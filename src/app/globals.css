@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
+
+html {
+  font-size: 62,5%;
+  overflow-x: hidden;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 242, 213, 229;
+  --background-end-rgb: 242, 213, 229;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 242, 213, 229;
+    --background-end-rgb: 242, 213, 229;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.navBackground {
+  background-color: rgb(175, 117, 191);
+  height: 5rem;
+}
+
+.titulo{
+  color: rgb(164, 110, 179);
+  font-size: 2.7rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.texto{
+  color: black;
+  font-size: 1.7rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.imagemlogo {
+  width: 75%;
+}
+
+.textoinformativo{
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 0 7rem;
+}
+
+.textopadrao{
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.botao{
+  background-color: rgb(195, 148, 237);
+  width: fit-content;
+  border-radius: 1.5rem;
+  height: 4.5rem;
+  width: 11.5rem;
+}
+
+.divimagem{
+  background-image: url('/images/Logo-FazerParte.svg');
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.textobotao{
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.titulop{
+  color: rgb(0, 0, 0);
+  font-size: 2.3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.titulov{
+  color: rgb(79, 99, 86);
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.entenda{
+  background-color: rgb(172, 198, 180);
+  border-radius: 1.5rem;
+  width: 94.5vw;
+  height: 65.5%;
+}
+
+.entenda2{
+  background-color: rgb(211, 167, 217);
+  border-radius: 1.5rem;
+  width: 94.5vw;
+  height: 65.5%;
+}
+
+.tituloentenda{
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 4rem;
+}
+
+.pentenda{
+  color: rgb(0, 0, 0);
+  font-size: 1.7rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 3.5rem;
+}
+
+.imagemsabia {
+  width: 10%;
+}
+
+.imagement {
+  width: 5%;
+}
+
+footer {
+  background-color: rgba(176, 99, 72, 0.84);
+}
