@@ -10,15 +10,15 @@ html {
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 242, 213, 229;
-  --background-end-rgb: 242, 213, 229;
+  --background-start-rgb: 252, 236, 245;
+  --background-end-rgb: 252, 236, 245;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 242, 213, 229;
-    --background-end-rgb: 242, 213, 229;
+    --background-start-rgb: 252, 236, 245;
+    --background-end-rgb: 252, 236, 245;
   }
 }
 
@@ -60,8 +60,7 @@ body {
   color: black;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
-  padding: 0 7rem;
+  font-size: 1.5rem;
 }
 
 .textopadrao{
@@ -72,11 +71,12 @@ body {
 }
 
 .botao{
-  background-color: rgb(195, 148, 237);
+  background-color: rgb(175, 117, 191);
   width: fit-content;
   border-radius: 1.5rem;
-  height: 4.5rem;
-  width: 11.5rem;
+  height: 5rem;
+  width: 35rem;
+  margin: 0 40rem;
 }
 
 .divimagem{
@@ -91,13 +91,16 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1.7rem;
+  letter-spacing: 1rem;
 }
 
 .titulop{
   color: rgb(0, 0, 0);
-  font-size: 2.3rem;
+  font-size: 3.5rem;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 1rem;
+  margin: 4rem 30rem;
 }
 
 .titulov{
@@ -110,14 +113,14 @@ body {
 .entenda{
   background-color: rgb(172, 198, 180);
   border-radius: 1.5rem;
-  width: 94.5vw;
+  width: 65.5vw;
   height: 65.5%;
 }
 
 .entenda2{
   background-color: rgb(211, 167, 217);
   border-radius: 1.5rem;
-  width: 94.5vw;
+  width: 65.5vw;
   height: 65.5%;
 }
 

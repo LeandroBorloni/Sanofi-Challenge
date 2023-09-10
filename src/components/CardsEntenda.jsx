@@ -3,9 +3,10 @@
 export default function CardEntenda() {
     return (
     <>
+    <div className="flex ml-20 gap-20">
         <div className='flex entenda ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10'>
+            <div className='flex mb-10 justify-center'>
                 <img className='imagement' src='/images/chatbot_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 ml-7'>ChatBot</h1>
             </div>
@@ -18,12 +19,15 @@ export default function CardEntenda() {
             </ul>
             <p className='pentenda font-mixed'>Estamos comprometidos em tornar sua jornada de cuidados de saúde mais fácil e eficaz.</p>
             </div>
-            <img src='/images/cel_chatbot.svg'></img>
         </div>
+            <img src='/images/cel_chatbot.svg'></img>
+    </div>
+    <div className="flex ml-20 gap-20">
+        <img src='/images/cel_consultas.svg'></img>
         <div className='flex entenda2 ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10'>
-                <img className='imagement' src='/images/chatbot_ent.svg'></img>
+            <div className='flex mb-10 justify-center'>
+                <img className='imagement' src='/images/consultas_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 ml-7'>Consulta & Exames</h1>
             </div>
             <p className='pentenda font-mixed'>Coloque sua saúde em primeiro lugar com nossa aba "Consultas & Exames".<br></br></p>
@@ -34,12 +38,14 @@ export default function CardEntenda() {
             </ul>
             <p className='pentenda font-mixed'>Estamos aqui para ajudar você a cuidar do que mais importa: você mesmo.</p>
             </div>
-            <img src='/images/cel_consultas.svg'></img>
         </div>
+        
+    </div>  
+    <div className="flex ml-20 gap-20">
         <div className='flex entenda ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10'>
-                <img className='imagement' src='/images/chatbot_ent.svg'></img>
+            <div className='flex mb-10 justify-center'>
+                <img className='imagement' src='/images/saude_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 ml-7'>Saúde & Bem-estar</h1>
             </div>
             <p className='pentenda font-mixed'>Estabeleça e monitore metas diárias e semanais para uma vida mais saudável. Com nossa plataforma, você pode:<br></br></p>
@@ -51,12 +57,15 @@ export default function CardEntenda() {
             </ul>
             <p className='pentenda font-mixed'>Transforme seus objetivos em realidade. Sua saúde está em suas mãos, e estamos aqui para ajudar.</p>
             </div>
-            <img src='/images/cel_saude.svg'></img>
         </div>
+        <img src='/images/cel_saude.svg'></img>
+    </div>
+    <div className="flex ml-20 gap-20">
+        <img src='/images/cel_artigos.svg'></img>
         <div className='flex entenda2 ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10'>
-                <img className='imagement' src='/images/chatbot_ent.svg'></img>
+            <div className='flex mb-10 justify-center'>
+                <img className='imagement' src='/images/artigos_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 ml-7'>Artigos</h1>
             </div>
             <p className='pentenda font-mixed'>Descubra uma fonte confiável de conhecimentos sobre saúde para mantê-lo informado e capacitado:<br></br></p>
@@ -67,8 +76,9 @@ export default function CardEntenda() {
             </ul>
             <p className='pentenda font-mixed'>Acesse informações atualizadas para apoiar sua saúde. Explore nossa seção de artigos e comece sua jornada de bem-estar.</p>
             </div>
-            <img src='/images/cel_artigos.svg'></img>
+            
         </div>
+    </div>
     </>
     )
 }
