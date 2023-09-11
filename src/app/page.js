@@ -6,6 +6,8 @@ import Card from '@/components/Card';
 import CardEntenda from '@/components/CardsEntenda';
 import IconWithToggle from '@/components/IconWithToggle';
 
+import Link from 'next/link';
+
 export default function Portal() {
   const cards = [
     {
@@ -72,7 +74,7 @@ export default function Portal() {
         </div>
         <div className='flex items-center'>
           <a className='mr-5 mb-1 text-black underline-2'>Criar Conta</a>
-          <a><UserIcon className='w-7 text-black icon mb-2'></UserIcon></a>
+          <Link href='./pageCadastro'><UserIcon className='w-7 text-black icon mb-2'></UserIcon></Link>
         </div>
       </nav>
 
@@ -168,6 +170,13 @@ export default function Portal() {
             </ul>
         </div>
       </div>
+      <div className='flex justify-center mt-20'>
+        <h2 className='textoinformativo'>SIGA-NOS NAS REDES SOCIAIS</h2>
+      </div>
+      <div className='flex justify-center mt-10'>
+        <img src='images/rede_social.svg'></img>
+      </div>
+      <p className='textopadrao mt-20 ml-5'>Caráter Informativo: <br></br>As informações disponibilizadas não substituem avaliação, diagnóstico,tratamento ou acompanhamento de profissionais.</p>
     </footer>
     </>
   )
