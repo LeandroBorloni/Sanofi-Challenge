@@ -151,3 +151,10 @@ body {
 footer {
   background-color: rgba(176, 99, 72, 0.84);
 }
+
+.titulofooter {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+}

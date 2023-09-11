@@ -126,8 +126,47 @@ export default function Portal() {
 
     </section>
     <footer className='footer mt-20'>
-      <div>
-        <h1 className=''>Fale Conosco</h1>
+      <div className='flex justify-between'>
+        <div>
+          <h1 className='titulofooter p-8'>Fale Conosco</h1>
+          <p className='textopadrao ml-8 mb-2'>Av. das Nações Unidas, 14401 - Chácara Santo Antônio <br></br> (Zona Sul), São Paulo - SP, 04794-000</p>
+          <p className='textopadrao ml-8'>CNPJ: 02.685.377/0001-57</p>
+        </div>
+        <div>
+          <p className='textopadrao mr-10 mb-3 pt-6'>© Sanofi 2004-2022 Todos os direitos reservados.</p>
+          <h3 className='textoinformativo mr-10'>Política de Privacidade e Dados</h3>
+        </div>
+      </div>
+      <div className='flex mt-20 ml-8 justify-around'>
+        <div>
+          <h3 className='textoinformativo font-mixed'>Sanofi<br></br></h3>
+          <ul className='ml-8 mr-12'>
+            <li  className='textopadrao font-mixed'>- Quem somos<br></br></li>
+            <li  className='textopadrao font-mixed'>- Trabalhe conosco<br></br></li>
+            <li  className='textopadrao font-mixed'>- Política de privacidade<br></br></li>
+            <li  className='textopadrao font-mixed'>- Compromisso de integridade<br></br></li>
+            <li  className='textopadrao font-mixed'>- Termos de uso<br></br></li>
+            <li  className='textopadrao font-mixed'>- Status<br></br></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className='textoinformativo font-mixed'>Nosso aplicativo<br></br></h3>
+          <ul className='ml-8 mr-12'>
+            <li  className='textopadrao font-mixed'>- Funcionalidades<br></br></li>
+            <li  className='textopadrao font-mixed'>- Política de privacidade<br></br></li>
+            <li  className='textopadrao font-mixed'>- Apoio a uma pessoa com deficiência<br></br></li>
+            <li  className='textopadrao font-mixed'>- Reporte um problema<br></br></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className='textoinformativo font-mixed'>Nosso site<br></br></h3>
+            <ul className='ml-8 mr-12'>
+              <li  className='textopadrao font-mixed'>- Funcionalidades<br></br></li>
+              <li  className='textopadrao font-mixed'>- Política de privacidade<br></br></li>
+              <li  className='textopadrao font-mixed'>- Apoio a uma pessoa com deficiência<br></br></li>
+              <li  className='textopadrao font-mixed'>- Reporte um problema<br></br></li>
+            </ul>
+        </div>
       </div>
     </footer>
     </>
