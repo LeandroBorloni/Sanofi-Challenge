@@ -70,11 +70,11 @@ export default function Portal() {
       <nav className='flex items-center justify-between navBackground p-4'>
         <div className='flex items-center'>
           <img className='imagemlogo' src="/images/Logo.svg"></img>
-          <a><MagnifyingGlassIcon className='w-7 text-black mb-2'></MagnifyingGlassIcon></a>
+          {/* <a><MagnifyingGlassIcon className='w-7 text-black mb-2'></MagnifyingGlassIcon></a> */}
         </div>
         <div className='flex items-center'>
-          <a className='mr-5 mb-1 text-black underline-2'>Criar Conta</a>
-          <Link href='./pageCadastro'><UserIcon className='w-7 text-black icon mb-2'></UserIcon></Link>
+          <Link href='/Cadastro'><span className='mr-5 mb-1 text-black underline-2 hover:underline'>Criar Conta</span></Link>
+          <Link href='/Login'><UserIcon className='w-7 text-black icon mb-2'></UserIcon></Link>
         </div>
       </nav>
 
@@ -95,9 +95,11 @@ export default function Portal() {
       <div className='divimagem mt-12 flex flex-col mb-3'>
         <h1 className="titulop mt-12">Faça parte!</h1>
       </div>
-      <div className='flex items-center justify-center botao text-black hover:bg-purple-500'> 
-        <p className='textobotao'>CRIAR CONTA</p>
-      </div>
+      <Link href='/Cadastro'>
+        <div className='flex items-center justify-center botao text-black hover:bg-purple-500'> 
+          <button className='textobotao'>CRIAR CONTA</button>
+        </div>
+      </Link>
 
       <div className='flex mt-20 ml-20 mr-20 gap-20 justify-evenly'>
         <div className='flex flex-col items-center justify-center'>

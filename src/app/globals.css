@@ -6,12 +6,27 @@
 html {
   font-size: 62,5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 252, 236, 245;
   --background-end-rgb: 252, 236, 245;
+}
+
+/* BARRA DE ROLAGEM */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F2D5E5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #AF75BF;
+  border-radius: 3px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -148,6 +163,7 @@ body {
   width: 5%;
 }
 
+/* FOOTER DA HOME PAGE */
 footer {
   background-color: rgba(176, 99, 72, 0.84);
 }
