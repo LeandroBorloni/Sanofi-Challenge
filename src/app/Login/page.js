@@ -13,7 +13,7 @@ export default function Login(){
                 </div>
             </nav>
             <div className='flex justify-between'>
-                <img src='images/poligonos_esq.svg'></img>
+                <img src='images/poligonos_esq.svg' className=''></img>
                 <div className='flex justify-center gap-20'>
                     <img src='images/mira_cs.svg'></img>
                     <div className='flex flex-col items-center mt-48'>

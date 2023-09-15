@@ -5,6 +5,7 @@ import './global.css';
 export default function LoginPaciente() {
     return (
         <>
+    
             <section className='flex flex-col'>
                 <nav className='flex items-center justify-between navBackground p-4'>
                     <div className='flex items-center'>
@@ -22,11 +23,11 @@ export default function LoginPaciente() {
                             <h3 className='texto mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
                             <form>
                                 <div className='botaologin-Pac flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5 justify-start'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color ml-4 mont text-black' type="email" id='email' required placeholder='E-mail'/></label>
+                                    <label className='flex p-5 justify-start'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="email" id='email' required placeholder='E-mail'/></label>
                                     
                                 </div>
                                 <div className='botaologin-Pac flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5'><img src='/images/senhaCadeado.svg'></img><input className='bg-color ml-4 mont text-black' type="password" id='password' required placeholder='Senha'/></label>
+                                    <label className='flex p-5'><img src='/images/senhaCadeado.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="password" id='password' required placeholder='Senha'/></label>
                                     
                                 </div>
                                 <Link href='./LoginMedico'>

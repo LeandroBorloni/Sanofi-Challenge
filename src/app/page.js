@@ -83,10 +83,10 @@ export default function Portal() {
       <h2 className='texto mt-12 ml-8'>Juntando-se a nossa comunidade você tem acesso à:</h2>
 
 
-      <div className='flex mt-12 ml-8 mr-8 gap-20'>
+      <div className='flex mt-12 gap-20 justify-center'>
         {cards.map(card => <Card card={card}></Card>)}
       </div>
-      <div className='flex mt-12 ml-8 mr-8 gap-20'>
+      <div className='flex mt-12 gap-20 justify-center'>
         {cards2.map(card => <Card card={card}></Card>)}
       </div>
 
