@@ -15,3 +15,17 @@
 .mont{
     font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 1024px) {
+    .botaologin {
+        width: 70vw;
+    }
+
+    .mira_cs {
+        display: none;
+    }
+
+    .botaocriar {
+        width: 50vw;
+    }
+}

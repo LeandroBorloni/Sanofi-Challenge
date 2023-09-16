@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
 
 html {
   font-size: 62,5%;
@@ -165,7 +165,7 @@ body {
 }
 
 .imagement {
-  width: 5%;
+  width: 7%;
 }
 
 /* FOOTER DA HOME PAGE */
@@ -178,4 +178,183 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 2rem;
+}
+
+::selection {
+  background-color: #AF75BF;
+  color: white;
+}
+
+@media (max-width: 1440px) {
+  .titulo {
+    font-size: 2.3rem;
+  }
+
+  .texto {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .textoinformativo {
+    font-size: 1.2rem;
+  }
+
+  .divcard {
+    width: 18rem;
+    height: 22rem;
+  }
+
+  .divimagem {
+    background-size: auto;
+    height: 450px;
+  }
+
+  .titulop {
+    margin: 4rem 18rem;
+    font-size: 2.7rem;
+  }
+  
+  .botao {
+    margin: 0 28rem;
+  }
+
+  .tituloentenda {
+    font-size: 2.5rem;
+  }
+
+  .pentenda {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .titulo {
+    font-size: 1.7rem;
+  }
+
+  .texto {
+    font-size: 1.5rem;
+  }
+
+  .divcard {
+    width: 15rem;
+    height: 20rem;
+  }
+
+  .textoinformativo {
+    font-size: 1.1rem;
+  }
+
+  .w-20 {
+    width: 2.7rem;
+  }
+
+  .h-20 {
+    height: 2.7rem;
+  }
+
+  .divimagem {
+    background-size: 100%;
+    height: 330px
+
+  }
+
+  .titulop {
+    font-size: 2.3rem;
+    margin: 3rem 11rem;
+  }
+
+  .botao {
+    margin: 0 15rem
+  }
+
+  .ml-20 {
+    margin-left: 3rem;
+  }
+
+  .titulov {
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagement {
+    width: 10%;
+  }
+
+  .pentenda {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  .cel {
+    display: none;
+  }
+
+  .entenda {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .texto {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    text-align: center;
+  }
+
+  .divcard {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 4rem;
+    margin-left: 3rem;
+  }
+
+  .divimagem {
+    display: none;
+  }
+
+  .botao {
+    margin: 0;
+    width: 20rem;
+    margin-left: 3rem;
+  }
+
+  .textobotao {
+    font-size: 1.3rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .titulop {
+    font-size: 1.4rem;
+    letter-spacing: 0.3rem;
+    margin: 1rem 3rem;
+  }
+
+  .textoinformativo {
+    font-size: 1.3rem;
+  }
+
+  .tituloentenda {
+    font-size: 1.8rem;
+  }
+
+  .imagement {
+    width: 30%;
+  }
+
+  .pentenda {
+    font-size: 1.2rem;
+    line-height: 1rem;
+  }
+
+  .celular-entenda {
+    display: none;
+  }
 }

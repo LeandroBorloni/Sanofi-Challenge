@@ -83,10 +83,10 @@ export default function Portal() {
       <h2 className='texto mt-12 ml-8'>Juntando-se a nossa comunidade você tem acesso à:</h2>
 
 
-      <div className='flex mt-12 gap-20 justify-center'>
+      <div className='lg:flex mt-12 gap-20 justify-center'>
         {cards.map(card => <Card card={card}></Card>)}
       </div>
-      <div className='flex mt-12 gap-20 justify-center'>
+      <div className='lg:flex lg:mt-12 gap-20 justify-center'>
         {cards2.map(card => <Card card={card}></Card>)}
       </div>
 
@@ -101,7 +101,7 @@ export default function Portal() {
         </div>
       </Link>
 
-      <div className='flex mt-20 ml-20 mr-20 gap-20 justify-evenly'>
+      <div className='lg:flex mt-20 ml-20 mr-20 gap-20 justify-evenly'>
         <div className='flex flex-col items-center justify-center'>
           <p className='textoinformativo mt-4'><span className='text-[2rem]'>Apenas</span> <br></br><strong className='text-[#5D896D] text-[3.5rem] ml-20'>16%</strong><br></br> <span className='flex text-center'>dos adultos consomem a <br></br> quantidade recomendada <br></br> de fibras diariamente.</span></p>
         </div>
@@ -141,7 +141,7 @@ export default function Portal() {
           <h3 className='textoinformativo mr-10'>Política de Privacidade e Dados</h3>
         </div>
       </div>
-      <div className='flex mt-20 ml-8 justify-around'>
+      <div className='lg:flex mt-20 ml-8 justify-around'>
         <div>
           <h3 className='textoinformativo font-mixed'>Sanofi<br></br></h3>
           <ul className='ml-8 mr-12'>

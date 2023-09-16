@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
+
+.textonav{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+
+.cardverde{
+    height: 30rem;
+    width: 50vw;
+}
+
+.botaocard{
+    width: 37%;
+    height: 10%;
+}
+
+.cardartigo {
+    border-radius: 3rem;
+    height: 16rem;
+}
+
+.mont{
+    font-family: 'Montserrat', sans-serif;
+}

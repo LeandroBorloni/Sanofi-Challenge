@@ -86,3 +86,25 @@ input[type="date"]{
     height: 75px;
     border-radius: 1.5rem;
 }
+
+@media (max-width: 1024px) {
+    .textocriarconta {
+        font-size: 1.3rem;
+    }
+
+    .labelformulario {
+        font-size: 1rem;
+    }
+
+    .botaoCadastro {
+        width: 60vw;
+    }
+
+    .termouso {
+        font-size: 1.2rem;
+    }
+
+    .botaologin-cadastro {
+        width: 25vw;
+    }
+}

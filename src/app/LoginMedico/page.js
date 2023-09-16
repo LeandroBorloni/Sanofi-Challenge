@@ -19,7 +19,7 @@ export default function LoginMedico() {
                     <div className='flex justify-center gap-20'>
                         <div className='flex flex-col items-center mt-10'>
                             <h1 className='titulo mb-10'>Construa sua Jornada de Bem-Estar</h1>
-                            <h3 className='texto mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
+                            <h3 className='textoMedico mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
                             <form>
                                 <div className='botaologin-Med flex mb-10 items-center justify-center'>
                                     <label className='flex p-5 justify-start'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color-Med ml-4 mont text-black pr-40 pt-5 pb-5' type="number" min='0' id='crm' required placeholder='CRM'/></label>

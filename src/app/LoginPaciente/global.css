@@ -8,7 +8,7 @@
     font-weight: 600;
 }
 
-.texto {
+.textoPaciente {
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     text-align: center;
@@ -70,4 +70,8 @@
 
 .bg-color {
     background-color: rgba(142, 191, 150, 0);
+}
+
+.mont{
+    font-family: 'Montserrat', sans-serif;
 }

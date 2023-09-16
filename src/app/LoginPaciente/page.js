@@ -20,7 +20,7 @@ export default function LoginPaciente() {
                     <div className='flex justify-center gap-20'>
                         <div className='flex flex-col items-center mt-10'>
                             <h1 className='titulo mb-10'>Continue sua Jornada de Bem-Estar</h1>
-                            <h3 className='texto mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
+                            <h3 className='textoPaciente mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
                             <form>
                                 <div className='botaologin-Pac flex mb-10 items-center justify-center'>
                                     <label className='flex p-5 justify-start'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="email" id='email' required placeholder='E-mail'/></label>
@@ -30,7 +30,7 @@ export default function LoginPaciente() {
                                     <label className='flex p-5'><img src='/images/senhaCadeado.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="password" id='password' required placeholder='Senha'/></label>
                                     
                                 </div>
-                                <Link href='./LoginMedico'>
+                                <Link href='./HomePaciente'>
                                     <div className='botaoacessar flex items-center justify-center mt-20'>
                                         <button className='mont textoacessar'>Acessar</button>
                                     </div>

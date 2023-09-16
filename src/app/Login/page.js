@@ -13,9 +13,9 @@ export default function Login(){
                 </div>
             </nav>
             <div className='flex justify-between'>
-                <img src='images/poligonos_esq.svg' className=''></img>
-                <div className='flex justify-center gap-20'>
-                    <img src='images/mira_cs.svg'></img>
+                <img src='images/poligonos_esq.svg'></img>
+                <div className='flex justify-center lg:gap-20'>
+                    <img className='mira_cs' src='images/mira_cs.svg'></img>
                     <div className='flex flex-col items-center mt-48'>
                         <Link href='./LoginPaciente'>
                             <div className='botaologin flex items-center justify-center bg-[#8EBF9F]'>
@@ -36,7 +36,7 @@ export default function Login(){
                             </div>
                         </Link>
                     </div>
-                    <img src='images/mira_cs.svg'></img>s
+                    <img className='mira_cs' src='images/mira_cs.svg'></img>s
                 </div>
                
                 <img src='images/poligonos_dir.svg'></img>
