@@ -19,7 +19,7 @@ export default function HomePaciente() {
             <div className=' flex bg-[#AF75BF] items-center justify-center h-20' >
                 <ul className='flex gap-48 textonav'>
                     <Link href='/HomePaciente'><li>Home</li></Link>
-                    <li>Exames & Consultas</li>
+                    <Link href='/ExamesEConsultas'><li>Exames & Consultas</li></Link>
                     <Link href='/SaudeEBemEstar'><li>Saúde & Bem estar</li></Link>
                     <Link href='/Artigos'><li>Artigos</li></Link>
                 </ul>
@@ -29,7 +29,7 @@ export default function HomePaciente() {
             </h1>
             <div className='bg-[#D3A7D9] cardverde mt-20 rounded-3xl ml-10 p-5'>
                 <h2 className='text-black text-center mont text-3xl font-normal'>Lembrete! <br></br>Sua próxima consulta é:</h2>
-                <div className='bg-[#AF75BF] w-4/5 h-2/5 rounded-3xl p-5 mt-5 ml-5'>
+                <div className='bg-[#AF75BF] lg:w-4/5 lg:h-2/5 rounded-3xl p-5 mt-5 lg:ml-5'>
                     <ul>
                         <li><p className='mont text-black text-2xl text-normal leading-10'>Dia: 30/09/2023</p></li>
                         <li><p className='mont text-black text-2xl text-normal leading-10'>Médico: Dr. Fabio Pimentel</p></li>
@@ -53,8 +53,8 @@ export default function HomePaciente() {
 
             <div className='flex flex-col bg-[#D3A7D9] cardverde mt-20 rounded-3xl ml-10 p-5 mb-28'>
                 <h2 className='text-black mont text-3xl font-normal p-5 bg-[#AF75BF] rounded-3xl text-center'>Artigo do dia: </h2>
-                <div className='flex h-2/3 pt-20'>
-                    <p className='mont text-black text-2xl leading-10 text-medium w-4/6 pr-10 pl-4'>Leia nosso artigo sobre atividades físicas para descobrir como incorporar exercícios em sua rotina diária e melhorar sua saúde geral.</p>
+                <div className='divcelartigos flex h-2/3 pt-20'>
+                    <p className='textocelartigos mont text-black text-2xl leading-10 text-medium w-4/6 pr-10 pl-4'>Leia nosso artigo sobre atividades físicas para descobrir como incorporar exercícios em sua rotina diária e melhorar sua saúde geral.</p>
                     <Link href='/Artigos'>
                         <div className='cardartigo flex flex-col bg-[#A65C41]'>
                             <img src='/images/atividade_fisica.svg'></img>

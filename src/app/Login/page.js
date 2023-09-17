@@ -12,8 +12,8 @@ export default function Login(){
                     <Link href='./'><img className='imagemlogo' src="/images/Logo.svg"></img></Link>
                 </div>
             </nav>
-            <div className='flex justify-between'>
-                <img src='images/poligonos_esq.svg'></img>
+            <div className='flex justify-between logincel'>
+                <img className='mira_cs' src='images/poligonos_esq.svg'></img>
                 <div className='flex justify-center lg:gap-20'>
                     <img className='mira_cs' src='images/mira_cs.svg'></img>
                     <div className='flex flex-col items-center mt-48'>
@@ -36,10 +36,10 @@ export default function Login(){
                             </div>
                         </Link>
                     </div>
-                    <img className='mira_cs' src='images/mira_cs.svg'></img>s
+                    <img className='mira_cs' src='images/mira_cs.svg'></img>
                 </div>
                
-                <img src='images/poligonos_dir.svg'></img>
+                <img className='mira_cs' src='images/poligonos_dir.svg'></img>
             </div>
 
 

@@ -16,7 +16,7 @@ export default function LoginPaciente() {
                     </div>
                 </nav>
                 <div className='flex justify-between'>
-                    <img src='images/poligonos_esq.svg'></img>
+                    <img className='poligonos' src='images/poligonos_esq.svg'></img>
                     <div className='flex justify-center gap-20'>
                         <div className='flex flex-col items-center mt-10'>
                             <h1 className='titulo mb-10'>Continue sua Jornada de Bem-Estar</h1>
@@ -46,7 +46,7 @@ export default function LoginPaciente() {
                             </Link>
                         </div>
                     </div>
-                    <img src='images/poligonos_dir.svg'></img>
+                    <img className='poligonos' src='images/poligonos_dir.svg'></img>
                 </div>
             </section>
 

@@ -75,7 +75,7 @@ export default function Artigos() {
             <div className=' flex bg-[#AF75BF] items-center justify-center h-20' >
                 <ul className='flex gap-48 textonav'>
                     <Link href='/HomePaciente'> <li>Home</li></Link>
-                    <li>Exames & Consultas</li>
+                    <Link href='/ExamesEConsultas'><li>Exames & Consultas</li></Link>
                     <Link href='/SaudeEBemEstar'><li>Saúde & Bem estar</li></Link>
                     <Link href='/Artigos'><li>Artigos</li></Link>
                 </ul>

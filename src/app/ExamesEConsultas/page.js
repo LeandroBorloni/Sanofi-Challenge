@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { UserIcon } from '@heroicons/react/24/outline'
 import './global.css';
 
-export default function SaudeEBemEstar() {
+export default function ExamesEConsultas() {
     return (
         <>
         <section className='flex flex-col'>

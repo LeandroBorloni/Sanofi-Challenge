@@ -24,3 +24,62 @@
 .mont{
     font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 425px) {
+    .textonav {
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .gap-48 {
+        gap: 1rem;
+    }
+
+    .imagemlogo {
+        width: 65%;
+    }
+
+    .mt-12 {
+        margin-top: 2rem;
+    }
+
+    .cardverde {
+        width: 80vw;
+        height: 37rem;
+    }
+
+    .botaocard {
+        width: 100%;
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .textocel {
+        font-size: 1.25rem;
+        line-height: 1.8rem;
+    }
+
+    .divcelmetas {
+        margin-left: 1rem;
+    }
+
+    .divcelartigos {
+        display: inline;
+        padding-top: 2rem;
+    }
+
+    .textocelartigos {
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        padding-right: 0;
+        padding-left: 0;
+        width: auto;
+        text-align: center;
+    }
+
+    .cardartigo {
+        margin-top: 2rem;
+    }
+}

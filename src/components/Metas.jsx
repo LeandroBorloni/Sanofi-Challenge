@@ -33,7 +33,7 @@ export default function Metas() {
     };
 
     return (
-        <div className='flex flex-col text-black gap-10 justify-center ml-10 mt-16'>
+        <div className='divcelmetas flex flex-col text-black gap-10 justify-center ml-10 mt-16'>
             <div className='flex gap-5'>
                 <img
                     src={imagemAtual}
@@ -41,7 +41,7 @@ export default function Metas() {
                     className="cursor-pointer"
                     onClick={trocarImagem}
                 />
-                <p className='mont text-black text-2xl text-normal leading-10'>Hidratação: Beba 2,0 L de água</p>
+                <p className='textocel mont text-black text-2xl text-normal leading-10'>Hidratação: Beba 2,0 L de água</p>
             </div>
 
             <div className='flex gap-5'>
@@ -51,7 +51,7 @@ export default function Metas() {
                     className="cursor-pointer"
                     onClick={trocarImagem2}
                 />
-                <p className='mont text-black text-2xl text-normal leading-10' >Atividade Física: Faça 30 minutos de exercícios</p>
+                <p className='textocel mont text-black text-2xl text-normal leading-10' >Atividade Física: Faça 30 minutos de exercícios</p>
             </div>
             
             <div className='flex gap-5'>
@@ -60,7 +60,7 @@ export default function Metas() {
                     alt="Descrição da imagem"
                     className="cursor-pointer"
                     onClick={trocarImagem3}
-                /><p className='mont text-black text-2xl text-normal leading-10'>Alimentação: Consuma 5 porções de frutas e vegetais</p>
+                /><p className='textocel mont text-black text-2xl text-normal leading-10'>Alimentação: Consuma 5 porções de frutas e vegetais</p>
             </div>
         </div>
     );
