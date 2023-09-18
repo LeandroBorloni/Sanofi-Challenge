@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
+
+.textonav{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+
+.mont{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.divimagemartigo9 {
+    background-image: url('/images/artigoSocorros.svg');
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.colortexto9 {
+    color: #D43A3A;
+}
+
+.tituloartigo {
+    letter-spacing: 0.4rem;
+}
+
+.subartigo {
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+}

@@ -15,7 +15,7 @@ const WeeklyCalendar = () => {
   };
 
   return (
-    <div className="text-center mt-6 text-black">
+    <div className="text-center text-black p-10">
       <table className="table-auto mt-4 text-black">
         <thead>
           <tr className='bg-[#AF75BF]'>

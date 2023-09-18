@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
+
+.textonav{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+
+.mont{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.divimagemartigo6 {
+    background-image: url('/images/artigoAlimentacao.svg');
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.colortexto6 {
+    color: #B9FF82;
+}
+
+.tituloartigo {
+    letter-spacing: 0.4rem;
+}
+
+.subartigo {
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+}

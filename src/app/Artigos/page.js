@@ -27,7 +27,7 @@ export default function Artigos() {
             texto:"Compreendendo, Gerenciando e Mantendo a Saúde Cardiovascular."
         },
         {
-            link: "",
+            link: "/Obesidade",
             imagem:"/images/obesidade.svg",
             titulo:"Obesidade",
             texto:"Entendendo, Enfrentando e Cultivando um Estilo de Vida Saudável."
@@ -37,19 +37,19 @@ export default function Artigos() {
 
     const artigoHabitoSaudavel= [
         {
-            link: "",
+            link: "/AtvFisica",
             imagem: "/images/atividade_fisica.svg",
             titulo: "Atividade física",
             texto: "Um Passo Vital para uma Vida Saudável"
         },
         {
-            link: "",
+            link: "/Alimentacao",
             imagem: "/images/alimentacao.svg",
             titulo: "Alimentação",
             texto: "Nutrindo o Seu Corpo para uma Vida Melhor"
         },
         {
-            link: "",
+            link: "/Hidratacao",
             imagem: "/images/hidratacao.svg",
             titulo: "Hidratação",
             texto: "A importância de beber água para o Bem-Estar"
@@ -58,13 +58,13 @@ export default function Artigos() {
 
     const artigoTopicoSaude =[
         {
-            link: "",
+            link: "/PrimeirosSocorros",
             imagem: "/images/primeirosSocorros.svg",
             titulo: "Primeiro Socorros",
             texto: "Conhecimento que Salva Vidas."
         },
         {
-            link: "",
+            link: "/Vacinacao",
             imagem: "/images/vacinacao.svg",
             titulo: "Vacinação",
             texto: "Protegendo a Saúde, Prevenindo Doenças"

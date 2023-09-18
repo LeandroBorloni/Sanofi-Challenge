@@ -29,13 +29,13 @@ export default function SaudeEBemEstar() {
                 </ul>
             </div>
             <div className='flex flex-col justify-center items-center mt-10 gap-10'>
-                <h1 className='mont text-black text-3xl'>Checklist Personalizado</h1>
-                <p className='mont text-black text-center text-xl italic w-1/2'>Monte sua rotina de forma personalizada para o seu dia-a-dia! Estabeleça metas diárias e semanais para manter sua saúde integrada. Física, mental e espiritual.</p>
+                <h1 className='mont text-black text-4xl'>Checklist Personalizado</h1>
+                <p className='mont text-black text-center text-2xl italic w-1/2'>Monte sua rotina de forma personalizada para o seu dia-a-dia! Estabeleça metas diárias e semanais para manter sua saúde integrada. Física, mental e espiritual.</p>
                 <img src='/images/LineCadastro.svg'></img>
             </div>
             <div className='flex flex-col w-1/3 ml-10 mt-20'>
-                <div className=' bg-[#7AA188] rounded-t-3xl '>
-                    <h2 className='mont text-normal text-black text-center text-2xl leading-10'>Suas metas hoje são:</h2>
+                <div className=' bg-[#7AA188] rounded-t-3xl h-16'>
+                    <h2 className='mont text-normal text-black text-center text-3xl leading-10 mt-2'>Suas metas hoje são:</h2>
                 </div>
                 <div className='flex flex-col bg-[#8EBF9F] rounded-b-3xl h-[20rem]'>
                     <Metas></Metas>
@@ -72,11 +72,11 @@ export default function SaudeEBemEstar() {
                 </div>
 
                 <div className='flex flex-col bg-[#AF75BF] rounded-3xl w-1/4 h-[3rem] justify-center items-center mt-20'>
-                    <h2 className='mont text-normal text-black text-center text-3xl leading-10'>Registrar Mudanças:</h2>
+                    <h2 className='mont text-normal text-black text-center text-3xl leading-10'>Registrar Mudanças</h2>
                 </div>
             </div>
 
-            <div className='flex mt-20 gap-10'>
+            <div className='flex mt-20 gap-10 ml-10'>
                 <div className='flex justify-center items-center bg-[#7AA188] w-1/6 h-[4rem] rounded-3xl'>
                     <h2 className='mont text-normal text-black text-center text-2xl leading-10'>Semanal</h2>
                 </div>

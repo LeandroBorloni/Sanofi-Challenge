@@ -51,7 +51,7 @@ const MonthlyCalendar = () => {
 
   return (
     
-    <div className="flex flex-col text-center mt-6 text-black">
+    <div className="flex flex-col text-center mt-6 text-black p-10">
       <div className="flex justify-between items-center">
         <button
           className="text-black hover:text-black"
