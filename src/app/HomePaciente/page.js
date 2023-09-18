@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { UserIcon } from '@heroicons/react/24/outline'
 import './global.css';
 import Metas from '@/components/Metas.jsx';
+import UserMenu from '@/components/UserMenu';
 
 export default function HomePaciente() {
     return (
@@ -10,10 +10,10 @@ export default function HomePaciente() {
         <section className='flex flex-col'>
             <nav className='flex items-center justify-between bg-[#B483BB] p-4'>
                 <div className='flex items-center'>
-                    <Link href='./'><img className='imagemlogo' src="/images/Logo.svg"></img></Link>
+                    <img className='imagemlogo' src="/images/Logo.svg"></img>
                 </div>
                 <div className='flex items-center'>
-                    <Link href='/Login'><UserIcon className='w-9 text-black icon mb-2'></UserIcon></Link>
+                    <UserMenu></UserMenu>
                 </div>
             </nav>
             <div className=' flex bg-[#AF75BF] items-center justify-center h-20' >
