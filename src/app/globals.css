@@ -340,6 +340,7 @@ footer {
 
   .textoinformativo {
     font-size: 1.3rem;
+    margin-left: 1rem;
   }
 
   .tituloentenda {
@@ -347,7 +348,8 @@ footer {
   }
 
   .imagement {
-    width: 30%;
+    width: 40%;
+    margin-left: 2rem;
   }
 
   .pentenda {
@@ -357,5 +359,9 @@ footer {
 
   .celular-entenda {
     display: none;
+  }
+
+  .titulofooter {
+    text-align: center;
   }
 }

@@ -1,11 +1,25 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 import Link from 'next/link';
 import './global.css';
+import { useRouter } from 'next/navigation';
+import toast from "react-hot-toast";
 
 export default function LoginPaciente() {
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+    const { push } = useRouter()
+
+    function login(e) {
+        e.preventDefault()
+        if(email == 'teste@sanofi.com.br' && senha == '123'){
+            push("/HomePaciente")
+        } else {
+            toast.error('Dados inválidos')
+        }
+    }
     return (
         <>
-    
             <section className='flex flex-col'>
                 <nav className='flex items-center justify-between navBackground p-4'>
                     <div className='flex items-center'>
@@ -21,20 +35,16 @@ export default function LoginPaciente() {
                         <div className='flex flex-col items-center mt-10'>
                             <h1 className='titulo mb-10'>Continue sua Jornada de Bem-Estar</h1>
                             <h3 className='textoPaciente mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
-                            <form>
+                            <form onSubmit={login}>
                                 <div className='botaologin-Pac flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5 justify-start'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="email" id='email' required placeholder='E-mail'/></label>
-                                    
+                                    <label className='flex p-5 justify-start' htmlFor='email'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} required placeholder='E-mail'/></label>    
                                 </div>
                                 <div className='botaologin-Pac flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5'><img src='/images/senhaCadeado.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="password" id='password' required placeholder='Senha'/></label>
-                                    
+                                    <label className='flex p-5' htmlFor='password'><img src='/images/senhaCadeado.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="password" id='password' value={senha} onChange={(e) => setSenha(e.target.value)} required placeholder='Senha'/></label>
                                 </div>
-                                <Link href='./HomePaciente'>
-                                    <div className='botaoacessar flex items-center justify-center mt-20'>
-                                        <button className='mont textoacessar'>Acessar</button>
-                                    </div>
-                                </Link>
+                                <button className='botaoacessar flex items-center justify-center mt-20'>
+                                    <span className='mont textoacessar'>Acessar</span>
+                                </button>
                             </form>
 
                             <span className='mt-28 textosenha underline-2 hover:underline'>Esqueceu a senha?</span>

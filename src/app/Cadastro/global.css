@@ -108,3 +108,43 @@ input[type="date"]{
         width: 25vw;
     }
 }
+
+@media (max-width: 425px) {
+    .imagemlogo {
+        width: 65%;
+        margin-left: 4rem;
+    }
+
+    .titulo {
+        font-size: 1.9rem;
+    }
+
+    .textocadastro {
+        font-size: 1.5rem;
+    }
+
+    .textocriarconta {
+        font-size: 1.1rem;
+    }
+
+    .botaoCadastro {
+        width: 85vw;
+    }
+
+    .labelformulario {
+        margin-left: 0;
+    }
+
+    .termouso {
+        font-size: 1rem;
+    }
+
+    input[type="date"]{
+        font-size: 1.1rem;
+        margin-right: 1rem;
+    }
+
+    .botaologin-cadastro {
+        width: 40vw;
+    }
+}

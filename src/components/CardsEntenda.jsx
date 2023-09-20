@@ -6,9 +6,9 @@ export default function CardEntenda() {
     <div className="flex lg:justify-center ml-20 gap-20">
         <div className='flex entenda ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10 justify-center'>
+            <div className='lg:flex mb-10 justify-center'>
                 <img className='imagement' src='/images/chatbot_ent.svg'></img>
-                <h1 className='tituloentenda tracking-2 ml-7'>ChatBot</h1>
+                <h1 className='tituloentenda tracking-2 lg:ml-7'>ChatBot</h1>
             </div>
             <p className='pentenda font-mixed celular-entenda'>Nosso Chatbot está aqui para facilitar sua jornada de cuidados de saúde:<br></br></p>
             <ul className='ml-8 mr-12 celular-entenda'>
@@ -26,9 +26,9 @@ export default function CardEntenda() {
         <img className="cel" src='/images/cel_consultas.svg'></img>
         <div className='flex entenda2 ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10 justify-center'>
+            <div className='lg:flex mb-10 justify-center'>
                 <img className='imagement' src='/images/consultas_ent.svg'></img>
-                <h1 className='tituloentenda tracking-2 ml-7'>Consulta & Exames</h1>
+                <h1 className='tituloentenda tracking-2 lg:ml-7'>Consulta & Exames</h1>
             </div>
             <p className='pentenda font-mixed celular-entenda'>Coloque sua saúde em primeiro lugar com nossa aba "Consultas & Exames".<br></br></p>
             <ul className='ml-8 mr-12 celular-entenda'>
@@ -44,9 +44,9 @@ export default function CardEntenda() {
     <div className="flex lg:justify-center ml-20 gap-20">
         <div className='flex entenda ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10 justify-center'>
+            <div className='lg:flex mb-10 justify-center'>
                 <img className='imagement' src='/images/saude_ent.svg'></img>
-                <h1 className='tituloentenda tracking-2 ml-7'>Saúde & Bem-estar</h1>
+                <h1 className='tituloentenda tracking-2 lg:ml-7'>Saúde & Bem-estar</h1>
             </div>
             <p className='pentenda font-mixed celular-entenda'>Estabeleça e monitore metas diárias e semanais para uma vida mais saudável. Com nossa plataforma, você pode:<br></br></p>
             <ul className='ml-8 mr-12 celular-entenda'>
@@ -64,9 +64,9 @@ export default function CardEntenda() {
         <img className="cel" src='/images/cel_artigos.svg'></img>
         <div className='flex entenda2 ml-8 mr-8 p-12'>
             <div className='flex flex-col mb-12 mt-5'>
-            <div className='flex mb-10 justify-center'>
+            <div className='lg:flex mb-10 justify-center'>
                 <img className='imagement' src='/images/artigos_ent.svg'></img>
-                <h1 className='tituloentenda tracking-2 ml-7'>Artigos</h1>
+                <h1 className='tituloentenda tracking-2 lg:ml-7'>Artigos</h1>
             </div>
             <p className='pentenda font-mixed celular-entenda'>Descubra uma fonte confiável de conhecimentos sobre saúde para mantê-lo informado e capacitado:<br></br></p>
             <ul className='ml-8 mr-12 celular-entenda'>
