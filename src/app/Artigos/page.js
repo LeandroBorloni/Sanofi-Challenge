@@ -5,6 +5,7 @@ import './global.css';
 
 import CardArtigos from '@/components/Artigos';
 import UserMenu from '@/components/UserMenu';
+import ArticleCarousel from '@/components/Carrossel';
 
 export default function Artigos() {
     const artigoSaudeVital = [
@@ -116,6 +117,7 @@ export default function Artigos() {
                     </div>
                 </div>
             </div>
+
 
             <h1 className='mont text-black'></h1>
         </section>

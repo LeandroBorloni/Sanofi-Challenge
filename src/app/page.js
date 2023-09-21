@@ -113,7 +113,7 @@ export default function Portal() {
         </div>
       </div>
 
-      <div className='flex ml-10 w-full mt-12 pt-12'>
+      <div className='flex ml-10 lg:w-full mt-12 pt-12'>
         <h1 className='titulov'>Entenda mais:</h1>
       </div>
       

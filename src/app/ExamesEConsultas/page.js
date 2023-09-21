@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import './global.css';
 import UserMenu from '@/components/UserMenu';
+import Form from '@/components/ConsultaForm.jsx';
 
 export default function ExamesEConsultas() {
     return (
@@ -28,38 +29,35 @@ export default function ExamesEConsultas() {
             </h1>
             <div className='flex items-center justify-center mt-20'>
                 <div className='flex flex-col bg-[#AF75BF] rounded-3xl w-4/5 h-[35rem] p-10'>
-                    <form>
+                    <form id="consultaForm">
                         <div className='grid grid-cols-2 gap-10 '>
                             <div className='flex w-[100%]'>
-                                <label className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>Data da Consulta/Exame: </label>
-                                <input type="date" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                                <label htmlFor='dataConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>Data da Consulta/Exame: </label>
+                                <input id='dataConsulta' type="date" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                             </div>
                             <div className='flex w-[100%]'>
-                                <label className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>CRM do médico (opcional) :</label>
-                                    
-                                    <input className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                                <label htmlFor='crmConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>CRM do médico (opcional) :</label>    
+                                <input id='crmConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                             </div>
                             
                             
                             <div className='flex col-span-2 '>
-                                <label className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Nome do Médico:
-                                    
-                                </label>
-                                <input type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                                <label htmlFor='nomeConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Nome do Médico: </label>
+                                <input id='nomeConsulta' type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                             </div>
 
                             <div className='flex w-[100%]'>
-                                <label className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Especialidade do Médico: </label>
-                                <input type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                                <label htmlFor='especialidadeConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Especialidade do Médico: </label>
+                                <input id='especialidadeConsulta' type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                             </div>
                             <div className='flex w-[100%]'>
-                                <label className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Endereço da Consulta : </label>
-                                <input className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                                <label htmlFor='enderecoConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Endereço da Consulta : </label>
+                                <input id='enderecoConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                             </div>
                               
                             <div className='flex w-[100%]'>
-                                <label className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/4'>Observações: </label>
-                                <input type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-3/4 text-2xl'></input>
+                                <label htmlFor='obsConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/4'>Observações: </label>
+                                <input id='obsConsulta' type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-3/4 text-2xl'></input>
                             </div>
                             <div className='flex w-[100%] justify-center '>
                                 <div className='flex bg-[#7A5597] rounded-3xl w-1/2 justify-center items-center'>
@@ -134,6 +132,9 @@ export default function ExamesEConsultas() {
                     <img className='w-7' src='/images/Upload.svg'></img>
                 </div>
             </div>
+
+
+            <Form></Form>
         </section>
         </>
     )

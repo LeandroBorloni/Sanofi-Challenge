@@ -37,7 +37,7 @@ export default function HomePaciente() {
                     </ul>
                 </div>
                 <h3 className='mont text-black font-light text-2xl mt-5 ml-8'>Gostaria de modificar suas consultas?</h3>
-                <div className='flex justify-center items-center bg-[#FCECF5] botaocard rounded-3xl ml-72 mt-10'>
+                <div className='lg:mt-10 flex justify-center items-center bg-[#FCECF5] botaocard rounded-3xl ml-72'>
                     <span className='text-black text-normal text-center text-2xl'>Modificar Consulta</span>
                 </div>
             </div>
@@ -55,7 +55,7 @@ export default function HomePaciente() {
                 <h2 className='text-black mont text-3xl font-normal p-5 bg-[#AF75BF] rounded-3xl text-center'>Artigo do dia: </h2>
                 <div className='divcelartigos flex h-2/3 pt-20'>
                     <p className='textocelartigos mont text-black text-2xl leading-10 text-medium w-4/6 pr-10 pl-4'>Leia nosso artigo sobre atividades físicas para descobrir como incorporar exercícios em sua rotina diária e melhorar sua saúde geral.</p>
-                    <Link href='/Artigos'>
+                    <Link href='/AtvFisica'>
                         <div className='cardartigo flex flex-col bg-[#A65C41]'>
                             <img src='/images/atividade_fisica.svg'></img>
                             <div className='flex bg-white items-center justify-center'>

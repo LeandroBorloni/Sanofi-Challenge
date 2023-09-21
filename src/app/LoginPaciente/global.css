@@ -78,7 +78,7 @@
 
 @media (max-width: 425px) {
     .titulo {
-        font-size: 2.1rem;
+        font-size: 2rem;
     }
 
     .poligonos {
@@ -110,4 +110,6 @@
     .mt-40 {
         margin-top: 5rem;
     }
+
+
 }
