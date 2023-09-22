@@ -1,10 +1,41 @@
+"use client"
+import { useState } from 'react';
 import React from 'react';
 import Link from 'next/link';
 import './global.css';
 import UserMenu from '@/components/UserMenu';
 import Form from '@/components/ConsultaForm.jsx';
+import Upload from '@/components/FileUpload.jsx';
 
 export default function ExamesEConsultas() {
+    
+    const [pdfFile, setPdfFile] = useState(null);
+  
+    const handleFileUpload = (file) => {
+      // Lida com o arquivo carregado aqui, por exemplo, enviando-o para o servidor
+      setPdfFile(file);
+    };
+    const viewPdf = () => {
+        if (pdfFile) {
+          // Cria uma URL temporária para visualização do PDF no navegador
+          const pdfUrl = URL.createObjectURL(pdfFile);
+          window.open(pdfUrl, '_blank');
+        }
+      };
+    
+    const downloadPdf = () => {
+        if (pdfFile) {
+            // Cria um link de download para o PDF
+            const pdfUrl = URL.createObjectURL(pdfFile);
+            const a = document.createElement('a');
+            a.href = pdfUrl;
+            a.download = pdfFile.name;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    };
     return (
         <>
         <section className='flex flex-col'>
@@ -135,6 +166,16 @@ export default function ExamesEConsultas() {
 
 
             <Form></Form>
+            <Upload onFileUpload={handleFileUpload}></Upload>
+            {pdfFile && (
+                <div className='bg-[#B483BB]'>
+                    <h2>PDF Carregado:</h2>
+                    <p>Nome do arquivo: {pdfFile.name}</p>
+                    <p>Tamanho do arquivo: {pdfFile.size} bytes</p>
+                    <button onClick={viewPdf}>Visualizar PDF</button>
+                    <button onClick={downloadPdf}>Baixar PDF</button>
+                </div>
+            )}
         </section>
         </>
     )
