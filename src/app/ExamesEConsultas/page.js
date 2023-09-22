@@ -6,16 +6,17 @@ import './global.css';
 import UserMenu from '@/components/UserMenu';
 import Form from '@/components/ConsultaForm.jsx';
 import Upload from '@/components/FileUpload.jsx';
+import { DocumentIcon } from '@heroicons/react/24/outline'
 
 export default function ExamesEConsultas() {
-    
-    const [pdfFile, setPdfFile] = useState(null);
+    // antes de editar
+    const [pdfFiles, setPdfFiles] = useState([]);
   
     const handleFileUpload = (file) => {
       // Lida com o arquivo carregado aqui, por exemplo, enviando-o para o servidor
-      setPdfFile(file);
+      setPdfFiles([...pdfFiles, file]);
     };
-    const viewPdf = () => {
+    const viewPdf = (pdfFile) => {
         if (pdfFile) {
           // Cria uma URL temporária para visualização do PDF no navegador
           const pdfUrl = URL.createObjectURL(pdfFile);
@@ -23,7 +24,7 @@ export default function ExamesEConsultas() {
         }
       };
     
-    const downloadPdf = () => {
+    const downloadPdf = (pdfFile) => {
         if (pdfFile) {
             // Cria um link de download para o PDF
             const pdfUrl = URL.createObjectURL(pdfFile);
@@ -35,6 +36,12 @@ export default function ExamesEConsultas() {
             a.click();
             document.body.removeChild(a);
         }
+    };
+    const removePdf = (index) => {
+        // Remova o PDF pelo índice na matriz de PDFs
+        const updatedPdfFiles = [...pdfFiles];
+        updatedPdfFiles.splice(index, 1);
+        setPdfFiles(updatedPdfFiles);
     };
     return (
         <>
@@ -166,16 +173,28 @@ export default function ExamesEConsultas() {
 
 
             <Form></Form>
-            <Upload onFileUpload={handleFileUpload}></Upload>
-            {pdfFile && (
-                <div className='bg-[#B483BB]'>
-                    <h2>PDF Carregado:</h2>
-                    <p>Nome do arquivo: {pdfFile.name}</p>
-                    <p>Tamanho do arquivo: {pdfFile.size} bytes</p>
-                    <button onClick={viewPdf}>Visualizar PDF</button>
-                    <button onClick={downloadPdf}>Baixar PDF</button>
-                </div>
-            )}
+            {/* npm install react-dropzone que eu usei */}
+            <div>
+                <Upload onFileUpload={handleFileUpload} />
+                {pdfFiles.length > 0 ? (
+                    <div className='flex bg-[#A65C41] gap-10'>
+                        <h2>PDFs Carregados:</h2>
+                        <ul className='flex flex-col gap-10'>
+                            {pdfFiles.map((pdfFile, index) => (
+                            <li key={index} className='flex gap-10'>
+                                <p>Nome do arquivo: {pdfFile.name}</p>
+                                <p>Tamanho do arquivo: {pdfFile.size} bytes</p>
+                                <button onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
+                                <button onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button>
+                                <button onClick={() => removePdf(index)}>Remover PDF</button>
+                            </li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    <p className='text-black'>Nenhum PDF carregado.</p>
+                )}
+            </div>
         </section>
         </>
     )

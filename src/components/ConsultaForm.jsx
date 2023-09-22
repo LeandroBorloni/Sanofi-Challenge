@@ -40,7 +40,8 @@ function ConsultaForm() {
     }
 
     limparCampos(); // Limpa os campos após adicionar a consulta
-  };
+    };
+
     const limparCampos = () => {
         setDataConsulta('');
         setNome('');
@@ -50,6 +51,17 @@ function ConsultaForm() {
         setObs('');
     };
 
+    const handleDeleteConsulta = (index, type) => {
+        if (type === "proximas") {
+          const updatedConsultasProximas = [...consultasProximas];
+          updatedConsultasProximas.splice(index, 1);
+          setConsultasProximas(updatedConsultasProximas);
+        } else if (type === "passadas") {
+          const updatedConsultasPassadas = [...consultasPassadas];
+          updatedConsultasPassadas.splice(index, 1);
+          setConsultasPassadas(updatedConsultasPassadas);
+        }
+      };
   return (
     <>
     <div>
@@ -149,6 +161,11 @@ function ConsultaForm() {
                         <p className='mont text-black text-3xl text-normal text-center mt-10'>
                             Endereço: {consulta.enderecoConsulta}
                         </p>
+                        <button
+                            className='mont text-red-500 text-xl mt-4 cursor-pointer'
+                            onClick={() => handleDeleteConsulta(index, "proximas")}>
+                            Excluir
+                        </button>
                     </div>
                 </div>
                 ))}
@@ -158,7 +175,7 @@ function ConsultaForm() {
             {consultasPassadas.length > 0 && (
                 <div>
                     <h1 className='mont text-3xl text-black text-center mt-10'>
-                        Consultas Passadas
+                        Histórico de Consultas
                     </h1>
 
                     <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
@@ -185,6 +202,11 @@ function ConsultaForm() {
                                 <p className='mont text-black text-3xl text-normal text-center mt-10'>
                                     Endereço: {consulta.enderecoConsulta}
                                 </p>
+                                <button
+                                    className='mont text-red-500 text-xl mt-4 cursor-pointer'
+                                    onClick={() => handleDeleteConsulta(index, "passadas")}>
+                                    Excluir
+                                </button>
                             </div>
                         </div>
                         ))}

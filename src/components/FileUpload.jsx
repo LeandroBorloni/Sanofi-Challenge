@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { DocumentPlusIcon } from '@heroicons/react/24/outline'
 
 const FileUpload = ({ onFileUpload }) => {
   const onDrop = useCallback(
@@ -20,9 +21,10 @@ const FileUpload = ({ onFileUpload }) => {
   });
 
   return (
-    <div {...getRootProps()} className="border-dashed border-2 p-4 bg-[#B483BB]">
+    <div {...getRootProps()} className="border-dashed border-2 p-4 bg-[#B483BB]  mt-20">
       <input {...getInputProps()} />
       <p>Arraste e solte um arquivo PDF aqui ou clique para selecionar um.</p>
+      <DocumentPlusIcon className='text-black w-7 cursor-pointer'></DocumentPlusIcon>
     </div>
   );
 };

@@ -46,6 +46,7 @@ const WeeklyCalendar = () => {
                 )}
               </td>
             ))}
+            
           </tr>
         </tbody>
       </table>
