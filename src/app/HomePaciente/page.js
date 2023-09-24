@@ -3,6 +3,7 @@ import Link from 'next/link';
 import './global.css';
 import Metas from '@/components/Metas.jsx';
 import UserMenu from '@/components/UserMenu';
+import Chatbot from '@/components/WatsonAssistantChat.jsx';
 
 export default function HomePaciente() {
     return (
@@ -68,6 +69,7 @@ export default function HomePaciente() {
                     </Link>
                 </div>
             </div>
+            <Chatbot></Chatbot>
         </section>
         </>
     )

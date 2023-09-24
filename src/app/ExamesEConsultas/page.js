@@ -9,7 +9,9 @@ import Upload from '@/components/FileUpload.jsx';
 import { DocumentIcon } from '@heroicons/react/24/outline'
 import { DocumentPlusIcon } from '@heroicons/react/24/outline'
 
+
 export default function ExamesEConsultas() {
+    
     // antes de editar
     const [pdfFiles, setPdfFiles] = useState([]);
   
@@ -200,6 +202,7 @@ export default function ExamesEConsultas() {
                 )}
             </div>
             {/* <DocumentPlusIcon className='text-black w-7 '></DocumentPlusIcon> */}
+            
         </section>
         </>
     )
