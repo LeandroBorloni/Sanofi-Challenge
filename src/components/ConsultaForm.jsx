@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import '../app/ExamesEConsultas/global.css';
+import { TrashIcon } from '@heroicons/react/24/outline'
+
 
 function ConsultaForm() {
   const [dataConsulta, setDataConsulta] = useState('');
@@ -26,6 +28,7 @@ function ConsultaForm() {
       nomeConsulta,
       especialidadeConsulta,
       enderecoConsulta,
+      obsConsulta,
     };
     
     const dataConsultaDate = new Date(dataConsulta);
@@ -139,37 +142,40 @@ function ConsultaForm() {
 
             <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                 {consultasProximas.map((consulta, index) => (
-                <div key={index} className='consulta-item'>
+                <div key={index} className='consulta-item relative'>
                     <div className='flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
                         <ul className='mt-5'>
                             <li>
-                            <p className='mont text-black text-3xl text-normal leading-10 mb-5'>
-                                Dia: {consulta.dataConsulta}
-                            </p>
+                                <p className='mont text-black text-3xl text-normal leading-10'>
+                                    Dia: {consulta.dataConsulta}
+                                </p>
                             </li>
                             <li>
-                            <p className='mont text-black text-3xl text-normal leading-10 mb-5'>
-                                Médico: {consulta.nomeConsulta}
-                            </p>
+                                <p className='mont text-black text-3xl text-normal leading-10'>
+                                    Médico: {consulta.nomeConsulta}
+                                </p>
                             </li>
                             <li>
-                            <p className='mont text-black text-3xl text-normal leading-10'>
-                                Especialidade: {consulta.especialidadeConsulta}
-                            </p>
+                                <p className='mont text-black text-3xl text-normal leading-10'>
+                                    Especialidade: {consulta.especialidadeConsulta}
+                                </p>
+                            </li>
+                            <li>
+                                <p className='mont text-black text-3xl text-normal leading-10'>
+                                    Observação: {consulta.obsConsulta}
+                                </p>
                             </li>
                         </ul>
                         <p className='mont text-black text-3xl text-normal text-center mt-10'>
                             Endereço: {consulta.enderecoConsulta}
                         </p>
-                        <button
-                            className='mont text-red-500 text-xl mt-4 cursor-pointer'
-                            onClick={() => handleDeleteConsulta(index, "proximas")}>
-                            Excluir
-                        </button>
+            
+                        <TrashIcon className='text-black cursor-pointer absolute top-5 right-5 mt-2 mr-2 w-7 ' onClick={() => handleDeleteConsulta(index, "proximas")} />
+   
                     </div>
                 </div>
                 ))}
-            </div>
+            </div> 
 
             {/* Histórico consultas */}
             {consultasPassadas.length > 0 && (
@@ -180,16 +186,16 @@ function ConsultaForm() {
 
                     <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                         {consultasPassadas.map((consulta, index) => (
-                        <div key={index} className='consulta-item'>
+                        <div key={index} className='consulta-item relative'>
                             <div className='flex flex-col bg-[#8EBF9F] rounded-3xl w-[40rem] h-[20rem] p-5'>
                                 <ul className='mt-5'>
                                     <li>
-                                    <p className='mont text-black text-3xl text-normal leading-10 mb-5'>
+                                    <p className='mont text-black text-3xl text-normal leading-10'>
                                         Dia: {consulta.dataConsulta}
                                     </p>
                                     </li>
                                     <li>
-                                    <p className='mont text-black text-3xl text-normal leading-10 mb-5'>
+                                    <p className='mont text-black text-3xl text-normal leading-10'>
                                         Médico: {consulta.nomeConsulta}
                                     </p>
                                     </li>
@@ -198,15 +204,16 @@ function ConsultaForm() {
                                         Especialidade: {consulta.especialidadeConsulta}
                                     </p>
                                     </li>
+                                    <li>
+                                        <p className='mont text-black text-3xl text-normal leading-10'>
+                                            Observação: {consulta.obsConsulta}
+                                        </p>
+                                    </li>
                                 </ul>
                                 <p className='mont text-black text-3xl text-normal text-center mt-10'>
                                     Endereço: {consulta.enderecoConsulta}
                                 </p>
-                                <button
-                                    className='mont text-red-500 text-xl mt-4 cursor-pointer'
-                                    onClick={() => handleDeleteConsulta(index, "passadas")}>
-                                    Excluir
-                                </button>
+                                <TrashIcon className='text-black cursor-pointer absolute top-5 right-5 mt-2 mr-2 w-7 ' onClick={() => handleDeleteConsulta(index, "passadas")} />
                             </div>
                         </div>
                         ))}

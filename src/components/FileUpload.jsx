@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { DocumentPlusIcon } from '@heroicons/react/24/outline'
+import '@/app/ExamesEConsultas/global.css';
 
 const FileUpload = ({ onFileUpload }) => {
   const onDrop = useCallback(
@@ -21,10 +22,11 @@ const FileUpload = ({ onFileUpload }) => {
   });
 
   return (
-    <div {...getRootProps()} className="border-dashed border-2 p-4 bg-[#B483BB]  mt-20">
+    <div {...getRootProps()} className="flex bg-[#A65C41] rounded-3xl w-1/2 h-[5rem] p-5 mt-10 cursor-pointer gap-5">
       <input {...getInputProps()} />
-      <p>Arraste e solte um arquivo PDF aqui ou clique para selecionar um.</p>
-      <DocumentPlusIcon className='text-black w-7 cursor-pointer'></DocumentPlusIcon>
+      <p className='mont text-black font-medium text-4xl ml-12 text-center'>Clique aqui para adicionar seus exames em pdf!</p>
+      <img src="/images/Upload.svg"/>
+      
     </div>
   );
 };

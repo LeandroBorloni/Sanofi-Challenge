@@ -7,6 +7,7 @@ import UserMenu from '@/components/UserMenu';
 import Form from '@/components/ConsultaForm.jsx';
 import Upload from '@/components/FileUpload.jsx';
 import { DocumentIcon } from '@heroicons/react/24/outline'
+import { DocumentPlusIcon } from '@heroicons/react/24/outline'
 
 export default function ExamesEConsultas() {
     // antes de editar
@@ -177,16 +178,19 @@ export default function ExamesEConsultas() {
             <div>
                 <Upload onFileUpload={handleFileUpload} />
                 {pdfFiles.length > 0 ? (
-                    <div className='flex bg-[#A65C41] gap-10'>
-                        <h2>PDFs Carregados:</h2>
-                        <ul className='flex flex-col gap-10'>
+                    <div className='flex flex-col  gap-10 mt-10'>
+                        <h2 className='text-black mont'>PDF(s) Carregado(s):</h2>
+                        <ul className='flex '>
                             {pdfFiles.map((pdfFile, index) => (
-                            <li key={index} className='flex gap-10'>
+                            <li key={index} className='flex flex-col bg-[#A65C41] gap-10'>
                                 <p>Nome do arquivo: {pdfFile.name}</p>
-                                <p>Tamanho do arquivo: {pdfFile.size} bytes</p>
-                                <button onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
-                                <button onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button>
-                                <button onClick={() => removePdf(index)}>Remover PDF</button>
+                                {/* <p>Tamanho do arquivo: {pdfFile.size} bytes</p> */}
+                                <img src='/images/ImgPDF.svg' className='w-48'></img>
+                                <div className='flex justify-between'>
+                                    <button onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
+                                    <button onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button>
+                                    <button onClick={() => removePdf(index)}>Remover PDF</button>
+                                </div>
                             </li>
                             ))}
                         </ul>
@@ -195,6 +199,7 @@ export default function ExamesEConsultas() {
                     <p className='text-black'>Nenhum PDF carregado.</p>
                 )}
             </div>
+            {/* <DocumentPlusIcon className='text-black w-7 '></DocumentPlusIcon> */}
         </section>
         </>
     )
