@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import React from 'react';
 import Link from 'next/link';
 import './global.css';
@@ -15,6 +15,14 @@ export default function ExamesEConsultas() {
     // antes de editar
     const [pdfFiles, setPdfFiles] = useState([]);
   
+    useEffect(() => {
+        const storedPdfFiles = JSON.parse(localStorage.getItem('pdfFiles') || '[]');
+        setPdfFiles(storedPdfFiles);
+    }, []);
+    useEffect(() => {
+        localStorage.setItem('pdfFiles', JSON.stringify(pdfFiles));
+    }, [pdfFiles]);
+
     const handleFileUpload = (file) => {
       // Lida com o arquivo carregado aqui, por exemplo, enviando-o para o servidor
       setPdfFiles([...pdfFiles, file]);
@@ -177,21 +185,21 @@ export default function ExamesEConsultas() {
 
             <Form></Form>
             {/* npm install react-dropzone que eu usei */}
-            <div>
+            <div className='flex flex-col items-center justify-center'>
                 <Upload onFileUpload={handleFileUpload} />
                 {pdfFiles.length > 0 ? (
                     <div className='flex flex-col  gap-10 mt-10'>
                         <h2 className='text-black mont'>PDF(s) Carregado(s):</h2>
-                        <ul className='flex '>
+                        <ul className='flex flex-wrap justify-center items-center gap-10'>
                             {pdfFiles.map((pdfFile, index) => (
-                            <li key={index} className='flex flex-col bg-[#A65C41] gap-10'>
-                                <p>Nome do arquivo: {pdfFile.name}</p>
+                            <li key={index} className='flex flex-col bg-[#A65C41] gap-10 p-5 rounded-3xl justify-center items-center w-80 h-96'>
+                                <p className='break-words font-bold mont'>Nome do arquivo: {pdfFile.name}</p>
                                 {/* <p>Tamanho do arquivo: {pdfFile.size} bytes</p> */}
-                                <img src='/images/ImgPDF.svg' className='w-48'></img>
-                                <div className='flex justify-between'>
-                                    <button onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
-                                    <button onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button>
-                                    <button onClick={() => removePdf(index)}>Remover PDF</button>
+                                <img src='/images/ImgPDF.svg' className='w-28'></img>
+                                <div className='flex flex-col gap-2'>
+                                    <button className='mont' onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
+                                    <button className='mont' onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button>
+                                    <button className='mont' onClick={() => removePdf(index)}>Remover PDF</button>
                                 </div>
                             </li>
                             ))}

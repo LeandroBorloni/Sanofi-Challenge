@@ -1,8 +1,7 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../app/ExamesEConsultas/global.css';
 import { TrashIcon } from '@heroicons/react/24/outline'
-
 
 function ConsultaForm() {
   const [dataConsulta, setDataConsulta] = useState('');
@@ -64,7 +63,25 @@ function ConsultaForm() {
           updatedConsultasPassadas.splice(index, 1);
           setConsultasPassadas(updatedConsultasPassadas);
         }
-      };
+    };
+    
+    useEffect(() => {
+        const consultasProximasStorage = localStorage.getItem('consultasProximas');
+        if (consultasProximasStorage) {
+          setConsultasProximas(JSON.parse(consultasProximasStorage));
+        }
+    
+        const consultasPassadasStorage = localStorage.getItem('consultasPassadas');
+        if (consultasPassadasStorage) {
+          setConsultasPassadas(JSON.parse(consultasPassadasStorage));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('consultasProximas', JSON.stringify(consultasProximas));
+        localStorage.setItem('consultasPassadas', JSON.stringify(consultasPassadas));
+    }, [consultasProximas, consultasPassadas]);
+
   return (
     <>
     <div>
@@ -135,7 +152,7 @@ function ConsultaForm() {
             
             {/* Próximas consultas */}
             {consultasProximas.length > 0 && (
-                <h1 className='mont text-3xl text-black text-center mt-10'>
+                <h1 className='mont text-3xl text-black text-center mt-10 font-medium'>
                 Próximas Consultas
                 </h1>
             )}
@@ -180,7 +197,7 @@ function ConsultaForm() {
             {/* Histórico consultas */}
             {consultasPassadas.length > 0 && (
                 <div>
-                    <h1 className='mont text-3xl text-black text-center mt-10'>
+                    <h1 className='mont text-3xl text-black text-center mt-10 font-medium'>
                         Histórico de Consultas
                     </h1>
 
