@@ -9,3 +9,16 @@
     font-weight: 500;
     font-size: 1.7rem;
 }
+
+@media (max-width: 425px) {
+    .textonav {
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .checkcel {
+        text-align: center;
+    }
+}

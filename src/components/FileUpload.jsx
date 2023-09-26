@@ -22,9 +22,9 @@ const FileUpload = ({ onFileUpload }) => {
   });
 
   return (
-    <div {...getRootProps()} className="flex bg-[#A65C41] rounded-3xl w-1/2 h-[5rem] p-5 mt-10 cursor-pointer gap-5">
+    <div {...getRootProps()} className="flex bg-[#A65C41] rounded-3xl w-1/2 h-[7rem] p-5 mt-10 cursor-pointer gap-5">
       <input {...getInputProps()} />
-      <p className='mont text-black font-medium text-4xl ml-12 text-center'>Clique aqui para adicionar seus exames em pdf!</p>
+      <p className='mont text-black font-medium text-3xl ml-12 text-center'>Clique aqui para adicionar seus exames em pdf!</p>
       <img src="/images/Upload.svg"/>
       
     </div>

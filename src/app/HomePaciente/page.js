@@ -19,7 +19,7 @@ export default function HomePaciente() {
                 </div>
             </nav>
             <div className=' flex bg-[#AF75BF] items-center justify-center h-20' >
-                <ul className='flex gap-48 textonav'>
+                <ul className='lg:gap-48 flex textonav'>
                     <Link href='/HomePaciente'><li>Home</li></Link>
                     <Link href='/ExamesEConsultas'><li>Exames & Consultas</li></Link>
                     <Link href='/SaudeEBemEstar'><li>Saúde & Bem estar</li></Link>
@@ -27,7 +27,7 @@ export default function HomePaciente() {
                 </ul>
             </div>
             <h1 className='mont text-black italic text-4xl text-center mt-12'>
-                Bem-vindo (a) de volta, Camila!
+                Bem-vindo (a) de volta!
             </h1>
             <div className='bg-[#D3A7D9] cardverde mt-20 rounded-3xl ml-10 p-5'>
                 <h2 className='text-black text-center mont text-3xl font-normal'>Lembrete! <br></br>Sua próxima consulta é:</h2>

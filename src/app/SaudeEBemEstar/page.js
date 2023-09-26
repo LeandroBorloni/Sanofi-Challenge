@@ -21,7 +21,7 @@ export default function SaudeEBemEstar() {
                 </div>
             </nav>
             <div className=' flex bg-[#AF75BF] items-center justify-center h-20' >
-                <ul className='flex gap-48 textonav'>
+                <ul className='lg:gap-48 flex textonav'>
                     <Link href='/HomePaciente'><li>Home</li></Link>
                     <Link href='/ExamesEConsultas'><li>Exames & Consultas</li></Link>
                     <Link href='/SaudeEBemEstar'><li>Saúde & Bem estar</li></Link>
@@ -29,7 +29,7 @@ export default function SaudeEBemEstar() {
                 </ul>
             </div>
             <div className='flex flex-col justify-center items-center mt-10 gap-10'>
-                <h1 className='mont text-black text-4xl'>Checklist Personalizado</h1>
+                <h1 className='checkcel mont text-black text-4xl'>Checklist Personalizado</h1>
                 <p className='mont text-black text-center text-2xl italic w-1/2'>Monte sua rotina de forma personalizada para o seu dia-a-dia! Estabeleça metas diárias e semanais para manter sua saúde integrada. Física, mental e espiritual.</p>
                 <img src='/images/LineCadastro.svg'></img>
             </div>
