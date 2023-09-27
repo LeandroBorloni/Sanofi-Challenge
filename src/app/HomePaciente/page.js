@@ -5,10 +5,17 @@ import './global.css';
 import Metas from '@/components/Metas.jsx';
 import UserMenu from '@/components/UserMenu';
 import Chatbot from '@/components/WatsonAssistantChat.jsx';
+import { useState, useEffect } from 'react';
+
+
 
 export default function HomePaciente() {
-    const consultasString = localStorage.getItem('consultasProximas');
-    const consultas = JSON.parse(consultasString);
+    const [consultasString, setConsultas] = useState([]);
+    useEffect(() => {
+        const consultasString = JSON.parse(localStorage.getItem('consultasProximas'));
+        setConsultas(consultasString)
+    }, []);
+
     return (
         <>
             <section className='flex flex-col'>
@@ -34,7 +41,7 @@ export default function HomePaciente() {
                 <div className='bg-[#D3A7D9] cardverde mt-20 rounded-3xl ml-10 p-5'>
                     <h2 className='text-black text-center mont text-3xl font-normal'>Lembrete! <br></br>Sua próxima consulta é:</h2>
                     <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
-                        {consultas.map((consulta, index) => (
+                        {consultasString.map((consulta, index) => (
                             <div key={index} className='consulta-item relative'>
                                 <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
                                     <ul className='mt-5'>
