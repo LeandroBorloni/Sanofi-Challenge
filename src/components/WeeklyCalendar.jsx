@@ -16,8 +16,10 @@ const WeeklyCalendar = () => {
   const [selectedPanel, setSelectedPanel] = useState('Saúde Física');
 
   useEffect(() => {
-    localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities))
-  }, []);
+    if (selectedActivities){
+      localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities))
+    }
+  }, [selectedActivities]);
 
   const handleDayClick = (day) => {
     setSelectedDay(day);

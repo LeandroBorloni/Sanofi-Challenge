@@ -1,4 +1,5 @@
 "use client"
+import { parse } from 'postcss';
 import React from 'react';
 import { useState, useEffect } from 'react';
 
@@ -33,42 +34,24 @@ export default function Metas() {
         }
     };
 
-    const [metasString, setMetas] = useState([]);
+    const [metas, setMetas] = useState([]);
     useEffect(() => {
-        const metasString = JSON.parse(localStorage.getItem('selectedActivities'))
-        setMetas(metasString)
+        const metasString = localStorage.getItem('selectedActivities')
+        if (metasString) {
+            const parsedMetas = JSON.parse(metasString)
+            setMetas(parsedMetas)
+        }
     }, []);
     return (
         <div className='divcelmetas flex flex-col text-black gap-8 justify-center ml-6 mt-10 mr-2'>
-            {metasString && metasString.map((meta, index) => (<div className='flex gap-2'>
+            {metas && metas.map((meta, index) => (<div className='flex gap-2'>
                 <img
                     src={imagemAtual}
                     alt="Descrição da imagem"
                     className="cursor-pointer"
                     onClick={trocarImagem}
                 />
-                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}/: {meta.activity}</p>
-            </div>))}
-
-            {metasString && metasString.map((meta, index) => (<div className='flex gap-2'>
-                <img
-                    src={imagemAtual}
-                    alt="Descrição da imagem"
-                    className="cursor-pointer"
-                    onClick={trocarImagem}
-                />
-                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}/: {meta.activity}</p>
-            </div>))}
-
-            
-            {metasString && metasString.map((meta, index) => (<div className='flex gap-2'>
-                <img
-                    src={imagemAtual}
-                    alt="Descrição da imagem"
-                    className="cursor-pointer"
-                    onClick={trocarImagem}
-                />
-                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}/: {meta.activity}</p>
+                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}: {meta.activity}</p>
             </div>))}
         </div>
     );
