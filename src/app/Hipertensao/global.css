@@ -29,3 +29,12 @@
 .colortexto2 {
     color: #B54646;
 }
+
+@media (max-width: 425px) {
+    .textonav {
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

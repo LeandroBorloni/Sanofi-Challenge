@@ -86,55 +86,55 @@ function ConsultaForm() {
     <>
     <div>
         <div className='flex items-center justify-center mt-20'>
-            <div className='flex flex-col bg-[#AF75BF] rounded-3xl w-4/5 h-[35rem] p-10'>
+            <div className='divcel flex flex-col bg-[#AF75BF] rounded-3xl w-4/5 h-[35rem] p-10'>
             <form onSubmit={cadastroConsulta} id="consultaForm">
-                <div className='grid grid-cols-2 gap-10 '>
-                <div className='flex w-[100%]'>
-                    <label htmlFor='dataConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>Data da Consulta/Exame: </label>
+                <div className='gridcel grid grid-cols-2 gap-10 '>
+                <div className='datacel flex w-[100%]'>
+                    <label htmlFor='dataConsulta' className='textcel bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>Data da Consulta/Exame: </label>
                     <input id='dataConsulta'
                     type="date"
                     value={dataConsulta}
                     onChange={(e) => setDataConsulta(e.target.value)}
-                    className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                    className='textcelinput bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                 </div>
-                <div className='flex w-[100%]'>
-                    <label htmlFor='crmConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>CRM do médico (opcional) :</label>
+                <div className='datacel flex w-[100%]'>
+                    <label htmlFor='crmConsulta' className='textcelcrm bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2 '>CRM do médico (opcional) :</label>
                     <input id='crmConsulta'
                     value={crmConsulta}
                     onChange={(e) => setCrm(e.target.value)}
-                    className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                    className='textcelinput bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                 </div>
 
 
-                <div className='flex col-span-2 '>
-                    <label htmlFor='nomeConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Nome do Médico: </label>
+                <div className='datacel flex col-span-2 '>
+                    <label htmlFor='nomeConsulta' className='textcel bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Nome do Médico: </label>
                     <input id='nomeConsulta'
                     value={nomeConsulta}
                     onChange={(e) => setNome(e.target.value)}
-                    type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                    type="text" className='textcelinput bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                 </div>
 
-                <div className='flex w-[100%]'>
-                    <label htmlFor='especialidadeConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Especialidade do Médico: </label>
+                <div className='datacel flex w-[100%]'>
+                    <label htmlFor='especialidadeConsulta' className='textcelespec bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Especialidade do Médico: </label>
                     <input id='especialidadeConsulta'
                     value={especialidadeConsulta}
                     onChange={(e) => setEspecialidadeMedico(e.target.value)}
-                    type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                    type="text" className='textcelinput bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                 </div>
-                <div className='flex w-[100%]'>
-                    <label htmlFor='enderecoConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Endereço da Consulta : </label>
+                <div className='datacel flex w-[100%]'>
+                    <label htmlFor='enderecoConsulta' className='textcel bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Endereço da Consulta : </label>
                     <input id='enderecoConsulta'
                     value={enderecoConsulta}
                     onChange={(e) => setEnderecoConsulta(e.target.value)}
-                    className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
+                    className='textcelinput bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-1/2 text-2xl'></input>
                 </div>
 
-                <div className='flex w-[100%]'>
-                    <label htmlFor='obsConsulta' className='bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/4'>Observações: </label>
+                <div className='datacel flex w-[100%]'>
+                    <label htmlFor='obsConsulta' className='textcel bg-[#EAD5FB] text-center text-black mont rounded-l-3xl text-2xl p-5 font-light w-1/2'>Observações: </label>
                     <input id='obsConsulta'
                     value={obsConsulta}
                     onChange={(e) => setObs(e.target.value)}
-                    type="text" className='bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-3/4 text-2xl'></input>
+                    type="text" className='textcelinput bg-[#EAD5FB] text-center text-black mont rounded-r-3xl p-5 font-light w-3/4 text-2xl'></input>
                 </div>
                 <div className='flex w-[100%] justify-center '>
                     <button className='flex bg-[#7A5597] rounded-3xl w-1/2 justify-center items-center'>
@@ -160,7 +160,7 @@ function ConsultaForm() {
             <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                 {consultasProximas.map((consulta, index) => (
                 <div key={index} className='consulta-item relative'>
-                    <div className='flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
+                    <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
                         <ul className='mt-5'>
                             <li>
                                 <p className='mont text-black text-3xl text-normal leading-10'>
@@ -204,7 +204,7 @@ function ConsultaForm() {
                     <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                         {consultasPassadas.map((consulta, index) => (
                         <div key={index} className='consulta-item relative'>
-                            <div className='flex flex-col bg-[#8EBF9F] rounded-3xl w-[40rem] h-[20rem] p-5'>
+                            <div className='resocel flex flex-col bg-[#8EBF9F] rounded-3xl w-[40rem] h-[20rem] p-5'>
                                 <ul className='mt-5'>
                                     <li>
                                     <p className='mont text-black text-3xl text-normal leading-10'>

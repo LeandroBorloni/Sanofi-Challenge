@@ -32,36 +32,40 @@ export default function Metas() {
         }
     };
 
+    const metasString = localStorage.getItem('selectedActivities')
+    const metas = JSON.parse(metasString)
     return (
-        <div className='divcelmetas flex flex-col text-black gap-8 justify-center ml-8 mt-12'>
-            <div className='flex gap-2'>
+        <div className='divcelmetas flex flex-col text-black gap-8 justify-center ml-6 mt-10 mr-2'>
+            {metas.map((meta, index) => (<div className='flex gap-2'>
                 <img
                     src={imagemAtual}
                     alt="Descrição da imagem"
                     className="cursor-pointer"
                     onClick={trocarImagem}
                 />
-                <p className='textocel mont text-black text-2xl text-normal leading-10'>Hidratação: Beba 2,0 L de água</p>
-            </div>
+                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}/: {meta.activity}</p>
+            </div>))}
 
-            <div className='flex gap-2'>
+            {metas.map((meta, index) => (<div className='flex gap-2'>
                 <img
-                    src={imagemAtual2}
+                    src={imagemAtual}
                     alt="Descrição da imagem"
                     className="cursor-pointer"
-                    onClick={trocarImagem2}
+                    onClick={trocarImagem}
                 />
-                <p className='textocel mont text-black text-2xl text-normal leading-10' >Atividade Física: Faça 30 minutos de exercícios</p>
-            </div>
+                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}/: {meta.activity}</p>
+            </div>))}
+
             
-            <div className='flex gap-2'>
+            {metas.map((meta, index) => (<div className='flex gap-2'>
                 <img
-                    src={imagemAtual3}
+                    src={imagemAtual}
                     alt="Descrição da imagem"
                     className="cursor-pointer"
-                    onClick={trocarImagem3}
-                /><p className='textocel mont text-black text-2xl text-normal leading-10'>Alimentação: Consuma 5 porções de frutas e vegetais</p>
-            </div>
+                    onClick={trocarImagem}
+                />
+                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}/: {meta.activity}</p>
+            </div>))}
         </div>
     );
 }

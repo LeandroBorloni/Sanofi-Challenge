@@ -6,71 +6,10 @@ import './global.css';
 import CardArtigos from '@/components/Artigos';
 import UserMenu from '@/components/UserMenu';
 import ArticleCarousel from '@/components/Carrossel';
+import ArticleCarouselHabitos from '@/components/CarroselHabitos';
+import ArticleCarouselSaude from '@/components/CarroselSaude';
 
 export default function Artigos() {
-    const artigoSaudeVital = [
-        {
-            link: "/Diabetes",
-            imagem:"/images/diabetes.svg",
-            titulo:"Diabetes",
-            texto:"Entendendo, Gerenciando e Vivendo Bem."
-        },
-        {
-            link: "/Hipertensao",
-            imagem:"/images/hipertensao.svg",
-            titulo:"Hipertensão",
-            texto:"Compreendendo, Controlando e Promovendo a Saúde Cardiovascular."
-        },
-        {
-            link: "/Colesterol",
-            imagem:"/images/colesterol.svg",
-            titulo:"Colesterol",
-            texto:"Compreendendo, Gerenciando e Mantendo a Saúde Cardiovascular."
-        },
-        {
-            link: "/Obesidade",
-            imagem:"/images/obesidade.svg",
-            titulo:"Obesidade",
-            texto:"Entendendo, Enfrentando e Cultivando um Estilo de Vida Saudável."
-        }
-    
-    ]
-
-    const artigoHabitoSaudavel= [
-        {
-            link: "/AtvFisica",
-            imagem: "/images/atividade_fisica.svg",
-            titulo: "Atividade física",
-            texto: "Um Passo Vital para uma Vida Saudável"
-        },
-        {
-            link: "/Alimentacao",
-            imagem: "/images/alimentacao.svg",
-            titulo: "Alimentação",
-            texto: "Nutrindo o Seu Corpo para uma Vida Melhor"
-        },
-        {
-            link: "/Hidratacao",
-            imagem: "/images/hidratacao.svg",
-            titulo: "Hidratação",
-            texto: "A importância de beber água para o Bem-Estar"
-        },
-    ]
-
-    const artigoTopicoSaude =[
-        {
-            link: "/PrimeirosSocorros",
-            imagem: "/images/primeirosSocorros.svg",
-            titulo: "Primeiro Socorros",
-            texto: "Conhecimento que Salva Vidas."
-        },
-        {
-            link: "/Vacinacao",
-            imagem: "/images/vacinacao.svg",
-            titulo: "Vacinação",
-            texto: "Protegendo a Saúde, Prevenindo Doenças"
-        }
-    ]
     return (
         
         <>
@@ -96,30 +35,24 @@ export default function Artigos() {
                 {/* 1 Carroçel */}
                 <div className='flex flex-col mt-12'>
                     <h1 className='textocelartigo mont text-black font-semibold text-3xl mb-8 ml-5'>Condições de saúde vitais</h1>
-                    <div className='flex gap-12 lg:ml-40'>
-                        {artigoSaudeVital.map(artigos => <CardArtigos artigos={artigos}></CardArtigos>)}
-                    </div>
+                    <ArticleCarousel></ArticleCarousel>
                 </div>
 
                 {/* 2 Carroçel */}
                 <div className='flex flex-col'>
                     <h1 className='textocelartigo mont text-black font-semibold text-3xl mb-8 ml-5'>Hábitos Saudáveis</h1>
-                    <div className='flex gap-12 lg:ml-40'>
-                        {artigoHabitoSaudavel.map(artigos => <CardArtigos artigos={artigos}></CardArtigos>)}
-                    </div>
+                    <ArticleCarouselHabitos></ArticleCarouselHabitos>
                 </div>
 
                 {/* 3 Carroçel */}
                 <div className='flex flex-col mb-20'>
                     <h1 className='textocelartigo mont text-black font-semibold text-3xl mb-8 ml-5'>Tópicos de Saúde</h1>
-                    <div className='flex gap-12 lg:ml-40'>
-                        {artigoTopicoSaude.map(artigos => <CardArtigos artigos={artigos}></CardArtigos>)}
-                    </div>
+                    <ArticleCarouselSaude></ArticleCarouselSaude>
                 </div>
             </div>
 
 
-            <h1 className='mont text-black'></h1>
+
         </section>
         </>
     )

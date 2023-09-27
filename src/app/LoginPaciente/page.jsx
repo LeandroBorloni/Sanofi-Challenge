@@ -37,10 +37,10 @@ export default function LoginPaciente() {
                             <h3 className='textoPaciente mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
                             <form onSubmit={login}>
                                 <div className='botaologin-Pac flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5 justify-start' htmlFor='email'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} required placeholder='E-mail'/></label>    
+                                    <label className='flex p-5 justify-start' htmlFor='email'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color ml-4 mont text-black pr-30 pt-5 pb-5' type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} required placeholder='E-mail'/></label>    
                                 </div>
                                 <div className='botaologin-Pac flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5' htmlFor='password'><img src='/images/senhaCadeado.svg'></img><input className='bg-color ml-4 mont text-black pr-40 pt-5 pb-5' type="password" id='password' value={senha} onChange={(e) => setSenha(e.target.value)} required placeholder='Senha'/></label>
+                                    <label className='flex p-5' htmlFor='password'><img src='/images/senhaCadeado.svg'></img><input className='bg-color ml-4 mont text-black pr-30 pt-5 pb-5' type="password" id='password' value={senha} onChange={(e) => setSenha(e.target.value)} required placeholder='Senha'/></label>
                                 </div>
                                 <button className='botaoacessar flex items-center justify-center mt-20'>
                                     <span className='mont textoacessar'>Acessar</span>

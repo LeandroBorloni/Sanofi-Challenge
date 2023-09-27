@@ -77,7 +77,7 @@ export default function ExamesEConsultas() {
                 Registrar próxima Consulta
             </h1>
             <Form></Form>
-            <h1 className='mont text-black font-medium text-4xl mt-20 ml-12 text-center'>
+            <h1 className='uploadcel mont text-black font-medium text-4xl mt-20 ml-12 text-center'>
                 Upload de exames
             </h1>
             {/* npm install react-dropzone que eu usei */}
@@ -98,6 +98,7 @@ export default function ExamesEConsultas() {
                                     <button className='mont' onClick={() => removePdf(index)}>Remover PDF</button>
                                 </div>
                             </li>
+                            
                             ))}
                         </ul>
                     </div>

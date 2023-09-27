@@ -1,5 +1,4 @@
 "use client"
-// Commit
 import React, { useState, useRef } from 'react';
 import '@/app/SaudeEBemEstar/global.css';
 
@@ -15,6 +14,8 @@ const WeeklyCalendar = () => {
   const calendarRef = useRef(null);
   const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
   const [selectedPanel, setSelectedPanel] = useState('Saúde Física');
+
+  localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities))
 
   const handleDayClick = (day) => {
     setSelectedDay(day);
@@ -106,11 +107,11 @@ const WeeklyCalendar = () => {
   };
 
   const handlePhysicalConfirm = () => {
-    handleSelect('Atividade Física', selectedActivity, physicalActivityDays);
+    handleSelect('Saúde Física', selectedActivity, physicalActivityDays);
   };
 
   const handleSpiritualConfirm = () => {
-    handleSelect('Atividade Espiritual', selectedActivity, spiritualActivityDays);
+    handleSelect('Saúde Espiritual', selectedActivity, spiritualActivityDays);
   };
 
   // Adicione o estado para controlar a atividade selecionada para exclusão
@@ -209,12 +210,12 @@ const WeeklyCalendar = () => {
             
           </div>
         ) : (
-          <div className='flex justify-center items-center gap-20'>
+          <div className='calendariocel flex justify-center items-center gap-20'>
             <select
               className='bg-[#7AA188] rounded-t-3xl w-2/5 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
               onChange={(e) => handlePhysicalActivitySelect(e.target.value)}
             >
-              <option className='bg-white text-black'>Atividade Física</option>
+              <option className='bg-white text-black'>Saúde Física</option>
               {renderSelectOptions(['Corrida', 'Natação', 'Musculação', 'Boxe', 'Ciclismo'])}
             </select>
 
@@ -222,14 +223,14 @@ const WeeklyCalendar = () => {
               className='bg-[#7AA188] rounded-t-3xl w-2/5 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
               onChange={(e) => handleSpiritualActivitySelect(e.target.value)}
             >
-              <option className='bg-white text-black'>Atividade Espiritual</option>
+              <option className='bg-white text-black'>Saúde Espiritual</option>
               {renderSelectOptions(['Meditação', 'Terapia', 'Yoga', 'Auto-reflexão'])}
             </select>
           </div>
         )}
       </div>
 
-      <table className="table-auto mt-20 text-black">
+      <table className="calendariocelresp table-auto mt-20 text-black">
         <thead>
           <tr className="bg-[#AF75BF]">
             {daysOfWeek.map((day) => (

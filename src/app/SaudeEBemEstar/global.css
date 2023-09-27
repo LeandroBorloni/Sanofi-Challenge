@@ -21,4 +21,38 @@
     .checkcel {
         text-align: center;
     }
+
+    .metascel {
+        width: 85%;
+    }
+
+    .divcelmetas {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .metastextcel {
+        text-align: center;
+    }
+
+    .metasbgcel {
+        height: 24rem;
+    }
+
+    .bgcalencel {
+        width: 50%;
+    }
+
+    .buttoncelcalend {
+        margin-left: 0;
+    }
+
+    .calendariocel {
+        display: inline;
+    }
+
+    .calendariocelresp {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

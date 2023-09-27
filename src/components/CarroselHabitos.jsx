@@ -6,34 +6,27 @@ import 'slick-carousel/slick/slick-theme.css';
 import CardArtigos from './Artigos';
 import Artigos from '@/app/Artigos/page';
 
-const ArticleCarousel = () => {
-  const artigoSaudeVital = [
-    {
-      link: "/Diabetes",
-      imagem: "/images/diabetes.svg",
-      titulo: "Diabetes",
-      texto: "Entendendo, Gerenciando e Vivendo Bem."
-    },
-    {
-      link: "/Hipertensao",
-      imagem: "/images/hipertensao.svg",
-      titulo: "Hipertensão",
-      texto: "Compreendendo, Controlando e Promovendo a Saúde Cardiovascular."
-    },
-    {
-      link: "/Colesterol",
-      imagem: "/images/colesterol.svg",
-      titulo: "Colesterol",
-      texto: "Compreendendo, Gerenciando e Mantendo a Saúde Cardiovascular."
-    },
-    {
-      link: "/Obesidade",
-      imagem: "/images/obesidade.svg",
-      titulo: "Obesidade",
-      texto: "Entendendo, Enfrentando e Cultivando um Estilo de Vida Saudável."
-    }
-
-  ]
+const ArticleCarouselHabitos = () => {
+    const artigoHabitoSaudavel= [
+        {
+            link: "/AtvFisica",
+            imagem: "/images/atividade_fisica.svg",
+            titulo: "Atividade física",
+            texto: "Um Passo Vital para uma Vida Saudável"
+        },
+        {
+            link: "/Alimentacao",
+            imagem: "/images/alimentacao.svg",
+            titulo: "Alimentação",
+            texto: "Nutrindo o Seu Corpo para uma Vida Melhor"
+        },
+        {
+            link: "/Hidratacao",
+            imagem: "/images/hidratacao.svg",
+            titulo: "Hidratação",
+            texto: "A importância de beber água para o Bem-Estar"
+        },
+    ]
   const settings = {
     dots: false,
     infinite: true,
@@ -58,23 +51,22 @@ const ArticleCarousel = () => {
         {/* Conteúdo do primeiro slide */}
         <div className='lg:ml-40 ml-24'>
           {/* {artigoSaudeVital.map(artigos => <CardArtigos artigos={artigos}></CardArtigos>)} */}
-          <CardArtigos artigos={artigoSaudeVital[0]}></CardArtigos>
+          <CardArtigos artigos={artigoHabitoSaudavel[0]}></CardArtigos>
         </div>
       </div>
       <div className='lg:ml-24 ml-24'>
         {/* Conteúdo do segundo slide */}
-        <CardArtigos artigos={artigoSaudeVital[1]}></CardArtigos>
+        <CardArtigos artigos={artigoHabitoSaudavel[1]}></CardArtigos>
       </div>
       <div className='lg:ml-10 ml-24'>
         {/* Conteúdo do terceiro slide */}
-        <CardArtigos artigos={artigoSaudeVital[2]}></CardArtigos>
+        <CardArtigos artigos={artigoHabitoSaudavel[2]}></CardArtigos>
       </div>
       <div className='lg:ml-0 ml-24'>
         {/* Conteúdo do quarto slide */}
-        <CardArtigos artigos={artigoSaudeVital[3]}></CardArtigos>
       </div>
     </Slider>
   );
 };
 
-export default ArticleCarousel;
+export default ArticleCarouselHabitos;

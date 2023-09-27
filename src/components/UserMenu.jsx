@@ -33,12 +33,12 @@ const UserMenu = () => {
           aria-orientation="vertical"
           aria-labelledby="user-menu-button"
         >
-          <Link href="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+          {/* <Link href="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
             Meu Perfil
           </Link>
           <Link href="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
             Configurações
-          </Link>
+          </Link> */}
           <Link href="./" className="block px-4 py-2 text-sm text-red-700 hover:bg-red-100" role="menuitem">
             Desconectar-se
           </Link>
