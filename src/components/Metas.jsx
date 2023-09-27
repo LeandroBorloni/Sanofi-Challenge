@@ -40,7 +40,7 @@ export default function Metas() {
     }, []);
     return (
         <div className='divcelmetas flex flex-col text-black gap-8 justify-center ml-6 mt-10 mr-2'>
-            {metasString.map((meta, index) => (<div className='flex gap-2'>
+            {metasString && metasString.map((meta, index) => (<div className='flex gap-2'>
                 <img
                     src={imagemAtual}
                     alt="Descrição da imagem"
@@ -50,7 +50,7 @@ export default function Metas() {
                 <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}/: {meta.activity}</p>
             </div>))}
 
-            {metasString.map((meta, index) => (<div className='flex gap-2'>
+            {metasString && metasString.map((meta, index) => (<div className='flex gap-2'>
                 <img
                     src={imagemAtual}
                     alt="Descrição da imagem"
@@ -61,7 +61,7 @@ export default function Metas() {
             </div>))}
 
             
-            {metasString.map((meta, index) => (<div className='flex gap-2'>
+            {metasString && metasString.map((meta, index) => (<div className='flex gap-2'>
                 <img
                     src={imagemAtual}
                     alt="Descrição da imagem"

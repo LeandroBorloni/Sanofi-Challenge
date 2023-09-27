@@ -41,7 +41,7 @@ export default function HomePaciente() {
                 <div className='bg-[#D3A7D9] cardverde mt-20 rounded-3xl ml-10 p-5'>
                     <h2 className='text-black text-center mont text-3xl font-normal'>Lembrete! <br></br>Sua próxima consulta é:</h2>
                     <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
-                        {consultasString.map((consulta, index) => (
+                        {consultasString && consultasString.map((consulta, index) => (
                             <div key={index} className='consulta-item relative'>
                                 <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
                                     <ul className='mt-5'>
