@@ -36,7 +36,7 @@ export default function Metas() {
     const [metasString, setMetas] = useState([]);
     useEffect(() => {
         const metasString = JSON.parse(localStorage.getItem('selectedActivities'))
-        setConsultas(metasString)
+        setMetas(metasString)
     }, []);
     return (
         <div className='divcelmetas flex flex-col text-black gap-8 justify-center ml-6 mt-10 mr-2'>
