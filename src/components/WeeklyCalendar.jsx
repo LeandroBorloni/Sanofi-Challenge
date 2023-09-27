@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '@/app/SaudeEBemEstar/global.css';
 
 const WeeklyCalendar = () => {
@@ -15,7 +15,9 @@ const WeeklyCalendar = () => {
   const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
   const [selectedPanel, setSelectedPanel] = useState('Saúde Física');
 
-  localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities))
+  useEffect(() => {
+    localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities))
+  }, []);
 
   const handleDayClick = (day) => {
     setSelectedDay(day);
@@ -153,7 +155,7 @@ const WeeklyCalendar = () => {
     if (activityInfoToDelete) {
       // Remova a atividade dos dias selecionados
       const updatedCalendarData = { ...calendarData };
-  
+
       for (const day of activityInfoToDelete.days) {
         if (updatedCalendarData[day]) {
           updatedCalendarData[day] = updatedCalendarData[day].filter(
@@ -161,18 +163,18 @@ const WeeklyCalendar = () => {
           );
         }
       }
-  
+
       setCalendarData(updatedCalendarData);
-  
+
       // Remova a atividade da lista de atividades selecionadas
       const updatedSelectedActivities = selectedActivities.filter(
         (activityInfo) => activityInfo.activity !== activityInfoToDelete.activity
       );
-  
+
       setSelectedActivities(updatedSelectedActivities);
     }
   };
-  
+
 
   return (
     <div className="text-center text-black p-10 w-75vw mx-auto" ref={calendarRef}>
@@ -207,7 +209,7 @@ const WeeklyCalendar = () => {
               </button>
               <button className='bg-[#A65C41] rounded-3xl p-5 mont text-2xl' onClick={cancelSelection}>Cancelar</button>
             </div>
-            
+
           </div>
         ) : (
           <div className='calendariocel flex justify-center items-center gap-20'>
@@ -276,7 +278,7 @@ const WeeklyCalendar = () => {
         <p className='mont text-black text-3xl'>Atividades Selecionadas:</p>
         <ul>
           {selectedActivities.map((activityInfo, index) => (
-            <li 
+            <li
               className='mont text-black text-xl'
               key={index}>
               {activityInfo.activity} - {activityInfo.days.join(', ')}
@@ -295,24 +297,24 @@ const WeeklyCalendar = () => {
             >
               Confirmar
             </button>
-            <button 
+            <button
               className='bg-[#A65C41] rounded-3xl p-5 mont text-2xl'
               onClick={closeDuplicatePopup}>Cancelar</button>
           </div>
         </div>
       )}
       {selectedActivities.map((activityInfo, index) => (
-  <li 
-    className='mont text-black text-xl'
-    key={index}>
-    {activityInfo.activity} - {activityInfo.days.join(', ')}
-    <button 
-      className='bg-[#A65C41] rounded-3xl p-2 mont text-base ml-3' 
-      onClick={() => handleDeleteActivity(activityInfo)}>
-        Excluir
-    </button>
-  </li>
-))}
+        <li
+          className='mont text-black text-xl'
+          key={index}>
+          {activityInfo.activity} - {activityInfo.days.join(', ')}
+          <button
+            className='bg-[#A65C41] rounded-3xl p-2 mont text-base ml-3'
+            onClick={() => handleDeleteActivity(activityInfo)}>
+            Excluir
+          </button>
+        </li>
+      ))}
 
 
 
