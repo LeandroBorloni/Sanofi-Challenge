@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import './global.css';
+import { Button } from '@mui/material';
 
 
 export default function Login(){
@@ -17,24 +18,24 @@ export default function Login(){
                 <div className='flex justify-center lg:gap-20'>
                     <img className='mira_cs' src='images/mira_cs.svg'></img>
                     <div className='flex flex-col items-center mt-48'>
-                        <Link href='./LoginPaciente'>
+                        <Button href='./LoginPaciente'>
                             <div className='botaologin flex items-center justify-center bg-[#8EBF9F]'>
-                                <button className='mont text-black font-medium text-3xl'>Login Paciente</button>
+                                <span className='mont text-black font-medium text-3xl'>Login Paciente</span>
                             </div>
-                        </Link>
-                        <Link href='./LoginMedico'>
+                        </Button>
+                        <Button href='./LoginMedico'>
                             <div className='botaologin flex items-center justify-center bg-[#AF75BF] mt-5'>
-                                <button className='mont text-black font-medium text-3xl'>Login Médico</button>
+                                <span className='mont text-black font-medium text-3xl'>Login Médico</span>
                             </div>
-                        </Link>
+                        </Button>
 
                         <span className=' mt-48 mont text-black text-base underline-2 hover:underline'>Não tem uma conta?</span>
 
-                        <Link href='./Cadastro'>
+                        <Button href='./Cadastro'>
                             <div className='botaocriar mt-7 bg-[#D3A7D9] flex items-center justify-center'>
                                 <span className='mont text-black font-medium text-xl'>Criar Conta</span>
                             </div>
-                        </Link>
+                        </Button>
                     </div>
                     <img className='mira_cs' src='images/mira_cs.svg'></img>
                 </div>

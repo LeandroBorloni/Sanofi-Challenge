@@ -58,6 +58,7 @@ input[type="date"]{
     font-style: italic;
     text-align: start;
     font-weight: 300;
+    margin-left: 1rem;
 }
 
 .labelformulario{
@@ -87,17 +88,20 @@ input[type="date"]{
     border-radius: 1.5rem;
 }
 
+@media (max-width: 1440px) {
+
+    .botaoCadastro {
+        width: 50vw;
+    }
+}
+
 @media (max-width: 1024px) {
-    .textocriarconta {
+    .labelformulario {
         font-size: 1.3rem;
     }
 
-    .labelformulario {
-        font-size: 1rem;
-    }
-
     .botaoCadastro {
-        width: 60vw;
+        width: 70vw;
     }
 
     .termouso {
@@ -109,39 +113,37 @@ input[type="date"]{
     }
 }
 
-@media (max-width: 425px) {
-    .imagemlogo {
-        width: 65%;
-        margin-left: 4rem;
-    }
-
-    .titulo {
-        font-size: 1.9rem;
-    }
-
-    .textocadastro {
-        font-size: 1.5rem;
-    }
-
-    .textocriarconta {
-        font-size: 1.1rem;
+@media (max-width: 640px) {
+    .labelformulario {
+        font-size: 1rem;
     }
 
     .botaoCadastro {
         width: 85vw;
     }
 
+    .termouso {
+        font-size: 1.2rem;
+    }
+
+    .botaologin-cadastro {
+        width: 35vw;
+    }
+}
+
+@media (max-width: 425px) {
+    .imagemlogo {
+        width: 65%;
+        margin-left: 4rem;
+    }
+
+    .botaoCadastro {
+        width: 100vw;
+    }
+
     .labelformulario {
         margin-left: 0;
-    }
-
-    .termouso {
         font-size: 1rem;
-    }
-
-    input[type="date"]{
-        font-size: 1.1rem;
-        margin-right: 1rem;
     }
 
     .botaologin-cadastro {

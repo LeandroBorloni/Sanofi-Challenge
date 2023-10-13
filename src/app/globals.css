@@ -10,7 +10,7 @@ html {
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 252, 236, 245;
   --background-end-rgb: 252, 236, 245;
 }
@@ -90,22 +90,16 @@ body {
   width: fit-content;
   border-radius: 1.5rem;
   height: 5rem;
-  width: 35rem;
-  margin: 0 40rem;
+  padding: 0 2rem;
 }
 
 .divimagem{
   background-image: url('/images/Logo-FazerParte.svg');
-  height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
-
+  height: 600px;
 }
 
-.divcard{
-  width: 24rem;
-  height: 30rem;
-}
 
 .textobotao{
   color: black;
@@ -117,11 +111,11 @@ body {
 
 .titulop{
   color: rgb(0, 0, 0);
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   letter-spacing: 1rem;
-  margin: 4rem 30rem;
+  margin: 4rem 20rem;
 }
 
 .titulov{
@@ -201,11 +195,6 @@ footer {
     font-size: 1.2rem;
   }
 
-  .divcard {
-    width: 18rem;
-    height: 22rem;
-  }
-
   .divimagem {
     background-size: auto;
     height: 450px;
@@ -216,6 +205,10 @@ footer {
     font-size: 2.7rem;
   }
   
+  .imagement {
+    width: 12%;
+  }
+
   .botao {
     margin: 0 28rem;
   }
@@ -239,11 +232,6 @@ footer {
     font-size: 1.5rem;
   }
 
-  .divcard {
-    width: 15rem;
-    height: 20rem;
-  }
-
   .textoinformativo {
     font-size: 1.1rem;
   }
@@ -263,8 +251,8 @@ footer {
   }
 
   .titulop {
-    font-size: 2.3rem;
-    margin: 3rem 11rem;
+    font-size: 2rem;
+    margin: 3rem 5rem;
   }
 
   .botao {
@@ -281,7 +269,7 @@ footer {
   }
 
   .imagement {
-    width: 10%;
+    width: 15%;
   }
 
   .pentenda {
@@ -310,21 +298,14 @@ footer {
     text-align: center;
   }
 
-  .divcard {
-    width: 20rem;
-    height: 20rem;
-    margin-bottom: 4rem;
-    margin-left: 3rem;
-  }
-
   .divimagem {
-    display: none;
+    background-size: contain;
+    height: 150px;
   }
 
   .botao {
     margin: 0;
     width: 20rem;
-    margin-left: 3rem;
   }
 
   .textobotao {
@@ -333,7 +314,7 @@ footer {
   }
 
   .titulop {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 0.3rem;
     margin: 1rem 3rem;
   }
@@ -350,6 +331,10 @@ footer {
   .imagement {
     width: 40%;
     margin-left: 2rem;
+  }
+
+  .celular-img {
+    display: inline;
   }
 
   .pentenda {

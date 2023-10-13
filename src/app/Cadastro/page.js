@@ -23,17 +23,17 @@ export default function Cadastro() {
                             <p className='textocriarconta mt-7 mb-20'>Crie uma conta para aproveitar todos os recursos do <br></br> SanoHealth e trilhar o caminho para uma vida <br></br> saudável e equilibrada.</p>
                             <form id='cadastro'>
                                 <div className='botaoCadastro flex mb-10 items-center'>
-                                    <label className='flex mont bg-color-Cad labelformulario items-center justify-center lg:p-5 pl-3'>Nome:    <input className='bg-color-Cad ml-4 mont text-black lg:pr-36 pt-5 pb-5' type="name" id='nome' required /></label>
+                                    <label className='flex mont bg-color-Cad labelformulario items-center justify-center lg:p-5 pl-3'>Nome:    <input className='bg-color-Cad ml-4 mont text-black lg:pr-30 pt-5 pb-5' type="name" id='nome' required /></label>
                                 </div>
                                 <div className='botaoCadastro flex mb-10 items-center'>
-                                    <label className='flex mont bg-color-Cad labelformulario items-center justify-center lg:p-5 pl-3'>Sobrenome:  <input className='bg-color-Cad ml-4 mont text-black lg:pr-36 pt-5 pb-5' type="name" id='sobrenome' required /></label>
+                                    <label className='flex mont bg-color-Cad labelformulario items-center justify-center lg:p-5 pl-3'>Sobrenome:  <input className='bg-color-Cad ml-4 mont text-black lg:pr-30 pt-5 pb-5' type="name" id='sobrenome' required /></label>
                                 </div>
                                 <div className='botaoCadastro flex mb-10 items-center'>
-                                    <label className='flex mont bg-color-Cad labelformulario items-center justify-center lg:p-5 pl-3'>Data de nascimento: <input className='bg-color-Cad lg:ml-4 mont text-black lg:pr-36 pt-5 pb-5 ' type="date" id='dataNasc' required /></label>
+                                    <label className='flex mont bg-color-Cad labelformulario items-center justify-center lg:p-5 pl-3'>Data de nascimento: <input className='bg-color-Cad lg:ml-4 mont text-black lg:pr-30 pt-5 pb-5 ' type="date" id='dataNasc' required /></label>
                                 </div>
                                 <div className='botaoCadastro flex mb-10 items-center lg:pl-5 pl-3'>
                                     <label htmlFor="genero" className='flex mr-4 labelformulario'>Gênero:</label>
-                                    <select id="genero" name="genero" className='labelformulario bg-color-Cad ml-4 lg:pr-36 pt-5 pb-5'>
+                                    <select id="genero" name="genero" className='labelformulario bg-color-Cad ml-4 lg:pr-30 pt-5 pb-5'>
                                         <option value="" disabled>Selecione um gênero</option>
                                         <option value="masculino">Masculino</option>
                                         <option value="feminino">Feminino</option>
@@ -41,16 +41,16 @@ export default function Cadastro() {
                                     </select>
                                 </div>
                                 <div className='botaoCadastro flex mb-10 items-center'>
-                                    <label className='flex labelformulario items-center justify-center lg:p-5 pl-3'>Email: <input className='bg-color-Cad ml-4 mont text-black lg:pr-36 pt-5 pb-5' type="email" id='email' required /></label>
+                                    <label className='flex labelformulario items-center justify-center lg:p-5 pl-3'>Email: <input className='bg-color-Cad ml-4 mont text-black lg:pr-30 pt-5 pb-5' type="email" id='email' required /></label>
                                 </div>
                                 <div className='botaoCadastro flex mb-10 items-center'>
-                                    <label className='flex labelformulario items-center justify-center lg:p-5 pl-3'>Confirme o email: <input className='bg-color-Cad ml-4 mont text-black lg:pr-36 pt-5 pb-5' type="email" id='email' required /></label>
+                                    <label className='flex labelformulario items-center justify-center lg:p-5 pl-3'>Confirme o email: <input className='bg-color-Cad ml-4 mont text-black lg:pr-30 pt-5 pb-5' type="email" id='email' required /></label>
                                 </div>
                                 <div className='botaoCadastro flex mb-10 items-center'>
-                                    <label className='flex lg:p-5 labelformulario items-center justify-center pl-3'>Crie uma senha: <input className='bg-color-Cad ml-4 mont text-black lg:pr-36 pt-5 pb-5' type="password" id='senha' required /></label>
+                                    <label className='flex lg:p-5 labelformulario items-center justify-center pl-3'>Crie uma senha: <input className='bg-color-Cad ml-4 mont text-black lg:pr-30 pt-5 pb-5' type="password" id='senha' required /></label>
                                 </div>
                                 <div className='botaoCadastro flex mb-10 items-center'>
-                                    <label className='flex lg:p-5 labelformulario items-center justify-center pl-3'>Repita a senha: <input className='bg-color-Cad ml-4 mont text-black lg:pr-36 pt-5 pb-5' type="password" id='senha' required /></label>
+                                    <label className='flex lg:p-5 labelformulario items-center justify-center pl-3'>Repita a senha: <input className='bg-color-Cad ml-4 mont text-black lg:pr-30 pt-5 pb-5' type="password" id='senha' required /></label>
                                 </div>
                                 <Crm></Crm>
                                 <TermoUso></TermoUso>

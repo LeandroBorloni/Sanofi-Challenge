@@ -28,7 +28,7 @@
     width: 15vw;
     height: 65px;
     border-radius: 3rem;
-    margin-left: 6rem;
+    margin-left: 20%;
     background-color: rgba(175, 117, 191, 0.60);
 }
 
@@ -74,6 +74,29 @@
 
 .mont{
     font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .poligonos {
+        display: none;
+    }
+
+    .botaologin-Med {
+        width: 50vw;
+    }
+
+    .flex-note {
+        justify-content: center;
+    }
+
+    .botaoacessar-Med {
+        width: 25vw;
+        margin-left: 25%;
+    }
+
+    .botaovoltar {
+        width: 20vw;
+    }
 }
 
 @media (max-width: 425px) {

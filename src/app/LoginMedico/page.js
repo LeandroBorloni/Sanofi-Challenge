@@ -14,7 +14,7 @@ export default function LoginMedico() {
                     <Link href='/Cadastro'><span className='mr-5 mb-1 text-black underline-2 hover:underline'>Criar Conta</span></Link>
                 </div>
             </nav>
-            <div className='flex justify-between'>
+            <div className='flex justify-between flex-note'>
                     <img className='poligonos' src='images/poligonos_esq.svg'></img>
                     <div className='flex justify-center gap-20'>
                         <div className='flex flex-col items-center mt-10'>

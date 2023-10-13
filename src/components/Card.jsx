@@ -1,11 +1,16 @@
 "use client"
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 
-export default function Card({card}) {
+export default function CardPage({card}) {
     return (
         // w-21%  h30,8%
-    <div className='flex flex-col items-center justify-center bg-[#EAD5FB] rounded-[3rem] divcard'>
-        <img className='w-20 h-20' src={card.imagem}></img>
-        <p className='textoinformativo text-center mt-4 w-2/3'>{card.texto}</p>
-    </div>
+        <Card className='flex flex-col items-center justify-center bg-[#EAD5FB] rounded-[3rem] mt-8'>
+            <CardMedia><img className='w-20 h-20 mt-10' src={card.imagem}></img></CardMedia>
+            <CardContent className='textoinformativo text-center mt-4 w-2/3'>{card.texto}</CardContent>
+        </Card>
     )
 }
+

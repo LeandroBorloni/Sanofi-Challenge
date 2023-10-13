@@ -12,7 +12,7 @@ export default function Crm() {
         <>
             <div className='botaoCadastro flex mb-10 items-center pl-5'>
                 <label htmlFor="medico" className='labelformulario flex mr-4'>É médico ?</label>
-                <select id="medico" name="medico" className='labelformulario bg-color-Cad ml-4 lg:pr-36 pt-5 pb-5' onChange={handleChange}>
+                <select id="medico" name="medico" className='labelformulario bg-color-Cad ml-4 lg:pr-30 pt-5 pb-5' onChange={handleChange}>
                     <option value="" disabled>Selecione uma opção</option>
                     <option value="nao">Não</option>
                     <option value="sim">Sim</option>

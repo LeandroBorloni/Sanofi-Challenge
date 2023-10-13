@@ -1,12 +1,13 @@
+"use client"
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { UserIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
-import Card from '@/components/Card';
 import CardEntenda from '@/components/CardsEntenda';
 import IconWithToggle from '@/components/IconWithToggle';
 
-import Link from 'next/link';
+import { Button, Container, Link } from '@mui/material';
+import CardPage from '@/components/Card';
 
 export default function Portal() {
   const cards = [
@@ -70,11 +71,10 @@ export default function Portal() {
       <nav className='flex items-center justify-between navBackground p-4'>
         <div className='flex items-center'>
           <img className='imagemlogo' src="/images/Logo.svg"></img>
-          {/* <a><MagnifyingGlassIcon className='w-7 text-black mb-2'></MagnifyingGlassIcon></a> */}
         </div>
         <div className='flex items-center'>
-          <Link href='/Cadastro'><span className='mr-5 mb-1 text-black underline-2 hover:underline'>Criar Conta</span></Link>
-          <Link href='/Login'><UserIcon className='w-7 text-black icon mb-2'></UserIcon></Link>
+          <Link href='/Cadastro' underline='hover' className='mr-5 mb-1 text-black'>Criar Conta</Link>
+          <Button href='/Login'><UserIcon className='w-7 text-black icon mb-2'></UserIcon></Button>
         </div>
       </nav>
 
@@ -84,22 +84,20 @@ export default function Portal() {
 
 
       <div className='lg:flex mt-12 gap-20 justify-center'>
-        {cards.map(card => <Card card={card}></Card>)}
+        {cards.map(card => <CardPage card={card}></CardPage>)}
       </div>
       <div className='lg:flex lg:mt-12 gap-20 justify-center'>
-        {cards2.map(card => <Card card={card}></Card>)}
+        {cards2.map(card => <CardPage card={card}></CardPage>)}
       </div>
-
-
 
       <div className='divimagem mt-12 flex flex-col mb-3'>
         <h1 className="titulop mt-12">Faça parte!</h1>
       </div>
-      <Link href='/Cadastro'>
+      <Button href='/Cadastro'>
         <div className='flex items-center justify-center botao text-black hover:bg-purple-500'> 
-          <button className='textobotao'>CRIAR CONTA</button>
+          <Button className='textobotao'>CRIAR CONTA</Button>
         </div>
-      </Link>
+      </Button>
 
       <div className='lg:flex mt-20 ml-20 mr-20 gap-20 justify-evenly'>
         <div className='flex flex-col items-center justify-center'>
@@ -113,7 +111,7 @@ export default function Portal() {
         </div>
       </div>
 
-      <div className='flex ml-10 lg:w-full mt-12 pt-12'>
+      <div className='flex ml-10 mt-12 pt-12'>
         <h1 className='titulov'>Entenda mais:</h1>
       </div>
       

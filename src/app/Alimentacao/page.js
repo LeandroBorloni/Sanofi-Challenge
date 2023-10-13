@@ -39,7 +39,7 @@ export default function Alimentacao() {
                     <h2 className='mont text-black font-semibold text-3xl'>OS PRINCÍPIOS DA ALIMENTAÇÃO SAUDÁVEL</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-7 text-justify ml-10 mr-10'>
+                    <ul className='mont text-black text-2xl mt-7 text-justify ml-10 mr-10'>
                         <li>- <strong>Variedade:</strong> Consuma uma ampla gama de alimentos, incluindo frutas, vegetais, grãos integrais, proteínas magras e laticínios com baixo teor de gordura.</li>
                         <li>- <strong>Moderação:</strong> Evite o excesso de calorias, açúcares e gorduras saturadas.</li>
                         <li>- <strong>Equilíbrio:</strong> Mantenha um equilíbrio entre a ingestão de calorias e o gasto energético para manter um peso saudável.</li>
@@ -50,7 +50,7 @@ export default function Alimentacao() {
                     <h2 className='mont text-black font-semibold text-3xl'>BENEFÍCIOS</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-7 text-justify ml-10 mr-10'>
+                    <ul className='mont text-black text-2xl mt-7 text-justify ml-10 mr-10'>
                         <li>- <strong>Saúde Cardiovascular:</strong> Ajuda a reduzir o risco de doenças cardíacas.</li>
                         <li>- <strong>Controle de Peso:</strong> Facilita a manutenção de um peso saudável.</li>
                         <li>- <strong>Saúde Mental:</strong> Pode melhorar o humor e a função cognitiva.</li>
@@ -61,7 +61,7 @@ export default function Alimentacao() {
                     <h2 className='mont text-black font-semibold text-3xl'>DICAS PRÁTICAS</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-7 text-justify ml-10 mr-10'>
+                    <ul className='mont text-black text-2xl mt-7 text-justify ml-10 mr-10'>
                         <li>- <strong>Planejamento:</strong> Planeje suas refeições com antecedência para evitar escolhas alimentares impulsivas.</li>
                         <li>- <strong>Leitura de Rótulos:</strong> Leia os rótulos dos alimentos para entender os ingredientes e o valor nutricional.</li>
                         <li>- <strong>Porções Adequadas:</strong> Esteja ciente das porções para evitar superdimensionamento.</li>
