@@ -306,14 +306,16 @@ export default function Cadastro() {
                                 required /></label>
                             </div>
                             <TermoUso></TermoUso>
+                            <div className="flex flex-col justify-center items-center">
+                                <button
+                                        className="botaologin-cadastro mt-5 bg-[#D3A7D9] flex items-center justify-center"
+                                        onClick={isMedico ? addMedico : addUsuario}
+                                    >
+                                        <span className="mont text-black font-medium text-2xl">Cadastrar</span>
+                                </button>
+                            </div>
                             <div className="flex flex-col justify-center items-center mt-56">
                                 <p className="textocriarconta underline-2 hover:underline">Já tem uma conta?</p>
-                                <button
-                                    className="botaologin-cadastro mt-5 bg-[#D3A7D9] flex items-center justify-center"
-                                    onClick={isMedico ? addMedico : addUsuario}
-                                >
-                                    <span className="mont text-black font-medium text-2xl">Cadastrar</span>
-                                </button>
                                 <Link href="./Login">
                                     <button className="botaologin-cadastro mt-5 bg-[#D3A7D9] flex items-center justify-center">
                                         <span className="mont text-black font-medium text-2xl">Login</span>
