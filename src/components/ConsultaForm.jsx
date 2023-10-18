@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import '../app/ExamesEConsultas/global.css';
 import { TrashIcon } from '@heroicons/react/24/outline'
-import { collection, addDoc, getDoc, QuerySnapshot, query, onSnapshot, deleteDoc, doc } from "firebase/firestore"; 
+import { collection, addDoc, query, onSnapshot, deleteDoc, doc } from "firebase/firestore"; 
 import {db} from '../app/firebase.js';
 
 function ConsultaForm() {
@@ -16,7 +16,7 @@ function ConsultaForm() {
     const [consultasPassadas, setConsultasPassadas] = useState([]);
   
     //Quando o usuário chama essa função, essa função retornaria uma div
-    const cadastroConsulta = (e) => {
+    function cadastroConsulta(e){
       e.preventDefault();
       
       // Processar os dados conforme necessário
@@ -106,7 +106,7 @@ function ConsultaForm() {
   
       useEffect(()=>{
           const q = query(collection(db, 'consultas'))
-          const unsubscribe  = onSnapshot(q, (QuerySnapshot) => {
+          onSnapshot(q, (QuerySnapshot) => {
               let consultasArr = []
   
               QuerySnapshot.forEach((doc) => {
