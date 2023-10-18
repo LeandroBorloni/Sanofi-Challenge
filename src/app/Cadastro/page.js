@@ -89,7 +89,9 @@ export default function Cadastro() {
                     dataNascimento: '',
                     genero: '',
                     email: '',
-                    senha: ''
+                    email2: '',
+                    senha: '',
+                    senha2: ''
                 });
             } catch (error) {
                 console.error("Error adding document: ", error);
@@ -131,7 +133,9 @@ export default function Cadastro() {
                     dataNascimento: '',
                     genero: '',
                     email: '',
+                    email2: '',
                     senha: '',
+                    senha2: '',
                     crm: ''
                 });
             } catch (error) {
