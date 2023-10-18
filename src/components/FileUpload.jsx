@@ -2,7 +2,7 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { DocumentPlusIcon } from '@heroicons/react/24/outline'
-import '@/app/ExamesEConsultas/global.css';
+import '../app/ExamesEConsultas/global.css';
 
 const FileUpload = ({ onFileUpload }) => {
   const onDrop = useCallback(
