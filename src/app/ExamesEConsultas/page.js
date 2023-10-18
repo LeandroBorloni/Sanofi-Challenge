@@ -81,7 +81,7 @@ export default function ExamesEConsultas() {
                 Upload de exames
             </h1>
             {/* npm install react-dropzone que eu usei */}
-            <div className='flex flex-col items-center justify-center'>
+            {/* <div className='flex flex-col items-center justify-center'>
                 <Upload onFileUpload={handleFileUpload} />
                 {pdfFiles.length > 0 ? (
                     <div className='flex flex-col  gap-10 mt-10'>
@@ -90,7 +90,7 @@ export default function ExamesEConsultas() {
                             {pdfFiles.map((pdfFile, index) => (
                             <li key={index} className='flex flex-col bg-[#A65C41] gap-10 p-5 rounded-3xl justify-center items-center w-80 h-96'>
                                 <p className='break-words font-bold mont'>Nome do arquivo: {pdfFile.name}</p>
-                                {/* <p>Tamanho do arquivo: {pdfFile.size} bytes</p> */}
+                                <p>Tamanho do arquivo: {pdfFile.size} bytes</p>
                                 <img src='/images/ImgPDF.svg' className='w-28'></img>
                                 <div className='flex flex-col gap-2'>
                                     <button className='mont' onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
@@ -105,7 +105,7 @@ export default function ExamesEConsultas() {
                 ) : (
                     <p className='text-black text-xl mt-10 mb-12'>Nenhum PDF carregado.</p>
                 )}
-            </div>
+            </div> */}
             {/* <DocumentPlusIcon className='text-black w-7 '></DocumentPlusIcon> */}
             
         </section>
