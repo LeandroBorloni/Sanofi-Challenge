@@ -23,10 +23,10 @@ export default function Portal() {
       imagem: "/images/Exames.svg",
       texto: "Aba de exames, onde você pode centralizar todos os arquivos em um só local, podendo acessar de qualquer lugar!"
     },
-    {
-      imagem: "/images/Habitos.svg",
-      texto: "Life hacks e dicas de hábitos saudáveis para tornar a rotina mais prática e descomplicada!"
-    }
+    // {
+    //   imagem: "/images/Habitos.svg",
+    //   texto: "Life hacks e dicas de hábitos saudáveis para tornar a rotina mais prática e descomplicada!"
+    // }
   ]
   const cards2 = [
     {
@@ -73,7 +73,7 @@ export default function Portal() {
           <img className='imagemlogo' src="/images/Logo.svg"></img>
         </div>
         <div className='flex items-center'>
-          <Link href='/Cadastro' underline='hover' className='mr-5 mb-1 text-black'>Criar Conta</Link>
+          <Link href='/Cadastro' underline='hover' className='mr-5 mb-1' id='textocriarMUI'>Criar Conta</Link>
           <Button href='/Login'><UserIcon className='w-7 text-black icon mb-2'></UserIcon></Button>
         </div>
       </nav>
@@ -83,10 +83,10 @@ export default function Portal() {
       <h2 className='texto mt-12 ml-8'>Juntando-se a nossa comunidade você tem acesso à:</h2>
 
 
-      <div className='lg:flex mt-12 gap-20 justify-center'>
+      <div className='lg:flex mt-12 gap-20 justify-center mx-5'>
         {cards.map(card => <CardPage card={card}></CardPage>)}
       </div>
-      <div className='lg:flex lg:mt-12 gap-20 justify-center'>
+      <div className='lg:flex lg:mt-12 gap-20 justify-center mx-5'>
         {cards2.map(card => <CardPage card={card}></CardPage>)}
       </div>
 
@@ -95,7 +95,7 @@ export default function Portal() {
       </div>
       <Button href='/Cadastro'>
         <div className='flex items-center justify-center botao text-black hover:bg-purple-500'> 
-          <Button className='textobotao'>CRIAR CONTA</Button>
+          <Button className='textobotao' id='textobotaoMUI'>CRIAR CONTA</Button>
         </div>
       </Button>
 

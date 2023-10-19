@@ -22,11 +22,11 @@ export default function LoginMedico() {
                             <h3 className='textoMedico mb-28'>Que bom te ter de volta! Faça seu login para aproveitar todos os <br></br> recursos do <img className='inline-block' src='/images/LogoPaciente.svg'></img>.Pode contar com a gente pra construção de <br></br> uma vida mais saudável e com qualidade.</h3>
                             <form>
                                 <div className='botaologin-Med flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5 justify-start'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color-Med ml-4 mont text-black pr-40 pt-5 pb-5' type="number" min='0' id='crm' required placeholder='CRM'/></label>
+                                    <label className='flex p-5 justify-start'><img src='/images/Botao-Perfil.svg'></img><input className='bg-color-Med ml-4 mont text-black pr-30 pt-5 pb-5' type="number" min='0' id='crm' required placeholder='CRM'/></label>
                                     
                                 </div>
                                 <div className='botaologin-Med flex mb-10 items-center justify-center'>
-                                    <label className='flex p-5'><img src='/images/senhaCadeado.svg'></img><input className='bg-color-Med ml-4 mont text-black pr-40 pt-5 pb-5' type="password" id='password' required placeholder='Senha'/></label>
+                                    <label className='flex p-5'><img src='/images/senhaCadeado.svg'></img><input className='bg-color-Med ml-4 mont text-black pr-30 pt-5 pb-5' type="password" id='password' required placeholder='Senha'/></label>
                                     
                                 </div>
                                 <Link href='./LoginMedico'>

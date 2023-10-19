@@ -249,7 +249,7 @@ export default function Cadastro() {
                                 </label>
                             </div>
                             
-                            <div className='botaoCadastro flex mb-10 items-center'>r
+                            <div className='botaoCadastro flex mb-10 items-center'>
                                 <label className='flex mont bg-color-Cad labelformulario items-center justify-cente lg:p-5 pl-3'>Data de nascimento:
                                     <input
                                         className='bg-color-Cad lg:ml-4 mont text-black lg:pr-36 pt-5 pb-5'

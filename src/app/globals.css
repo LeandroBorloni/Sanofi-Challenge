@@ -109,6 +109,18 @@ body {
   letter-spacing: 1rem;
 }
 
+#textobotaoMUI {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  letter-spacing: 1rem;
+}
+
+#textocriarMUI {
+  color: #000;
+}
+
 .titulop{
   color: rgb(0, 0, 0);
   font-size: 3rem;
@@ -161,6 +173,11 @@ body {
 
 .imagement {
   width: 7%;
+}
+
+#CardInicial {
+  background-color: #EAD5FB;
+  border-radius: 3rem;
 }
 
 /* FOOTER DA HOME PAGE */
