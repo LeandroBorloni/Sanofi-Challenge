@@ -3,6 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 import UserMenu from '@/components/UserMenu';
 import { UserIcon } from '@heroicons/react/24/outline'
+import PerfilForm from '@/components/PerfilForm';
+import './global.css';
 
 export default function Perfil() {
     return (
@@ -28,9 +30,15 @@ export default function Perfil() {
                     <UserIcon className='w-1/6 h-1/6 text-black icon mt-8'></UserIcon>
                 </div>
                 <h1 className='mont text-black italic text-4xl mt-20 ml-6'>
-                        Dados cadastrais
+                    Dados cadastrais
                 </h1>
-                <Link href='./HomePaciente' className='flex items-center justify-center mt-20'>
+                <PerfilForm></PerfilForm>
+                <div className='flex items-center justify-center mt-12'>
+                    <button className='botaovoltar bg-[#949494] flex items-center justify-center'>
+                        <span className='mont text-black font-medium text-xl'>Editar Perfil</span>
+                    </button>
+                </div>
+                <Link href='./HomePaciente' className='flex items-center justify-center mt-16 mb-20'>
                     <div className='botaovoltar bg-[#D3A7D9] flex items-center justify-center'>
                         <span className='mont text-black font-medium text-xl'>Voltar</span>
                     </div>

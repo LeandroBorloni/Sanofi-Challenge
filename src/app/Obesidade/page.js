@@ -35,11 +35,11 @@ export default function Obesidade() {
                     <h2 className='mont text-black font-semibold text-3xl'>O QUE É?</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A obesidade é uma condição caracterizada pelo acúmulo excessivo de gordura corporal, geralmente resultante de um desequilíbrio entre a ingestão de calorias e o gasto energético. Ela não apenas afeta a aparência física, mas também tem um impacto significativo na saúde geral.</p>
-                <div className='flex bg-[#D9C84D] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>CAUSAS E FATORES DE RISCO</h2>
+                <div className='obescel flex bg-[#D9C84D] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='obesceltext mont text-black font-semibold text-3xl'>CAUSAS E FATORES DE RISCO</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-7 text-justify'>
+                    <ul className='mont text-black text-2xl ml-8 mt-7 mr-8 text-justify'>
                         <li>- <strong>Dieta Desbalanceada:</strong> Consumo excessivo de calorias vazias, alimentos processados e ricos em gorduras saturadas e açúcares.</li>
                         <li>- <strong>Estilo de Vida Sedentário:</strong> Falta de atividade física regular.</li>
                         <li>- <strong>Genética:</strong> Predisposição genética pode influenciar o metabolismo e a tendência à obesidade.</li>
@@ -47,12 +47,12 @@ export default function Obesidade() {
                         <li>- <strong>Ambiente:</strong> Acesso fácil a alimentos pouco saudáveis e estilo de vida sedentário.</li>
                     </ul>
                 </div>
-                <div className='flex bg-[#D9C84D] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>CONSEQUÊNCIAS PARA SAÚDE</h2>
+                <div className='obescel flex bg-[#D9C84D] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='obesceltext mont text-black font-semibold text-3xl'>CONSEQUÊNCIAS PARA SAÚDE</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A obesidade está associada a uma variedade de problemas de saúde, incluindo:</p>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-3 text-justify'>
+                    <ul className='mont text-black text-2xl ml-8 mt-3 mr-8 text-justify'>
                         <li>- <strong>Doenças Cardiovasculares:</strong> Hipertensão, doença arterial coronariana, acidente vascular cerebral.</li>
                         <li>- <strong>Diabetes Tipo 2:</strong> A obesidade é um fator de risco significativo para o desenvolvimento da diabetes.</li>
                         <li>- <strong>Doenças Respiratórias:</strong> Apneia do sono e dificuldades respiratórias.</li>
@@ -61,8 +61,8 @@ export default function Obesidade() {
                         <li>- <strong>Impacto Psicológico:</strong> Baixa autoestima, depressão e ansiedade.</li>
                     </ul>
                 </div>
-                <div className='flex bg-[#D9C84D] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>ESTRATÉGIAS DE GERENCIAMENTO</h2>
+                <div className='obescel flex bg-[#D9C84D] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='obesceltext mont text-black font-semibold text-3xl'>ESTRATÉGIAS DE GERENCIAMENTO</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>O gerenciamento da obesidade envolve uma abordagem integral:</p>
                 <div>
@@ -78,7 +78,7 @@ export default function Obesidade() {
                     <h2 className='mont text-black font-semibold text-3xl'>DICAS</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-8 text-justify'>
+                    <ul className='mont text-black text-2xl ml-8 mt-8 mr-8 text-justify'>
                         <li>- <strong>Atividade Física:</strong> Pratique exercícios regularmente para manter um peso saudável e fortalecer o corpo.</li>
                         <li>- <strong>Alimentação Consciente:</strong> Esteja consciente de suas escolhas alimentares e evite comer por emoção.</li>
                         <li>- <strong>Gerenciamento do Estresse:</strong> Adote técnicas de relaxamento, como meditação e ioga.</li>

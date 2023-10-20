@@ -35,8 +35,8 @@ export default function Alimentacao() {
                     <h2 className='mont text-black font-semibold text-3xl'>O QUE É?</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A comida é mais do que apenas combustível; é a matéria-prima que nosso corpo usa para se regenerar e funcionar corretamente. Escolher alimentos ricos em nutrientes é essencial para manter a saúde e o bem-estar.</p>
-                <div className='flex bg-[#8F776E] ml-8 mt-12 w-1/2 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>OS PRINCÍPIOS DA ALIMENTAÇÃO SAUDÁVEL</h2>
+                <div className='saudcel flex bg-[#8F776E] ml-8 mt-12 w-1/2 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='saudceltext mont text-black font-semibold text-3xl'>OS PRINCÍPIOS DA ALIMENTAÇÃO SAUDÁVEL</h2>
                 </div>
                 <div>
                     <ul className='mont text-black text-2xl mt-7 text-justify ml-10 mr-10'>

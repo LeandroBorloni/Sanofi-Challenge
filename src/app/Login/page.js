@@ -23,7 +23,7 @@ export default function Login(){
                                 <span className='mont text-black font-medium text-3xl'>Login Paciente</span>
                             </div>
                         </Button>
-                        <Button href='./LoginMedico'>
+                        <Button href='./LoginMedico' disabled='true'>
                             <div className='botaologin flex items-center justify-center bg-[#AF75BF] mt-5'>
                                 <span className='mont text-black font-medium text-3xl'>Login Médico</span>
                             </div>

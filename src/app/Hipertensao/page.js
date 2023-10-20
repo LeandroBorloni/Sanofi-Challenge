@@ -35,11 +35,11 @@ export default function Hipertensao() {
                     <h2 className='mont text-black font-semibold text-3xl'>O QUE É?</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A hipertensão arterial é caracterizada pelo aumento crônico da pressão exercida pelas paredes das artérias sobre o fluxo sanguíneo. Isso coloca uma tensão extra sobre o sistema circulatório, aumentando o risco de doenças cardíacas, acidente vascular cerebral (AVC) e outros problemas de saúde.</p>
-                <div className='flex bg-[#A4AB9A] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>CAUSAS E FATORES DE RISCO</h2>
+                <div className='hipercel flex bg-[#A4AB9A] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='hiperceltext mont text-black font-semibold text-3xl'>CAUSAS E FATORES DE RISCO</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-10 text-justify'>
+                    <ul className='mont text-black text-2xl ml-8 mt-10 mr-8 text-justify'>
                         <li>- <strong>Genética:</strong> Predisposição genética pode aumentar o risco.</li>
                         <li>- <strong>Estilo de Vida:</strong> Dieta rica em sódio, baixa atividade física, obesidade e tabagismo (hábito de fumar).</li>
                         <li>- <strong>Idade:</strong> A incidência aumenta com o envelhecimento.</li>
@@ -47,8 +47,8 @@ export default function Hipertensao() {
                         <li>- <strong>Condições Médicas:</strong> Diabetes, doenças renais e distúrbios hormonais podem contribuir.</li>
                     </ul>
                 </div>
-                <div className='flex bg-[#A4AB9A] ml-8 mt-12 w-96 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>SINTOMAS E RISCOS</h2>
+                <div className='hipercel flex bg-[#A4AB9A] ml-8 mt-12 w-96 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='hiperceltext mont text-black font-semibold text-3xl'>SINTOMAS E RISCOS</h2>
                 </div>
                 <div>
                     <ul className='mont text-black text-2xl ml-8 mt-10 text-justify'>
@@ -75,7 +75,7 @@ export default function Hipertensao() {
                     <h2 className='mont text-black font-semibold text-3xl'>DICAS</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-10 text-justify'>
+                    <ul className='mont text-black text-2xl ml-8 mt-10 mr-8 text-justify'>
                         <li>- Mantenha um estilo de vida saudável com dieta equilibrada e atividade física.</li>
                         <li>- Gerencie o estresse através de técnicas de relaxamento.</li>
                         <li>- Evite o tabagismo e limite o consumo de álcool.</li>

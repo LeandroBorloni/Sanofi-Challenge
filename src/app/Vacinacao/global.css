@@ -42,6 +42,11 @@
         gap: 10rem 5rem;
         font-size: 1.2rem;
     }
+
+    .vaccel {
+        width: 85vw;
+        height: 100%;
+    }
 }
 
 @media (max-width: 425px) {

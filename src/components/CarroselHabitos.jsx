@@ -29,12 +29,26 @@ const ArticleCarouselHabitos = () => {
     ]
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4, // Mostrar um slide de cada vez
     slidesToScroll: 1, // Navegar um slide de cada vez
     swipeToSlide: true, // Permitir arrastar para navegar
     responsive: [
+      {
+        breakpoint: 1440, // Define um ponto de quebra para dispositivos móveis
+        settings: {
+          slidesToShow: 3, // Mostrar 4 slides de uma vez em dispositivos móveis
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024, // Define um ponto de quebra para dispositivos móveis
+        settings: {
+          slidesToShow: 2, // Mostrar 4 slides de uma vez em dispositivos móveis
+          slidesToScroll: 1,
+        },
+      },
       {
         breakpoint: 768, // Define um ponto de quebra para dispositivos móveis
         settings: {

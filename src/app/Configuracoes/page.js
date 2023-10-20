@@ -21,8 +21,16 @@ export default function Configuracoes() {
         },
         {
             pergunta: "Idiomas",
+            resposta: "Atualmente nosso site e aplicativos só estão disponíveis em Português (Brasil), novos idiomas estarão disponíveis em breve!" 
+        },
+        {
+            pergunta: "Fale Conosco",
+            resposta: "Contate nossa equipe de suporte em bemainardes@gmail.com para assistência personalizada e orientação relacionada ao aplicativo SanoHealth. Estamos aqui para ajudar você a obter o melhor do nosso aplicativo e a cuidar da sua saúde e bem-estar." 
+        },
+        {
+            pergunta: "Histórico de consultas",
             resposta: "Teste" 
-        }
+        },
     ]
     return (
         <>
@@ -43,7 +51,7 @@ export default function Configuracoes() {
             <div className='flex flex-col gap-5 mt-12 ml-6'>
                 {accordeonConfig.map(accordeon => <AccordConfig accordeon={accordeon}></AccordConfig>)}
             </div>
-            <Link href='./HomePaciente' className='flex items-center justify-center mt-20'>
+            <Link href='./HomePaciente' className='flex items-center justify-center mt-20 mb-20'>
                 <div className='botaovoltar bg-[#D3A7D9] flex items-center justify-center'>
                     <span className='mont text-black font-medium text-xl'>Voltar</span>
                 </div>

@@ -49,14 +49,14 @@ export default function Colesterol() {
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>Ter níveis elevados de colesterol LDL pode aumentar significativamente o risco de:</p>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-5 text-justify'>
+                    <ul className='mont text-black text-2xl ml-8 mt-5 mr-8 text-justify'>
                         <li>- <strong>Doenças Cardíacas:</strong> Placas de colesterol nas artérias podem levar a ataques cardíacos e angina.</li>
                         <li>- <strong>AVC:</strong> O acúmulo de placas nas artérias cerebrais pode resultar em acidente vascular cerebral.</li>
                         <li>- <strong>Doença Arterial Periférica:</strong> Placas nas artérias que fornecem sangue para as extremidades podem causar dor e dificuldade de locomoção.</li>
                     </ul>
                 </div>
-                <div className='flex bg-[#FC8B7F] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>MANTENDO NÍVEIS SAUDÁVEIS</h2>
+                <div className='colecel flex bg-[#FC8B7F] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='coleceltext mont text-black font-semibold text-3xl'>MANTENDO NÍVEIS SAUDÁVEIS</h2>
                 </div>
                 <div>
                     <ul className='mont text-black text-2xl ml-8 mt-7 text-justify ml-10 mr-10'>
@@ -66,8 +66,8 @@ export default function Colesterol() {
                         <li>- <strong>Evitar Tabagismo e Limitar Álcool:</strong> O tabagismo pode reduzir os níveis de HDL e aumentar o risco de placas de colesterol. O consumo excessivo de álcool também pode afetar os níveis de lipídios.</li>
                     </ul>
                 </div>
-                <div className='flex bg-[#FC8B7F] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>MONITORAMENTO E TRATAMENTO</h2>
+                <div className='colecel flex bg-[#FC8B7F] ml-8 mt-12 w-1/3 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='coleceltext mont text-black font-semibold text-3xl'>MONITORAMENTO E TRATAMENTO</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>É importante realizar exames regulares de colesterol para avaliar seus níveis. Se o colesterol LDL estiver elevado, medidas de estilo de vida podem ser recomendadas. Em alguns casos, o médico pode prescrever medicamentos para ajudar a controlar os níveis de colesterol.</p>
                 <div className='flex bg-[#FC8B7F] ml-8 mt-12 w-64 h-20 rounded-2xl items-center justify-center'>

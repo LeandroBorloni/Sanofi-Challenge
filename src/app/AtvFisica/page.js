@@ -39,16 +39,16 @@ export default function AtvFisica() {
                     <h2 className='mont text-black font-semibold text-3xl'>BENEFÍCIOS</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A atividade física não é apenas uma escolha saudável, mas um presente para o corpo e a mente. Ela melhora a saúde cardiovascular, fortalece os músculos e ossos, e ajuda a manter um peso saudável. Além disso, a atividade física regular libera endorfinas, os hormônios do bem-estar, que podem aliviar o estresse e melhorar o humor.</p>
-                <div className='flex bg-[#B6E0B3] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>COMEÇE DE FORMA SIMPLES</h2>
+                <div className='atvcel flex bg-[#B6E0B3] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='atvceltext mont text-black font-semibold text-3xl'>COMEÇE DE FORMA SIMPLES</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A boa notícia é que você não precisa ser um atleta de elite para colher os benefícios da atividade física. Comece de forma simples, dando passos que se encaixem no seu dia a dia. Uma caminhada rápida, subir escadas em vez de usar o elevador ou fazer alongamentos pela manhã já são excelentes maneiras de começar.</p>
-                <div className='flex bg-[#B6E0B3] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>O MELHOR PARA VOCÊ</h2>
+                <div className='atvcel flex bg-[#B6E0B3] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='atvceltext mont text-black font-semibold text-3xl'>O MELHOR PARA VOCÊ</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A beleza da atividade física está na diversidade. Há uma variedade incrível de opções, desde aulas de dança animadas até sessões de ioga calmantes. Encontre algo que você goste e que se encaixe em sua vida. Isso não apenas tornará o exercício mais agradável, mas também aumentará a probabilidade de você mantê-lo a longo prazo.</p>
-                <div className='flex bg-[#B6E0B3] ml-8 mt-12 w-1/2 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>PEQUENAS MUDANÇAS, GRANDES IMPACTOS</h2>
+                <div className='atvcel flex bg-[#B6E0B3] ml-8 mt-12 w-1/2 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='atvceltext mont text-black font-semibold text-3xl'>PEQUENAS MUDANÇAS, GRANDES IMPACTOS</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>Aqui está o segredo: pequenas mudanças acumulam-se ao longo do tempo para criar um impacto duradouro. Caminhar durante o almoço, pedalar até o trabalho ou fazer uma pausa para fazer alguns alongamentos podem fazer toda a diferença. O importante é criar consistência e tornar a atividade física parte de sua rotina diária.</p>
                 <div className='flex bg-[#B6E0B3] ml-8 mt-12 w-64 h-20 rounded-2xl items-center justify-center'>

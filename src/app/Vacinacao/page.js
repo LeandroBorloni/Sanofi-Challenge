@@ -31,8 +31,8 @@ export default function Vacinacao() {
                     <h1 className='colortexto8 tituloartigo mont text-black font-semibold text-4xl ml-8'>Vacinação</h1>
                     <p className='subartigo mont text-black mt-56 ml-8 font-medium pb-10'>Por que a vacinação é tão crucial e como ela beneficia a sociedade como um todo.</p>
                 </div>
-                <div className='flex bg-[#D3D6D7] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>ENTENDENDO A VACINAÇÃO</h2>
+                <div className='vaccel flex bg-[#D3D6D7] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='vacceltext mont text-black font-semibold text-3xl'>ENTENDENDO A VACINAÇÃO</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A vacinação é uma das conquistas mais importantes da medicina moderna. Ela desempenha um papel fundamental na prevenção de doenças infecciosas e na proteção da saúde pública.
                 As vacinas são projetadas para ensinar o sistema imunológico a reconhecer e combater agentes infecciosos, como vírus e bactérias. Elas ajudam a prevenir doenças graves, muitas das quais podem ser mortais.</p>

@@ -35,8 +35,8 @@ export default function Diabetes() {
                     <h2 className='mont text-black font-semibold text-3xl'>O QUE É?</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A diabetes é uma condição crônica que envolve o metabolismo inadequado da glicose (um açúcar que serve como fonte principal de energia para o corpo). A glicose é regulada pela insulina, um hormônio produzido pelo pâncreas. Na diabetes, há uma disfunção na produção ou a ação de insulina, resultando em níveis elevados de glicose no sangue.</p>
-                <div className='flex bg-[#E18F4F] ml-8 mt-12 w-96 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>TIPOS DE DIABETES</h2>
+                <div className='diabcel flex bg-[#E18F4F] ml-8 mt-12 w-96 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='diabceltext mont text-black font-semibold text-3xl'>TIPOS DE DIABETES</h2>
                 </div>
                 <div>
                     <h2 className='mont text-black font-semibold text-3xl text-center mt-5'>1. DIABETES TIPO 1</h2>
@@ -68,7 +68,7 @@ export default function Diabetes() {
                     <h2 className='mont text-black font-semibold text-3xl'>DICAS</h2>
                 </div>
                 <div>
-                    <ul className='mont text-black text-2xl ml-8 mt-10 text-justify'>
+                    <ul className='mont text-black text-2xl ml-8 mt-10 mr-8 text-justify'>
                         <li>- Mantenha uma dieta equilibrada, rica em fibras e alimentos de baixo índice glicêmico.</li>
                         <li>- Faça exercícios regularmente para ajudar a controlar os níveis de glicose e manter um peso saudável.</li>
                         <li>- Monitore os níveis de glicose no sangue conforme orientação médica.</li>

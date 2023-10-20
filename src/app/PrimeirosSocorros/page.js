@@ -35,8 +35,8 @@ export default function PrimeirosSocorros() {
                     <h2 className='mont text-black font-semibold text-3xl'>IMPORTÂNCIA</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>Os primeiros socorros desempenham um papel vital em situações de emergência, ajudando a estabilizar a condição de uma pessoa até a chegada de ajuda médica profissional. Eles podem prevenir complicações graves e, em muitos casos, salvar vidas.</p>
-                <div className='flex bg-[#1393DE] ml-8 mt-12 w-1/2 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>PROCEDIMENTOS INICIAIS DE ASSISTÊNCIA</h2>
+                <div className='soccel flex bg-[#1393DE] ml-8 mt-12 w-1/2 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='socceltext mont text-black font-semibold text-3xl'>PROCEDIMENTOS INICIAIS DE ASSISTÊNCIA</h2>
                 </div>
                 <div>
                     <ul className='mont text-black text-2xl ml-8 mt-7 text-justify mr-8'>

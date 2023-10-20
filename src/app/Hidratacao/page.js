@@ -43,8 +43,8 @@ export default function Hidratacao() {
                         <li>- <strong>Lubrificação Articular:</strong> A água atua como um lubrificante natural para nossas articulações.</li>
                     </ul>
                 </div>
-                <div className='flex bg-[#8EDDFE] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
-                    <h2 className='mont text-black font-semibold text-3xl'>SINAIS DE DESIDRATAÇÃO</h2>
+                <div className='hidcel flex bg-[#8EDDFE] ml-8 mt-12 w-1/4 h-20 rounded-2xl items-center justify-center'>
+                    <h2 className='hidceltext mont text-black font-semibold text-3xl'>SINAIS DE DESIDRATAÇÃO</h2>
                 </div>
                 <p className='mont text-black text-2xl mt-7 ml-10 mr-10 text-justify'>A desidratação ocorre quando você não ingere água suficiente para repor a que é perdida por meio da urina, suor e respiração. Os sintomas de desidratação podem incluir:</p>
                 <div>
