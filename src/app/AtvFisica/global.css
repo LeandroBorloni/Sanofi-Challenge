@@ -62,4 +62,8 @@
         width: 90vw;
         height: 100%;
     }
+
+    .atvceltext {
+        text-align: center;
+    }
 }

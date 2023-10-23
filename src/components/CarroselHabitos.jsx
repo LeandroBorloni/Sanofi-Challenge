@@ -31,7 +31,7 @@ const ArticleCarouselHabitos = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4, // Mostrar um slide de cada vez
+    slidesToShow: 3, // Mostrar um slide de cada vez
     slidesToScroll: 1, // Navegar um slide de cada vez
     swipeToSlide: true, // Permitir arrastar para navegar
     responsive: [

@@ -3,9 +3,9 @@
 export default function CardEntenda() {
     return (
     <>
-    <div className="flex justify-center ml-20 gap-20">
+    <div className="diventendacel flex justify-center ml-20 gap-20">
         <div className='flex entenda ml-8 mr-8 p-12'>
-            <div className='flex flex-col mb-12 mt-5'>
+            <div className='celtext flex flex-col mb-12 mt-5 '>
             <div className='flex mb-10 justify-center celular-img'>
                 <img className='imagement' src='/images/chatbot_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 lg:ml-7'>ChatBot</h1>
@@ -22,10 +22,10 @@ export default function CardEntenda() {
         </div>
             <img className="cel" src='/images/cel_chatbot.svg'></img>
     </div>
-    <div className="flex justify-center ml-20 gap-20">
+    <div className="diventendacel flex justify-center ml-20 gap-20">
         <img className="cel" src='/images/cel_consultas.svg'></img>
         <div className='flex entenda2 ml-8 mr-8 p-12'>
-            <div className='flex flex-col mb-12 mt-5'>
+            <div className='celtext flex flex-col mb-12 mt-5'>
             <div className='flex mb-10 justify-center celular-img'>
                 <img className='imagement' src='/images/consultas_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 lg:ml-7'>Consulta & Exames</h1>
@@ -41,9 +41,9 @@ export default function CardEntenda() {
         </div>
         
     </div>  
-    <div className="flex justify-center ml-20 gap-20">
+    <div className="diventendacel flex justify-center ml-20 gap-20">
         <div className='flex entenda ml-8 mr-8 p-12'>
-            <div className='flex flex-col mb-12 mt-5'>
+            <div className='celtext flex flex-col mb-12 mt-5'>
             <div className='flex mb-10 justify-center celular-img'>
                 <img className='imagement' src='/images/saude_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 lg:ml-7'>Saúde & Bem-estar</h1>
@@ -60,10 +60,10 @@ export default function CardEntenda() {
         </div>
         <img className="cel" src='/images/cel_saude.svg'></img>
     </div>
-    <div className="flex justify-center ml-20 gap-20">
+    <div className="diventendacel flex justify-center ml-20 gap-20">
         <img className="cel" src='/images/cel_artigos.svg'></img>
         <div className='flex entenda2 ml-8 mr-8 p-12'>
-            <div className='flex flex-col mb-12 mt-5'>
+            <div className='celtext flex flex-col mb-12 mt-5'>
             <div className='flex mb-10 justify-center celular-img'>
                 <img className='imagement' src='/images/artigos_ent.svg'></img>
                 <h1 className='tituloentenda tracking-2 lg:ml-7'>Artigos</h1>

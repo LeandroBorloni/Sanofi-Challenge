@@ -351,7 +351,7 @@ footer {
   }
 
   .celular-img {
-    display: inline;
+    display: inline-block;    
   }
 
   .pentenda {
@@ -365,5 +365,14 @@ footer {
 
   .titulofooter {
     text-align: center;
+  }
+
+  .diventendacel {
+    margin: 0;
+  }
+
+  .celtext {
+    text-align: center;
+    align-items: center;
   }
 }

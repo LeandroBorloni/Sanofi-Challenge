@@ -66,4 +66,8 @@
         width: 90vw;
         height: 100%;
     }
+
+    .hiperceltext {
+        text-align: center;
+    }
 }

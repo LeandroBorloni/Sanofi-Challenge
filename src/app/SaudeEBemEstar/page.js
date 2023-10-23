@@ -38,7 +38,7 @@ export default function SaudeEBemEstar() {
                 </div>
                 <div className='flex flex-col justify-center items-center mt-10 gap-10'>
                     <h1 className='checkcel mont text-black text-4xl'>Checklist Personalizado</h1>
-                    <p className='mont text-black text-center text-2xl italic w-1/2'>Monte sua rotina de forma personalizada para o seu dia-a-dia! Estabeleça metas diárias e semanais para manter sua saúde integrada. Física, mental e espiritual.</p>
+                    <p className='mont text-black text-center text-2xl italic px-8'>Monte sua rotina de forma personalizada para o seu dia-a-dia! Estabeleça metas diárias e semanais para manter sua saúde integrada. Física, mental e espiritual.</p>
                     <img src='/images/LineCadastro.svg'></img>
                 </div>
                 <div className='metascel flex flex-col w-1/3 ml-10 mt-20'>

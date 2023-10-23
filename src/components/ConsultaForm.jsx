@@ -200,7 +200,7 @@ function ConsultaForm() {
             <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                 {consultas.map((consulta, index) => (
                 <div key={index} className='consulta-item relative'>
-                    <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
+                    <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-96 h-100 p-5'>
                         <ul className='mt-5'>
                             <li>
                                 <p className='mont text-black text-3xl text-normal leading-10'>
@@ -244,7 +244,7 @@ function ConsultaForm() {
                     <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                         {consultasPassadas.map((consulta, index) => (
                         <div key={index} className='consulta-item relative'>
-                            <div className='resocel flex flex-col bg-[#8EBF9F] rounded-3xl w-[40rem] h-[20rem] p-5'>
+                            <div className='resocel flex flex-col bg-[#8EBF9F] rounded-3xl w-100 h-100 p-5'>
                                 <ul className='mt-5'>
                                     <li>
                                     <p className='mont text-black text-3xl text-normal leading-10'>

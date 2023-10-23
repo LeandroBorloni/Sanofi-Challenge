@@ -179,7 +179,7 @@ const WeeklyCalendar = () => {
 
 
   return (
-    <div className="text-center text-black p-10 w-75vw mx-auto" ref={calendarRef}>
+    <div className="text-center text-black w-100 mx-auto p-2" ref={calendarRef}>
       <div>
         {selectedActivity ? (
           <div className='flex flex-col justify-center items-center gap-5'>
@@ -216,7 +216,7 @@ const WeeklyCalendar = () => {
         ) : (
           <div className='calendariocel flex justify-center items-center gap-20'>
             <select
-              className='bg-[#7AA188] rounded-t-3xl w-2/5 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
+              className='respcheckcel bg-[#7AA188] rounded-t-3xl w-1/3 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
               onChange={(e) => handlePhysicalActivitySelect(e.target.value)}
             >
               <option className='bg-white text-black'>Saúde Física</option>
@@ -224,7 +224,7 @@ const WeeklyCalendar = () => {
             </select>
 
             <select
-              className='bg-[#7AA188] rounded-t-3xl w-2/5 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
+              className='bg-[#7AA188] rounded-t-3xl w-1/3 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
               onChange={(e) => handleSpiritualActivitySelect(e.target.value)}
             >
               <option className='bg-white text-black'>Saúde Espiritual</option>

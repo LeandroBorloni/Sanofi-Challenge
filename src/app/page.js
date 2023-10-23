@@ -122,12 +122,12 @@ export default function Portal() {
       </div>
 
 
-      <div className='flex flex-col gap-5 items-center justify-center '>
+      <div className='flex flex-col gap-5 items-center justify-center mb-20'>
         {accordeon.map(accordeon => <IconWithToggle accordeon={accordeon}></IconWithToggle>)}
       </div>
 
     </section>
-    <footer className='footer mt-20'>
+    {/* <footer className='footer mt-20'>
       <div className='flex justify-between'>
         <div>
           <h1 className='titulofooter p-8'>Fale Conosco</h1>
@@ -177,7 +177,7 @@ export default function Portal() {
         <img src='images/rede_social.svg'></img>
       </div>
       <p className='textopadrao mt-20 ml-5'>Caráter Informativo: <br></br>As informações disponibilizadas não substituem avaliação, diagnóstico,tratamento ou acompanhamento de profissionais.</p>
-    </footer>
+    </footer> */}
     </>
   )
 }
