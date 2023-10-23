@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import '../app/ExamesEConsultas/global.css';
 import { TrashIcon } from '@heroicons/react/24/outline'
-import { collection, addDoc, query, onSnapshot, deleteDoc, doc } from "firebase/firestore"; 
+import { collection, addDoc, query, onSnapshot, deleteDoc, doc, getDoc, setDoc } from "firebase/firestore";
+
 import {db} from '../app/firebase.js';
 
-function ConsultaForm() {
+function ConsultaForm({user}) {
     const [dataConsulta, setDataConsulta] = useState('');
     const [nomeConsulta, setNome] = useState('');
     const [crmConsulta, setCrm] = useState('');
@@ -14,111 +15,192 @@ function ConsultaForm() {
     const [obsConsulta, setObs] = useState('');
     const [consultasProximas, setConsultasProximas] = useState([]);
     const [consultasPassadas, setConsultasPassadas] = useState([]);
-  
+    
     //Quando o usuário chama essa função, essa função retornaria uma div
-    function cadastroConsulta(e){
-      e.preventDefault();
+    function cadastroConsulta(e) {
+
+        e.preventDefault();
       
-      // Processar os dados conforme necessário
-      // Por exemplo, você pode validar os campos aqui
+        const novaConsulta = {
+          dataConsulta,
+          nomeConsulta,
+          especialidadeConsulta,
+          enderecoConsulta,
+          obsConsulta,
+        };
       
-      // Adicionar a nova consulta ao array de consultas
-      const novaConsulta = {
-        dataConsulta,
-        nomeConsulta,
-        especialidadeConsulta,
-        enderecoConsulta,
-        obsConsulta,
-      };
+        const dataConsultaDate = new Date(dataConsulta);
+         const dataAtual = new Date();
       
-      const dataConsultaDate = new Date(dataConsulta);
-      const dataAtual = new Date();
-      
-      if (dataConsultaDate > dataAtual) {
-          // Consulta no futuro, adicione-a às "Próximas Consultas"
+        if (dataConsultaDate > dataAtual) {
           setConsultasProximas([...consultasProximas, novaConsulta]);
-      } else {
-          // Consulta no passado, adicione-a às "Consultas Passadas"
+        } else {
           setConsultasPassadas([...consultasPassadas, novaConsulta]);
+        }
+      
+        limparCampos(); // Limpa os campos após adicionar a consulta
       }
-  
-      limparCampos(); // Limpa os campos após adicionar a consulta
-      };
-  
-      const limparCampos = () => {
-          setDataConsulta('');
-          setNome('');
-          setCrm('');
-          setEspecialidadeMedico('');
-          setEnderecoConsulta('');
-          setObs('');
-      };
-  
-      const handleDeleteConsulta = (index, type) => {
-          if (type === "proximas") {
-            const updatedConsultasProximas = [...consultasProximas];
-            updatedConsultasProximas.splice(index, 1);
-            setConsultasProximas(updatedConsultasProximas);
-          } else if (type === "passadas") {
-            const updatedConsultasPassadas = [...consultasPassadas];
-            updatedConsultasPassadas.splice(index, 1);
-            setConsultasPassadas(updatedConsultasPassadas);
-          }
-      };
       
-      useEffect(() => {
-          const consultasProximasStorage = localStorage.getItem('consultasProximas');
-          if (consultasProximasStorage) {
-            setConsultasProximas(JSON.parse(consultasProximasStorage));
-          }
-      
-          const consultasPassadasStorage = localStorage.getItem('consultasPassadas');
-          if (consultasPassadasStorage) {
-            setConsultasPassadas(JSON.parse(consultasPassadasStorage));
-          }
-      }, []);
-  
-      useEffect(() => {
-          localStorage.setItem('consultasProximas', JSON.stringify(consultasProximas));
-          localStorage.setItem('consultasPassadas', JSON.stringify(consultasPassadas));
-      }, [consultasProximas, consultasPassadas]);
+    
+        const limparCampos = () => {
+            setDataConsulta('');
+            setNome('');
+            setCrm('');
+            setEspecialidadeMedico('');
+            setEnderecoConsulta('');
+            setObs('');
+            setNewConsulta({
+                data: '',
+                nome: '',
+                especialidade: '',
+                endereco: '',
+                obs: '',
+                crm: '',
+              });
+        };
+    
+        const handleDeleteConsulta = (index, type) => {
+            if (type === "proximas") {
+                const updatedConsultasProximas = [...consultasProximas];
+                updatedConsultasProximas.splice(index, 1);
+                setConsultasProximas(updatedConsultasProximas);
+            } else if (type === "passadas") {
+                const updatedConsultasPassadas = [...consultasPassadas];
+                updatedConsultasPassadas.splice(index, 1);
+                setConsultasPassadas(updatedConsultasPassadas);
+            }
+        };
+        
+        
+    
+       
   
       //------------------------------- DATABASE ---------------------------------------
-      const [consultas, setConsultas] = useState([])
-      const [newConsulta, setNewConsulta] = useState({data:'', nome:'', especialidade:'',endereco:'',obs:'',crm:'' })
-      // Add Item na base de dados
-      const addItem = async (e) => {
-          e.preventDefault()
-          if (newConsulta.data !='' &&  newConsulta.nome !='' &&  newConsulta.especialidade !='' &&  newConsulta.endereco !='' &&  newConsulta.obs !='' &&  newConsulta.crm !=''){
-              //setConsultas([...consultas, newConsulta])
-              await addDoc(collection(db, 'consultas'), {
-                  data: newConsulta.data,
-                  nome: newConsulta.nome,
-                  especialidade: newConsulta.especialidade ,                
-                  endereco: newConsulta.endereco ,
-                  obs: newConsulta.obs ,
-                  crm: newConsulta.crm
-              })
-              setNewConsulta({data:'', nome:'', especialidade:'',endereco:'',obs:'',crm:'' })
+    const [consultas, setConsultas] = useState([])
+    const [newConsulta, setNewConsulta] = useState({data:'', nome:'', especialidade:'',endereco:'',obs:'',crm:'' })
+    // Add Item na base de dados
+    const addItem = async () => {
+        if (!user) {
+          console.log("Usuário não autenticado. Não é possível adicionar consulta.");
+          return;
+        }
+      
+        const novaConsulta = {
+          data: newConsulta.data,
+          nome: newConsulta.nome,
+          especialidade: newConsulta.especialidade,
+          endereco: newConsulta.endereco,
+          obs: newConsulta.obs,
+          crm: newConsulta.crm,
+        };
+      
+        try {
+          const userDocRef = doc(db, 'usuarios', user.uid);
+          const userDocSnapshot = await getDoc(userDocRef);
+      
+          if (userDocSnapshot.exists()) {
+            const userData = userDocSnapshot.data();
+      
+            if (!userData.consultas) {
+              userData.consultas = [];
+            }
+      
+            userData.consultas.push(novaConsulta);
+      
+            await setDoc(userDocRef, userData);
+            console.log("Consulta adicionada com sucesso!");
+      
+            // Atualize o estado 'consultas' com as consultas do usuário
+            setConsultas(userData.consultas);
+      
+            setNewConsulta({ data: '', nome: '', especialidade: '', endereco: '', obs: '', crm: '' });
+        } 
+        else {
+            console.log("Documento do usuário não encontrado.");
+        }
+    } catch (error) {
+        console.error("Erro ao adicionar consulta:", error);
+    }
+      };
+    
+    
+    
+    // Ler Item na base de dados
+
+    useEffect(() => {
+        if (!user) {
+          return; // Não há usuário autenticado, então não há nada para buscar
+        }
+      
+        const fetchData = async () => {
+          try {
+            const userDocRef = doc(db, 'usuarios', user.uid);
+            const userDocSnapshot = await getDoc(userDocRef);
+      
+            if (userDocSnapshot.exists()) {
+              const userData = userDocSnapshot.data();
+      
+              if (userData.consultas) {
+                setConsultas(userData.consultas);
+              } else {
+                setConsultas([]); // Defina um array vazio se o usuário não tiver consultas
+              }
+            } else {
+              console.log("Documento do usuário não encontrado.");
+            }
+          } catch (error) {
+            console.error("Erro ao buscar consultas do usuário:", error);
           }
-      }
-      // Ler Item na base de dados
-  
-      useEffect(()=>{
-          const q = query(collection(db, 'consultas'))
-          onSnapshot(q, (QuerySnapshot) => {
-              let consultasArr = []
-  
-              QuerySnapshot.forEach((doc) => {
-                  consultasArr.push({...doc.data(), id: doc.id })
-              });
-              setConsultas(consultasArr)
-          })
-      },[])
-      // Deletar Item na base de dados
-      const excluirConsulta = async (id) => {
-          await deleteDoc(doc(db, 'consultas', id))
-      }
+        };
+      
+        fetchData(); // Chame a função fetchData para buscar os dados quando o usuário estiver disponível.
+      }, [user]);
+      
+    
+    
+    // Deletar Item na base de dados
+    const excluirConsulta = async (id) => {
+        if (!user) {
+          console.log("Usuário não autenticado. Não é possível excluir consulta.");
+          return;
+        }
+      
+        try {
+          const userDocRef = doc(db, 'usuarios', user.uid);
+          const userDocSnapshot = await getDoc(userDocRef);
+      
+          if (userDocSnapshot.exists()) {
+            const userData = userDocSnapshot.data();
+      
+            if (userData.consultas) {
+              // Verifique se a consulta com o ID especificado existe no array
+              const consultaIndex = userData.consultas.findIndex((consulta) => consulta.id === id);
+      
+              if (consultaIndex !== -1) {
+                // Remova a consulta com o ID correspondente
+                userData.consultas.splice(consultaIndex, 1);
+      
+                // Atualize o documento do usuário no banco de dados
+                await setDoc(userDocRef, userData);
+                console.log("Consulta excluída com sucesso!");
+      
+                // Atualize o estado 'consultas' com as consultas do usuário, removendo a consulta excluída
+                setConsultas(userData.consultas);
+              } else {
+                console.log("Consulta com o ID especificado não encontrada.");
+              }
+            } else {
+              console.log("Nenhuma consulta encontrada para o usuário.");
+            }
+          } else {
+            console.log("Documento do usuário não encontrado.");
+          }
+        } catch (error) {
+          console.error("Erro ao excluir consulta:", error);
+        }
+      };
+      
+    
 
   return (
     <>
@@ -197,10 +279,10 @@ function ConsultaForm() {
                 </h1>
             )}
 
-            <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
+            <div id='proximas_consultas' className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                 {consultas.map((consulta, index) => (
                 <div key={index} className='consulta-item relative'>
-                    <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-96 h-100 p-5'>
+                    <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
                         <ul className='mt-5'>
                             <li>
                                 <p className='mont text-black text-3xl text-normal leading-10'>
@@ -241,10 +323,10 @@ function ConsultaForm() {
                         Histórico de Consultas
                     </h1>
 
-                    <div className='flex flex-wrap justify-center items-center gap-20 mt-5'>
+                    <div id='historico_consultas' className='flex flex-wrap justify-center items-center gap-20 mt-5'>
                         {consultasPassadas.map((consulta, index) => (
                         <div key={index} className='consulta-item relative'>
-                            <div className='resocel flex flex-col bg-[#8EBF9F] rounded-3xl w-100 h-100 p-5'>
+                            <div className='resocel flex flex-col bg-[#8EBF9F] rounded-3xl w-[40rem] h-[20rem] p-5'>
                                 <ul className='mt-5'>
                                     <li>
                                     <p className='mont text-black text-3xl text-normal leading-10'>

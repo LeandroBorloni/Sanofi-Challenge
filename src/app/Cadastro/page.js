@@ -2,15 +2,20 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import './global.css';
- 
+import { useRouter } from 'next/navigation';
+
 import {db} from '@/app/firebase';
-import { collection, addDoc} from "firebase/firestore";
+import { collection, addDoc, doc, setDoc} from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 import TermoUso from '@/components/TermoUso.jsx';
 
 
 export default function Cadastro() {
+
+    const { push } = useRouter()
+
+    
     const handleChange = (event) => {
         setMedicos(event.target.value);
     };
@@ -64,42 +69,7 @@ export default function Cadastro() {
 
     
 
-    const addUsuario = async (e) => {
-        console.log("Função addUsuario chamada");
-        
-        e.preventDefault();
     
-        if (validateFormUsuario()) {
-            
-            try {
-                const docRef = await addDoc(collection(db, 'usuarios'), {
-                    nome: newUsuario.nome,
-                    sobrenome: newUsuario.sobrenome,
-                    dataNascimento: newUsuario.dataNascimento,
-                    genero: newUsuario.genero,
-                    email: newUsuario.email,
-                    senha: newUsuario.senha
-                });
-    
-                console.log("Document written with ID: ", docRef.id);
-    
-                setNewUsuario({
-                    nome: '',
-                    sobrenome: '',
-                    dataNascimento: '',
-                    genero: '',
-                    email: '',
-                    email2: '',
-                    senha: '',
-                    senha2: ''
-                });
-            } catch (error) {
-                console.error("Error adding document: ", error);
-            }
-        } else {
-            console.log("Formulário Inválido");
-        }
-    }
 
     const [medicos, setMedicos] = useState([])
     const [newMedico, setNewMedico] = useState({nome:'', sobrenome:'', dataNascimento:'', genero:'', email:'',email2:'',senha:'', senha2:'', crm:'' })
@@ -109,86 +79,118 @@ export default function Cadastro() {
         setIsMedico(event.target.value === "sim");
     };
 
-    const addMedico = async (e) => {
-        console.log("Função addMedico chamada");
-        e.preventDefault();
-        
-        if (validateFormMedico) {
-            try {
-                const docRef = await addDoc(collection(db, 'medicos'), {
-                    nome: newMedico.nome,
-                    sobrenome: newMedico.sobrenome,
-                    dataNascimento: newMedico.dataNascimento,
-                    genero: newMedico.genero,
-                    email: newMedico.email,
-                    senha: newMedico.senha,
-                    crm: newMedico.crm
-                });
     
-                console.log("Document written with ID: ", docRef.id);
-    
-                setNewMedico({
-                    nome: '',
-                    sobrenome: '',
-                    dataNascimento: '',
-                    genero: '',
-                    email: '',
-                    email2: '',
-                    senha: '',
-                    senha2: '',
-                    crm: ''
-                });
-            } catch (error) {
-                console.error("Error adding document: ", error);
-            }
-        }
-        else {
-            console.log("Formulário Inválido");
-        }
-    };
 
     
     //------------------------------- AUTENTICAÇÃO ---------------------------------------
     
+    //commit
+
+
+
+    //commit
     const [authError, setAuthError] = useState(null);
     const auth = getAuth();
     async function handleCadastro(e){
-        console.log("Função de autenticação chamada")
         e.preventDefault();
-
         if (validateFormMedico()||validateFormUsuario()) {
-            console.log("Passou pela validação de formulário")
-            try {
-                const userCredential = await createUserWithEmailAndPassword(auth, newUsuario.email2 || newMedico.email2, newUsuario.senha2 || newMedico.senha2);
-                const user = userCredential.user;
-                // O certo já seria chamar o addUsuario ou o AddMedico passando como parametro o user.uid,
-                // Ex: AddUsuario(user.uid) e lá no AddUsuario colocar o uid dele o mesmo do auth. Assim:
-                /* 
-                    const docRef = await addDoc(collection(db, 'usuarios'), {
-                        uid: user.uid,
+            let userCredential;
+            
+            if (isMedico) {
+                console.log("Entrou na funçãoé medico")
+                try{
+                    console.log("Email do medico"+newMedico.email2);
+                    console.log("Senha do medico"+newMedico.senha2);
+                    userCredential = await createUserWithEmailAndPassword(auth, newMedico.email2, newMedico.senha2);
+                    console.log('Médico autenticado com sucesso:', userCredential);
+                    const medicoUID = userCredential.user.uid;
+
+                    const medicoData = {
+                        uid: medicoUID,
+                        nome: newMedico.nome,
+                        sobrenome: newMedico.sobrenome,
+                        dataNascimento: newMedico.dataNascimento,
+                        genero: newMedico.genero,
+                        email: newMedico.email,
+                        senha: newMedico.senha,
+                        crm: newMedico.crm
+                    };
+
+                    const medicoDocRef = doc(db, 'medicos', medicoUID);
+                    await setDoc(medicoDocRef, medicoData);
+                    setNewMedico({
+                        nome: '',
+                        sobrenome: '',
+                        dataNascimento: '',
+                        genero: '',
+                        email: '',
+                        email2: '',
+                        senha: '',
+                        senha2: '',
+                        crm: ''
+                    });
+                    console.log('Cadastro bem-sucedido. Redirecionando para a página de login...');
+                    push('/LoginMedico');
+                }
+                catch (error) {
+                    if (error.code === 'auth/invalid-email') {
+                        setAuthError('Endereço de e-mail inválido. Verifique o formato do e-mail.');
+                    } else if (error.code === 'auth/weak-password') {
+                        setAuthError('A senha é muito fraca. Use uma senha mais segura.');
+                    } else {
+                        setAuthError('Erro desconhecido: ' + error.message);
+                    }
+                    console.error('Erro de autenticação:', error);
+                }
+                
+            } else {
+                try{
+                    
+                    userCredential = await createUserWithEmailAndPassword(auth, newUsuario.email2, newUsuario.senha2);
+                    console.log('Usuário autenticado com sucesso:', userCredential);
+                    const usuarioUID = userCredential.user.uid;
+
+                    const usuarioData = {
+                        uid: usuarioUID,
                         nome: newUsuario.nome,
                         sobrenome: newUsuario.sobrenome,
                         dataNascimento: newUsuario.dataNascimento,
                         genero: newUsuario.genero,
                         email: newUsuario.email,
                         senha: newUsuario.senha
+                    };
+
+                    const usuarioDocRef = doc(db, 'usuarios', usuarioUID);
+                    await setDoc(usuarioDocRef, usuarioData);
+
+                    setNewUsuario({
+                        nome: '',
+                        sobrenome: '',
+                        dataNascimento: '',
+                        genero: '',
+                        email: '',
+                        email2: '',
+                        senha: '',
+                        senha2: ''
                     });
-                */
-                console.log('Usuário autenticado com sucesso:', user);
-            } catch (error) {
-                if (error.code === 'auth/invalid-email') {
-                    setAuthError('Endereço de e-mail inválido. Verifique o formato do e-mail.');
-                } else if (error.code === 'auth/weak-password') {
-                    setAuthError('A senha é muito fraca. Use uma senha mais segura.');
-                } else {
-                    setAuthError('Erro desconhecido: ' + error.message);
+                    console.log('Cadastro bem-sucedido. Redirecionando para a página de login...');
+                    push('/LoginPaciente');
+                }   
+                catch (error) {
+                    if (error.code === 'auth/invalid-email') {
+                        setAuthError('Endereço de e-mail inválido. Verifique o formato do e-mail.');
+                    } else if (error.code === 'auth/weak-password') {
+                        setAuthError('A senha é muito fraca. Use uma senha mais segura.');
+                    } else {
+                        setAuthError('Erro desconhecido: ' + error.message);
+                    }
+                    console.error('Erro de autenticação:', error);
                 }
-                console.error('Erro de autenticação:', error);
             }
         } else {
             console.log("Erro no Form")
             setAuthError('Por favor, preencha os campos de email e senha.');
-        }
+        }     
       };
     return (
         <>
@@ -216,12 +218,8 @@ export default function Cadastro() {
                                         onChange={(e) => {
                                             if (isMedico) {
                                                 setNewMedico({ ...newMedico, nome: e.target.value });
-                                                console.log("Novo valor de newMedico.nome:", e.target.value);
-                                                console.log("Estado newMedico atualizado:", newMedico);
                                             } else {
                                                 setNewUsuario({ ...newUsuario, nome: e.target.value });
-                                                console.log("Novo valor de newUsuario.nome:", e.target.value);
-                                                console.log("Estado newUsuario atualizado:", newUsuario);
                                             }
                                         }}
                                         required
@@ -307,6 +305,8 @@ export default function Cadastro() {
                                         onChange={(e) => {
                                             if (isMedico) {
                                                 setNewMedico({ ...newMedico, email2: e.target.value });
+                                                console.log("Novo valor de newMedico.email2:", e.target.value);
+                                                console.log("Estado newMedico atualizado:", newMedico);
                                             } else {
                                                 setNewUsuario({ ...newUsuario, email2: e.target.value });
                                             }
@@ -374,16 +374,11 @@ export default function Cadastro() {
                             <TermoUso></TermoUso>
                             <div className="flex flex-col justify-center items-center mt-56">
                                 <p className="textocriarconta underline-2 hover:underline">Já tem uma conta?</p>
-                                <button
-                                    className="botaologin-cadastro mt-5 bg-[#D3A7D9] flex items-center justify-center"
-                                    onClick={isMedico ? addMedico : addUsuario}
-                                >
-                                    <span className="mont text-black font-medium text-2xl">Cadastrar</span>
-                                </button>
+                               
                                 <Link href="./Login">
                                     <button className="botaologin-cadastro mt-5 bg-[#D3A7D9] flex items-center justify-center"
                                             onClick={handleCadastro}>
-                                        <span className="mont text-black font-medium text-2xl">Login</span>
+                                        <span className="mont text-black font-medium text-2xl">Cadastrar</span>
                                     </button>
                                 </Link>
                             </div>

@@ -8,7 +8,7 @@ import Form from '@/components/ConsultaForm.jsx';
 import Upload from '@/components/FileUpload.jsx';
 import { DocumentIcon } from '@heroicons/react/24/outline'
 import { DocumentPlusIcon } from '@heroicons/react/24/outline'
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function ExamesEConsultas() {
     
@@ -54,6 +54,25 @@ export default function ExamesEConsultas() {
         updatedPdfFiles.splice(index, 1);
         setPdfFiles(updatedPdfFiles);
     };
+
+// ---------------------------------- FIREBASE -------------------------------------------
+const [user, setUser] = useState(null);
+useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (authUser) => {
+      setUser(authUser); // Define o usuário no estado se estiver autenticado
+      if (authUser) {
+        console.log("Email do usuário:", authUser.email);
+        console.log("Email do usuário:", authUser.uid);
+
+      } else {
+        console.log("Usuário não autenticado");
+      }
+    });
+  }, []);
+
+    
+
     return (
         <>
         <section className='flex flex-col'>
@@ -76,7 +95,7 @@ export default function ExamesEConsultas() {
             <h1 className='mont text-black font-medium text-4xl mt-20 ml-12'>
                 Registrar próxima Consulta
             </h1>
-            <Form></Form>
+            <Form user={user} ></Form>
             <h1 className='uploadcel mont text-black font-medium text-4xl mt-20 ml-12 text-center'>
                 Upload de exames
             </h1>

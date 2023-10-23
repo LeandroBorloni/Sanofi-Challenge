@@ -7,31 +7,28 @@ export default function Metas() {
     const imagem1 = '/images/CheckBox.svg'
     const imagem2 = '/images/CheckBox_Checked.svg'
 
-    const [imagemAtual, setImagemAtual] = useState(imagem1);
-    const [imagemAtual2, setImagemAtual2] = useState(imagem1);
-    const [imagemAtual3, setImagemAtual3] = useState(imagem1);
+    const [selectedImages, setSelectedImages] = useState({
+        1: { imagem: imagem1, atividades: [] },
+        2: { imagem: imagem1, atividades: [] },
+        3: { imagem: imagem1, atividades: [] },
+        4: { imagem: imagem1, atividades: [] },
+        5: { imagem: imagem1, atividades: [] },
+        6: { imagem: imagem1, atividades: [] },
+        7: { imagem: imagem1, atividades: [] },
+    });
 
-    const trocarImagem = () => {
-        if (imagemAtual === imagem1) {
-            setImagemAtual(imagem2);
-        } else {
-            setImagemAtual(imagem1);
-        }
-    };
+    const trocarImagem = (dia) => {
+        setSelectedImages((prevSelected) => {
+            const prevDia = prevSelected[dia] || { imagem: imagem1, atividades: [] };
 
-    const trocarImagem2 = () => {
-        if (imagemAtual2 === imagem1) {
-            setImagemAtual2(imagem2);
-        } else {
-            setImagemAtual2(imagem1);
-        }
-    };
-    const trocarImagem3 = () => {
-        if (imagemAtual3 === imagem1) {
-            setImagemAtual3(imagem2);
-        } else {
-            setImagemAtual3(imagem1);
-        }
+            return {
+                ...prevSelected,
+                [dia]: {
+                    ...prevDia,
+                    imagem: prevDia.imagem === imagem1 ? imagem2 : imagem1,
+                },
+            };
+        });
     };
 
     const [metas, setMetas] = useState([]);
@@ -44,15 +41,18 @@ export default function Metas() {
     }, []);
     return (
         <div className='divcelmetas flex flex-col text-black gap-8 justify-center ml-6 mt-10 mr-2'>
-            {metas && metas.map((meta, index) => (<div className='flex gap-2'>
-                <img
-                    src={imagemAtual}
-                    alt="Descrição da imagem"
-                    className="cursor-pointer"
-                    onClick={trocarImagem}
-                />
-                <p key={index} className='textocel mont text-black text-2xl text-normal leading-10'>{meta.days}: {meta.activity}</p>
-            </div>))}
+                {metas && metas.map((meta, index) => (                    
+                <div className='flex gap-2' key={index}>
+                    <img
+                        src={(selectedImages[meta.days] || {}).imagem}
+                        alt="Descrição da imagem"
+                        className="cursor-pointer"
+                        onClick={() => trocarImagem(meta.days)}
+                    />
+                    <p className='textocel mont text-black text-2xl text-normal leading-10'>
+                        {meta.days}: {meta.activity}
+                    </p>
+                </div>))}
         </div>
     );
 }

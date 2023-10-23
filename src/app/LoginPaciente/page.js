@@ -4,6 +4,7 @@ import Link from 'next/link';
 import './global.css';
 import { useRouter } from 'next/navigation';
 import toast from "react-hot-toast";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginPaciente() {
     const [email, setEmail] = useState("")
@@ -11,12 +12,16 @@ export default function LoginPaciente() {
     const { push } = useRouter()
 
     function login(e) {
-        e.preventDefault()
-        if(email == 'teste@sanofi.com.br' && senha == '123'){
-            push("/HomePaciente")
-        } else {
-            toast.error('Dados inválidos')
-        }
+        e.preventDefault();
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, senha)
+            .then((userCredential) => {
+                push("/HomePaciente");
+            })
+            .catch((error) => {
+                console.error(error); // Adicione esta linha para ver o erro no console
+                toast.error('Dados inválidos');
+            });
     }
     return (
         <>
