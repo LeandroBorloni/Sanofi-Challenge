@@ -376,7 +376,7 @@ export default function Cadastro() {
                                 <p className="textocriarconta underline-2 hover:underline">Já tem uma conta?</p>
                                
                                 <Link href="./Login">
-                                    <button className="botaologin-cadastro mt-5 bg-[#D3A7D9] flex items-center justify-center"
+                                    <button className="botaologin-cadastro mt-5 bg-[#D3A7D9] flex items-center justify-center mb-20"
                                             onClick={handleCadastro}>
                                         <span className="mont text-black font-medium text-2xl">Cadastrar</span>
                                     </button>

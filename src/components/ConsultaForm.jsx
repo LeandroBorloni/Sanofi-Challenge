@@ -32,11 +32,12 @@ function ConsultaForm({user}) {
         const dataConsultaDate = new Date(dataConsulta);
          const dataAtual = new Date();
       
-        if (dataConsultaDate > dataAtual) {
+         if (dataConsultaDate > dataAtual) {
           setConsultasProximas([...consultasProximas, novaConsulta]);
         } else {
           setConsultasPassadas([...consultasPassadas, novaConsulta]);
         }
+        
       
         limparCampos(); // Limpa os campos após adicionar a consulta
       }
@@ -70,8 +71,25 @@ function ConsultaForm({user}) {
                 setConsultasPassadas(updatedConsultasPassadas);
             }
         };
-        
-        
+    function adicionarAoArray(novaConsulta) {
+      console.log("Entramos na fução adicionarAoArray")
+      
+    
+      const dataConsultaDate = new Date(dataConsulta);
+       const dataAtual = new Date();
+    
+      if (dataConsultaDate > dataAtual) {
+        setConsultasProximas([...consultasProximas, novaConsulta]);
+        console.log("Consultas Proxmias Array:")
+        console.log(consultasProximas)
+      } else {
+        setConsultasPassadas([...consultasPassadas, novaConsulta]);
+        console.log("Consultas Passadas Array:")
+        console.log(consultasPassadas)
+      }
+    
+      limparCampos(); // Limpa os campos após adicionar a consulta
+    }
     
        
   
@@ -141,8 +159,24 @@ function ConsultaForm({user}) {
               const userData = userDocSnapshot.data();
       
               if (userData.consultas) {
+                console.log(userData.consultas);
                 setConsultas(userData.consultas);
-              } else {
+              
+                userData.consultas.forEach((consulta) => {
+                  adicionarAoArray({
+                    preventDefault: () => {},
+                    target: {
+                      data: consulta.data,
+                      crm: consulta.crm,
+                      nome: consulta.nome,
+                      especialidade: consulta.especialidade,
+                      endereco: consulta.endereco,
+                      obs: consulta.obs,
+                    },
+                  });
+                });
+              }
+               else {
                 setConsultas([]); // Defina um array vazio se o usuário não tiver consultas
               }
             } else {

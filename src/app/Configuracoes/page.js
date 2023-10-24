@@ -9,7 +9,14 @@ export default function Configuracoes() {
     const accordeonConfig = [
         {
             pergunta: "Meus dados cadastrais",
-            resposta: "Teste" 
+            resposta: 
+            <>
+                <Link href='./Perfil' className='flex items-center justify-center mt-2 mb-2'>
+                    <div className='botaovoltar bg-[#AF75BF] flex items-center justify-center'>
+                        <span className='mont text-black font-medium text-xl'>Ver dados</span>
+                    </div>
+                </Link>
+            </> 
         },        
         {
             pergunta: "Políticas de privacidade",

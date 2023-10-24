@@ -224,7 +224,7 @@ const WeeklyCalendar = () => {
             </select>
 
             <select
-              className='bg-[#7AA188] rounded-t-3xl w-1/3 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
+              className='respcheckcel bg-[#7AA188] rounded-t-3xl w-1/3 flex justify-between items-center text-white mont text-2xl h-auto text-center p-4'
               onChange={(e) => handleSpiritualActivitySelect(e.target.value)}
             >
               <option className='bg-white text-black'>Saúde Espiritual</option>

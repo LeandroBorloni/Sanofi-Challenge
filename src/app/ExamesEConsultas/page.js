@@ -55,21 +55,21 @@ export default function ExamesEConsultas() {
         setPdfFiles(updatedPdfFiles);
     };
 
-// ---------------------------------- FIREBASE -------------------------------------------
-const [user, setUser] = useState(null);
-useEffect(() => {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (authUser) => {
-      setUser(authUser); // Define o usuário no estado se estiver autenticado
-      if (authUser) {
-        console.log("Email do usuário:", authUser.email);
-        console.log("Email do usuário:", authUser.uid);
+    // ---------------------------------- FIREBASE -------------------------------------------
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (authUser) => {
+        setUser(authUser); // Define o usuário no estado se estiver autenticado
+        if (authUser) {
+            console.log("Email do usuário:", authUser.email);
+            console.log("Email do usuário:", authUser.uid);
 
-      } else {
-        console.log("Usuário não autenticado");
-      }
-    });
-  }, []);
+        } else {
+            console.log("Usuário não autenticado");
+        }
+        });
+    }, []);
 
     
 

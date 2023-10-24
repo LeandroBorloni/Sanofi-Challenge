@@ -33,6 +33,43 @@
         gap: 10rem 5rem;
         font-size: 1.2rem;
     }
+
+    .calendariocelresp {
+        display: flex;
+        align-items: center; /* Centraliza os elementos na coluna */
+    }
+
+    .calendariocelresp th,
+    .calendariocelresp td {
+        box-sizing: border-box;
+        width: 100%; /* Ocupa a largura total disponível */
+        max-width: none; /* Remove a largura máxima */
+        white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+    }
+
+    .calendariocelresp thead {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; /* Espaçamento uniforme entre os dias da semana */
+        width: 100%; /* Ocupa a largura total da tela */
+    }
+
+    .calendariocelresp th {
+        flex: 1; /* Distribui o espaço igualmente entre os dias da semana */
+        padding: 4.7rem 2rem;
+    }
+
+    .calendariocelresp tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; /* Espaçamento uniforme entre as células */
+        width: 100%; /* Ocupa a largura total da tela */
+    }
+
+    .calendariocelresp td {
+        flex: 1; /* Distribui o espaço igualmente entre as células */
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 425px) {
@@ -65,19 +102,59 @@
         height: 100%;
     }
 
+    .calendariocel {
+        display: inline; /* Altera para bloco para empilhar em telas pequenas */
+    }
+
     .bgcalencel {
-        width: 50%;
+        width: 100%; /* Ocupa a largura total na tela pequena */
     }
 
     .buttoncelcalend {
         margin-left: 0;
-    }
-
-    .calendariocel {
-        display: inline;
+        margin-top: 1rem; /* Adiciona espaço superior para melhorar a aparência */
     }
 
     .respcheckcel {
         margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .calendariocelresp {
+        display: flex;
+        align-items: center; /* Centraliza os elementos na coluna */
+    }
+
+    .calendariocelresp th,
+    .calendariocelresp td {
+        box-sizing: border-box;
+        width: 100%; /* Ocupa a largura total disponível */
+        max-width: none; /* Remove a largura máxima */
+        white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+    }
+
+    .calendariocelresp thead {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; /* Espaçamento uniforme entre os dias da semana */
+        width: 100%; /* Ocupa a largura total da tela */
+    }
+
+    .calendariocelresp th {
+        flex: 1; /* Distribui o espaço igualmente entre os dias da semana */
+        padding: 4.7rem 2rem;
+    }
+
+    .calendariocelresp tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; /* Espaçamento uniforme entre as células */
+        width: 100%; /* Ocupa a largura total da tela */
+    }
+
+    .calendariocelresp td {
+        flex: 1; /* Distribui o espaço igualmente entre as células */
+        box-sizing: border-box;
+        padding: 5rem 4rem
     }
 }

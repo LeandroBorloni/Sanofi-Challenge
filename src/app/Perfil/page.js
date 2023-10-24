@@ -33,11 +33,6 @@ export default function Perfil() {
                     Dados cadastrais
                 </h1>
                 <PerfilForm></PerfilForm>
-                <div className='flex items-center justify-center mt-12'>
-                    <button className='botaovoltar bg-[#949494] flex items-center justify-center'>
-                        <span className='mont text-black font-medium text-xl'>Editar Perfil</span>
-                    </button>
-                </div>
                 <Link href='./HomePaciente' className='flex items-center justify-center mt-16 mb-20'>
                     <div className='botaovoltar bg-[#D3A7D9] flex items-center justify-center'>
                         <span className='mont text-black font-medium text-xl'>Voltar</span>
