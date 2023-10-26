@@ -9,6 +9,7 @@ import { collection, addDoc, doc, setDoc} from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 import TermoUso from '@/components/TermoUso.jsx';
+import toast from 'react-hot-toast';
 
 
 export default function Cadastro() {
@@ -97,12 +98,8 @@ export default function Cadastro() {
             let userCredential;
             
             if (isMedico) {
-                console.log("Entrou na funçãoé medico")
                 try{
-                    console.log("Email do medico"+newMedico.email2);
-                    console.log("Senha do medico"+newMedico.senha2);
                     userCredential = await createUserWithEmailAndPassword(auth, newMedico.email2, newMedico.senha2);
-                    console.log('Médico autenticado com sucesso:', userCredential);
                     const medicoUID = userCredential.user.uid;
 
                     const medicoData = {
@@ -129,7 +126,7 @@ export default function Cadastro() {
                         senha2: '',
                         crm: ''
                     });
-                    console.log('Cadastro bem-sucedido. Redirecionando para a página de login...');
+                    toast.success('Cadastro bem-sucedido. Redirecionando para a página de login...');
                     push('/LoginMedico');
                 }
                 catch (error) {
@@ -140,14 +137,13 @@ export default function Cadastro() {
                     } else {
                         setAuthError('Erro desconhecido: ' + error.message);
                     }
-                    console.error('Erro de autenticação:', error);
+                    toast.error('Erro de autenticação:', error);
                 }
                 
             } else {
                 try{
                     
                     userCredential = await createUserWithEmailAndPassword(auth, newUsuario.email2, newUsuario.senha2);
-                    console.log('Usuário autenticado com sucesso:', userCredential);
                     const usuarioUID = userCredential.user.uid;
 
                     const usuarioData = {
@@ -173,7 +169,7 @@ export default function Cadastro() {
                         senha: '',
                         senha2: ''
                     });
-                    console.log('Cadastro bem-sucedido. Redirecionando para a página de login...');
+                    toast.success('Cadastro bem-sucedido. Redirecionando para a página de login...');
                     push('/LoginPaciente');
                 }   
                 catch (error) {
@@ -184,11 +180,10 @@ export default function Cadastro() {
                     } else {
                         setAuthError('Erro desconhecido: ' + error.message);
                     }
-                    console.error('Erro de autenticação:', error);
+                    toast.error('Erro de autenticação:', error);
                 }
             }
         } else {
-            console.log("Erro no Form")
             setAuthError('Por favor, preencha os campos de email e senha.');
         }     
       };

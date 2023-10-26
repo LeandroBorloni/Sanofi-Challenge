@@ -9,54 +9,124 @@ import Upload from '@/components/FileUpload.jsx';
 import { DocumentIcon } from '@heroicons/react/24/outline'
 import { DocumentPlusIcon } from '@heroicons/react/24/outline'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getStorage, ref, uploadBytes, listAll, getDownloadURL, deleteObject } from "firebase/storage";
+
 
 export default function ExamesEConsultas() {
     
     // antes de editar
     const [pdfFiles, setPdfFiles] = useState([]);
-  
-    useEffect(() => {
-        const storedPdfFiles = JSON.parse(localStorage.getItem('pdfFiles') || '[]');
-        setPdfFiles(storedPdfFiles);
-    }, []);
-    useEffect(() => {
-        localStorage.setItem('pdfFiles', JSON.stringify(pdfFiles));
-    }, [pdfFiles]);
-
-    const handleFileUpload = (file) => {
-      // Lida com o arquivo carregado aqui, por exemplo, enviando-o para o servidor
-      setPdfFiles([...pdfFiles, file]);
-    };
-    const viewPdf = (pdfFile) => {
-        if (pdfFile) {
-          // Cria uma URL temporária para visualização do PDF no navegador
-          const pdfUrl = URL.createObjectURL(pdfFile);
-          window.open(pdfUrl, '_blank');
+    const [user, setUser] = useState(null);
+    const handleFileUpload = async (file) => {
+        const auth = getAuth();
+        const user = auth.currentUser;
+        try {
+          const storage = getStorage();
+          const storageRef = ref(storage, `exames/${user.uid}/${file.name}`);
+      
+          // Realiza o upload do arquivo para o Firebase Storage
+          await uploadBytes(storageRef, file);
+      
+          // Atualize o estado dos arquivos PDF (se necessário)
+          // Como o Firebase Storage é baseado na nuvem, você pode optar por não manter o controle local dos arquivos.
+          // Se você desejar, pode adicionar um estado ou usar a referência do arquivo para exibi-los posteriormente.
+          // Se você optar por manter um controle local, você pode fazer algo como:
+           setPdfFiles([...pdfFiles, file]);
+      
+          console.log('Arquivo enviado com sucesso para o Firebase Storage');
+        } catch (error) {
+          console.error('Erro ao fazer upload do arquivo:', error);
         }
       };
+      
+      const fetchPdfFiles = async () => {
+        const auth = getAuth();
+        const user = auth.currentUser;
+        try {
+          const storage = getStorage();
+          const examesRef = ref(storage, `exames/${user.uid}`); // Referência à pasta de exames
+          // Liste todos os itens na pasta 'exames'
+          const files = await listAll(examesRef);
+            
+          // Mapeie os arquivos retornados para obter os nomes
+          const pdfFilePromises = files.items.map(async (file) => {
+            // Obtenha o URL do arquivo
+            const url = await getDownloadURL(file);
+            return {
+              name: file.name,
+              url: url, // Armazene o URL
+            };
+          });
+          
     
-    const downloadPdf = (pdfFile) => {
+          // Aguarde a conclusão de todas as promessas
+          const pdfFilesData = await Promise.all(pdfFilePromises);
+          
+          // Atualize o estado com os dados dos arquivos
+          setPdfFiles(pdfFilesData);
+        } catch (error) {
+          console.error('Erro ao buscar os arquivos do Firebase Storage:', error);
+        }
+      };
+      
+      const viewPdf = (pdfFile) => {
         if (pdfFile) {
-            // Cria um link de download para o PDF
-            const pdfUrl = URL.createObjectURL(pdfFile);
-            const a = document.createElement('a');
-            a.href = pdfUrl;
-            a.download = pdfFile.name;
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            window.open(pdfFile.url, '_blank');
         }
     };
-    const removePdf = (index) => {
-        // Remova o PDF pelo índice na matriz de PDFs
-        const updatedPdfFiles = [...pdfFiles];
-        updatedPdfFiles.splice(index, 1);
-        setPdfFiles(updatedPdfFiles);
+    
+    const downloadPdf = async (pdfFile) => {
+        if (pdfFile) {
+            try {
+                const response = await fetch(pdfFile.url);
+                const blob = await response.blob();
+    
+                const a = document.createElement('a');
+                const url = window.URL.createObjectURL(blob);
+                
+                a.href = url;
+                a.download = pdfFile.name;
+                a.style.display = 'none';
+                
+                document.body.appendChild(a);
+                a.click();
+                
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Erro ao fazer download do PDF:', error);
+            }
+        }
     };
+    
+    
+    const removePdf = async (index) => {
+        try {
+            const pdfFile = pdfFiles[index];
+            if (pdfFile) {
+                const auth = getAuth();
+                const user = auth.currentUser;
+                const storage = getStorage();
+                const fileRef = ref(storage, `exames/${user.uid}/${pdfFile.name}`);
+    
+                // Exclua o arquivo no Firebase Storage
+                await deleteObject(fileRef);
+    
+                // Remova o PDF da matriz local
+                const updatedPdfFiles = [...pdfFiles];
+                updatedPdfFiles.splice(index, 1);
+                setPdfFiles(updatedPdfFiles);
+    
+                console.log('PDF removido com sucesso do Firebase Storage');
+            }
+        } catch (error) {
+            console.error('Erro ao remover o PDF:', error);
+        }
+    };
+    
 
     // ---------------------------------- FIREBASE -------------------------------------------
-    const [user, setUser] = useState(null);
+    
     useEffect(() => {
         const auth = getAuth();
         onAuthStateChanged(auth, (authUser) => {
@@ -64,9 +134,10 @@ export default function ExamesEConsultas() {
         if (authUser) {
             console.log("Email do usuário:", authUser.email);
             console.log("Email do usuário:", authUser.uid);
-
+            fetchPdfFiles();
         } else {
             console.log("Usuário não autenticado");
+            
         }
         });
     }, []);
@@ -100,7 +171,7 @@ export default function ExamesEConsultas() {
                 Upload de exames
             </h1>
             {/* npm install react-dropzone que eu usei */}
-            {/* <div className='flex flex-col items-center justify-center'>
+             <div className='flex flex-col items-center justify-center'>
                 <Upload onFileUpload={handleFileUpload} />
                 {pdfFiles.length > 0 ? (
                     <div className='flex flex-col  gap-10 mt-10'>
@@ -113,7 +184,7 @@ export default function ExamesEConsultas() {
                                 <img src='/images/ImgPDF.svg' className='w-28'></img>
                                 <div className='flex flex-col gap-2'>
                                     <button className='mont' onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
-                                    <button className='mont' onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button>
+                                    {/* <button className='mont' onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button> */}
                                     <button className='mont' onClick={() => removePdf(index)}>Remover PDF</button>
                                 </div>
                             </li>
@@ -124,8 +195,8 @@ export default function ExamesEConsultas() {
                 ) : (
                     <p className='text-black text-xl mt-10 mb-12'>Nenhum PDF carregado.</p>
                 )}
-            </div> */}
-            {/* <DocumentPlusIcon className='text-black w-7 '></DocumentPlusIcon> */}
+            </div> 
+             {/* <DocumentPlusIcon className='text-black w-7 '></DocumentPlusIcon>  */}
             
         </section>
         </>

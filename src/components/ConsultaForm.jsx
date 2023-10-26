@@ -5,6 +5,7 @@ import { TrashIcon } from '@heroicons/react/24/outline'
 import { collection, addDoc, query, onSnapshot, deleteDoc, doc, getDoc, setDoc } from "firebase/firestore";
 
 import {db} from '../app/firebase.js';
+import toast from 'react-hot-toast';
 
 function ConsultaForm({user}) {
     const [dataConsulta, setDataConsulta] = useState('');
@@ -15,31 +16,14 @@ function ConsultaForm({user}) {
     const [obsConsulta, setObs] = useState('');
     const [consultasProximas, setConsultasProximas] = useState([]);
     const [consultasPassadas, setConsultasPassadas] = useState([]);
-    
+
     //Quando o usuário chama essa função, essa função retornaria uma div
     function cadastroConsulta(e) {
 
         e.preventDefault();
+    
       
-        const novaConsulta = {
-          dataConsulta,
-          nomeConsulta,
-          especialidadeConsulta,
-          enderecoConsulta,
-          obsConsulta,
-        };
-      
-        const dataConsultaDate = new Date(dataConsulta);
-         const dataAtual = new Date();
-      
-         if (dataConsultaDate > dataAtual) {
-          setConsultasProximas([...consultasProximas, novaConsulta]);
-        } else {
-          setConsultasPassadas([...consultasPassadas, novaConsulta]);
-        }
-        
-      
-        limparCampos(); // Limpa os campos após adicionar a consulta
+        limparCampos();
       }
       
     
@@ -71,35 +55,15 @@ function ConsultaForm({user}) {
                 setConsultasPassadas(updatedConsultasPassadas);
             }
         };
-    function adicionarAoArray(novaConsulta) {
-      console.log("Entramos na fução adicionarAoArray")
       
-    
-      const dataConsultaDate = new Date(dataConsulta);
-       const dataAtual = new Date();
-    
-      if (dataConsultaDate > dataAtual) {
-        setConsultasProximas([...consultasProximas, novaConsulta]);
-        console.log("Consultas Proxmias Array:")
-        console.log(consultasProximas)
-      } else {
-        setConsultasPassadas([...consultasPassadas, novaConsulta]);
-        console.log("Consultas Passadas Array:")
-        console.log(consultasPassadas)
-      }
-    
-      limparCampos(); // Limpa os campos após adicionar a consulta
-    }
-    
-       
-  
       //------------------------------- DATABASE ---------------------------------------
     const [consultas, setConsultas] = useState([])
     const [newConsulta, setNewConsulta] = useState({data:'', nome:'', especialidade:'',endereco:'',obs:'',crm:'' })
     // Add Item na base de dados
     const addItem = async () => {
+        console.log("Função addItem chamada ")
         if (!user) {
-          console.log("Usuário não autenticado. Não é possível adicionar consulta.");
+          toast.error("Usuário não autenticado. Não é possível adicionar consulta.");
           return;
         }
       
@@ -118,38 +82,39 @@ function ConsultaForm({user}) {
       
           if (userDocSnapshot.exists()) {
             const userData = userDocSnapshot.data();
-      
-            if (!userData.consultas) {
-              userData.consultas = [];
-            }
+            
       
             userData.consultas.push(novaConsulta);
       
             await setDoc(userDocRef, userData);
-            console.log("Consulta adicionada com sucesso!");
+            toast.success("Consulta adicionada com sucesso!");
       
             // Atualize o estado 'consultas' com as consultas do usuário
             setConsultas(userData.consultas);
-      
             setNewConsulta({ data: '', nome: '', especialidade: '', endereco: '', obs: '', crm: '' });
+            
+            const dataConsultaDate = new Date(novaConsulta.data);
+            const dataAtual = new Date();
+            if (dataConsultaDate > dataAtual) {
+              setConsultasProximas([...consultasProximas, novaConsulta]);
+            } else {
+              setConsultasPassadas([...consultasPassadas, novaConsulta]);
+            }
         } 
         else {
-            console.log("Documento do usuário não encontrado.");
+          toast.error("Documento do usuário não encontrado.");
         }
     } catch (error) {
-        console.error("Erro ao adicionar consulta:", error);
+      toast.error("Erro ao adicionar consulta:", error);
     }
       };
     
     
-    
     // Ler Item na base de dados
-
     useEffect(() => {
         if (!user) {
           return; // Não há usuário autenticado, então não há nada para buscar
         }
-      
         const fetchData = async () => {
           try {
             const userDocRef = doc(db, 'usuarios', user.uid);
@@ -159,43 +124,45 @@ function ConsultaForm({user}) {
               const userData = userDocSnapshot.data();
       
               if (userData.consultas) {
-                console.log(userData.consultas);
-                setConsultas(userData.consultas);
-              
-                userData.consultas.forEach((consulta) => {
-                  adicionarAoArray({
-                    preventDefault: () => {},
-                    target: {
-                      data: consulta.data,
-                      crm: consulta.crm,
-                      nome: consulta.nome,
-                      especialidade: consulta.especialidade,
-                      endereco: consulta.endereco,
-                      obs: consulta.obs,
-                    },
-                  });
+                const consultasProximasTemp = [];
+                const consultasPassadasTemp = [];
+      
+                userData.consultas.forEach((consulta, i) => {
+                  const dataConsultaDate = new Date(consulta.data);
+                  const dataAtual = new Date();
+      
+                  if (dataConsultaDate > dataAtual) {
+                    const consultaComId = { ...consulta, id: userDocSnapshot.id };
+                    consultasProximasTemp.push(consultaComId);
+                  } else {
+                    const consultaComId = { ...consulta, id: userDocSnapshot.id };
+                    consultasPassadasTemp.push(consultaComId);
+                  }
                 });
-              }
-               else {
+      
+                setConsultasProximas(consultasProximasTemp);
+                setConsultasPassadas(consultasPassadasTemp);
+              } else {
                 setConsultas([]); // Defina um array vazio se o usuário não tiver consultas
               }
             } else {
-              console.log("Documento do usuário não encontrado.");
+              toast.error("Documento do usuário não encontrado.");
             }
           } catch (error) {
-            console.error("Erro ao buscar consultas do usuário:", error);
+            toast.error("Erro ao buscar consultas do usuário:", error);
           }
         };
       
         fetchData(); // Chame a função fetchData para buscar os dados quando o usuário estiver disponível.
       }, [user]);
       
-    
+      
+
     
     // Deletar Item na base de dados
-    const excluirConsulta = async (id) => {
+    const excluirConsulta = async (data, nome) => {
         if (!user) {
-          console.log("Usuário não autenticado. Não é possível excluir consulta.");
+          toast.error("Usuário não autenticado. Não é possível excluir consulta.");
           return;
         }
       
@@ -207,32 +174,42 @@ function ConsultaForm({user}) {
             const userData = userDocSnapshot.data();
       
             if (userData.consultas) {
-              // Verifique se a consulta com o ID especificado existe no array
-              const consultaIndex = userData.consultas.findIndex((consulta) => consulta.id === id);
-      
-              if (consultaIndex !== -1) {
-                // Remova a consulta com o ID correspondente
-                userData.consultas.splice(consultaIndex, 1);
-      
-                // Atualize o documento do usuário no banco de dados
-                await setDoc(userDocRef, userData);
-                console.log("Consulta excluída com sucesso!");
-      
-                // Atualize o estado 'consultas' com as consultas do usuário, removendo a consulta excluída
-                setConsultas(userData.consultas);
-              } else {
-                console.log("Consulta com o ID especificado não encontrada.");
-              }
+                // Verifique se a consulta com o ID especificado existe no array
+                const consultaIndex = userData.consultas.findIndex((consulta) => consulta.data === data && consulta.nome === nome );
+                
+                if (consultaIndex !== -1) {
+                    // Remova a consulta com o ID correspondente
+                    userData.consultas.splice(consultaIndex, 1);
+        
+                    // Atualize o documento do usuário no banco de dados
+                    await setDoc(userDocRef, userData);
+        
+                    // Atualize o estado 'consultas' com as consultas do usuário, removendo a consulta excluída
+                    setConsultas(userData.consultas);
+
+                    const updatedProximas = userData.consultas.filter(
+                      (consulta) => new Date(consulta.data) > new Date()
+                    );
+                    const updatedPassadas = userData.consultas.filter(
+                        (consulta) => new Date(consulta.data) <= new Date()
+                    );
+                    setConsultasProximas(updatedProximas);
+                    setConsultasPassadas(updatedPassadas);
+
+                    toast.success("Consulta excluída com sucesso!");
+                } else {
+                    toast.error("Consulta com o ID especificado não encontrada.");
+                }
             } else {
-              console.log("Nenhuma consulta encontrada para o usuário.");
+              toast.error("Nenhuma consulta encontrada para o usuário.");
             }
-          } else {
-            console.log("Documento do usuário não encontrado.");
-          }
-        } catch (error) {
-          console.error("Erro ao excluir consulta:", error);
+        } else {
+            toast.error("Documento do usuário não encontrado.");
         }
-      };
+    } catch (error) {
+        toast.error("Erro ao excluir consulta:", error);
+    }
+};
       
     
 
@@ -307,14 +284,14 @@ function ConsultaForm({user}) {
         <div className='flex flex-col w-100% items-center justify-center'>
             
             {/* Próximas consultas */}
-            {consultas.length > 0 && (
+            {consultasProximas.length > 0 && (
                 <h1 className='mont text-3xl text-black text-center mt-10 font-medium'>
                 Próximas Consultas
                 </h1>
             )}
 
             <div id='proximas_consultas' className='flex flex-wrap justify-center items-center gap-20 mt-5'>
-                {consultas.map((consulta, index) => (
+                {consultasProximas.map((consulta, index) => (
                 <div key={index} className='consulta-item relative'>
                     <div className='resocel flex flex-col bg-[#AF75BF] rounded-3xl w-[40rem] h-[20rem] p-5'>
                         <ul className='mt-5'>
@@ -343,7 +320,7 @@ function ConsultaForm({user}) {
                             Endereço: {consulta.endereco}
                         </p>
             
-                        <TrashIcon className='text-black cursor-pointer absolute top-5 right-5 mt-2 mr-2 w-7 ' onClick={() => excluirConsulta(consulta.id)} />
+                        <TrashIcon className='text-black cursor-pointer absolute top-5 right-5 mt-2 mr-2 w-7 ' onClick={() => excluirConsulta(consulta.data, consulta.nome)} />
    
                     </div>
                 </div>
@@ -364,29 +341,29 @@ function ConsultaForm({user}) {
                                 <ul className='mt-5'>
                                     <li>
                                     <p className='mont text-black text-3xl text-normal leading-10'>
-                                        Dia: {consulta.dataConsulta}
+                                        Dia: {consulta.data}
                                     </p>
                                     </li>
                                     <li>
                                     <p className='mont text-black text-3xl text-normal leading-10'>
-                                        Médico: {consulta.nomeConsulta}
+                                        Médico: {consulta.nome}
                                     </p>
                                     </li>
                                     <li>
                                     <p className='mont text-black text-3xl text-normal leading-10'>
-                                        Especialidade: {consulta.especialidadeConsulta}
+                                        Especialidade: {consulta.especialidade}
                                     </p>
                                     </li>
                                     <li>
                                         <p className='mont text-black text-3xl text-normal leading-10'>
-                                            Observação: {consulta.obsConsulta}
+                                            Observação: {consulta.obs}
                                         </p>
                                     </li>
                                 </ul>
                                 <p className='mont text-black text-3xl text-normal text-center mt-10'>
-                                    Endereço: {consulta.enderecoConsulta}
+                                    Endereço: {consulta.endereco}
                                 </p>
-                                <TrashIcon className='text-black cursor-pointer absolute top-5 right-5 mt-2 mr-2 w-7 ' onClick={() => handleDeleteConsulta(index, "passadas")} />
+                                <TrashIcon className='text-black cursor-pointer absolute top-5 right-5 mt-2 mr-2 w-7 ' onClick={() => excluirConsulta(consulta.data, consulta.nome)} />
                             </div>
                         </div>
                         ))}
