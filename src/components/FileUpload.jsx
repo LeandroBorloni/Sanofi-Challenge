@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, listAll, getDownloadURL, deleteObject } from "firebase/storage";
+import toast from 'react-hot-toast';
 
 const FileUpload = ({ onFileUpload }) => {
   const handleFileChange = async (e) => {
@@ -23,8 +24,9 @@ const FileUpload = ({ onFileUpload }) => {
         await uploadBytes(storageRef, file);
 
         onFileUpload(file);
+        toast.success('Upload de arquivo com sucesso! Carregando...')
       } catch (error) {
-        console.error("Erro ao fazer o upload do arquivo:", error);
+        toast.error("Erro ao fazer o upload do arquivo:", error);
       }
     }
   };

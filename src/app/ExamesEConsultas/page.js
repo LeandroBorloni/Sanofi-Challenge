@@ -8,6 +8,7 @@ import Form from '@/components/ConsultaForm.jsx';
 import Upload from '@/components/FileUpload.jsx';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, listAll, getDownloadURL, deleteObject } from "firebase/storage";
+import toast from 'react-hot-toast';
 
 export default function ExamesEConsultas() {
     
@@ -18,23 +19,28 @@ export default function ExamesEConsultas() {
         const auth = getAuth();
         const user = auth.currentUser;
         try {
-          const storage = getStorage();
-          const storageRef = ref(storage, `exames/${user.uid}/${file.name}`);
-      
-          // Realiza o upload do arquivo para o Firebase Storage
-          await uploadBytes(storageRef, file);
-      
-          // Atualize o estado dos arquivos PDF (se necessário)
-          // Como o Firebase Storage é baseado na nuvem, você pode optar por não manter o controle local dos arquivos.
-          // Se você desejar, pode adicionar um estado ou usar a referência do arquivo para exibi-los posteriormente.
-          // Se você optar por manter um controle local, você pode fazer algo como:
-           setPdfFiles([...pdfFiles, file]);
-      
-          console.log('Arquivo enviado com sucesso para o Firebase Storage');
+            const storage = getStorage();
+            const storageRef = ref(storage, `exames/${user.uid}/${file.name}`);
+    
+            // Realiza o upload do arquivo para o Firebase Storage
+            const uploadTask = uploadBytes(storageRef, file);
+    
+            // Aguarde a conclusão do upload
+            await uploadTask;
+    
+            // Agora que o upload está completo, obtenha o URL do arquivo
+            const url = await getDownloadURL(storageRef);
+    
+            // Atualize o estado dos arquivos PDF
+            setPdfFiles([...pdfFiles, { name: file.name, url }]);
+            onFileUpload(file);
+            console.log('Arquivo enviado com sucesso para o Firebase Storage');
         } catch (error) {
-          console.error('Erro ao fazer upload do arquivo:', error);
+            console.error('Erro ao fazer upload do arquivo:', error);
         }
-      };
+    };
+    
+    
       
       const fetchPdfFiles = async () => {
         const auth = getAuth();
@@ -71,33 +77,7 @@ export default function ExamesEConsultas() {
           window.open(pdfFile.url, '_blank');
         }
       };
-      
-      
-    
-    // const downloadPdf = async (pdfFile) => {
-    //     if (pdfFile) {
-    //         try {
-    //             const response = await fetch(pdfFile.url);
-    //             const blob = await response.blob();
-    
-    //             const a = document.createElement('a');
-    //             const url = window.URL.createObjectURL(blob);
-                
-    //             a.href = url;
-    //             a.download = pdfFile.name;
-    //             a.style.display = 'none';
-                
-    //             document.body.appendChild(a);
-    //             a.click();
-                
-    //             window.URL.revokeObjectURL(url);
-    //             document.body.removeChild(a);
-    //         } catch (error) {
-    //             console.error('Erro ao fazer download do PDF:', error);
-    //         }
-    //     }
-    // };
-    
+          
     
     const removePdf = async (index) => {
         try {
@@ -117,9 +97,10 @@ export default function ExamesEConsultas() {
                 setPdfFiles(updatedPdfFiles);
     
                 console.log('PDF removido com sucesso do Firebase Storage');
+                toast.success('PDF removido com sucesso!')
             }
         } catch (error) {
-            console.error('Erro ao remover o PDF:', error);
+            toast.error('Erro ao remover o PDF:', error);
         }
     };
     
@@ -169,7 +150,6 @@ export default function ExamesEConsultas() {
             <h1 className='uploadcel mont text-black font-medium text-4xl mt-20 ml-12 text-center'>
                 Upload de exames
             </h1>
-            {/* npm install react-dropzone que eu usei */}
              <div className='flex flex-col items-center justify-center'>
                 <Upload onFileUpload={handleFileUpload} />
                 {pdfFiles.length > 0 ? (
@@ -183,7 +163,6 @@ export default function ExamesEConsultas() {
                                 <img src='/images/ImgPDF.svg' className='w-28'></img>
                                 <div className='flex flex-col gap-2'>
                                     <button className='mont' onClick={() => viewPdf(pdfFile)}>Visualizar PDF</button>
-                                    {/* <button className='mont' onClick={() => downloadPdf(pdfFile)}>Baixar PDF</button> */}
                                     <button className='mont' onClick={() => removePdf(index)}>Remover PDF</button>
                                 </div>
                             </li>
@@ -195,8 +174,6 @@ export default function ExamesEConsultas() {
                     <p className='text-black text-xl mt-10 mb-12'>Nenhum PDF carregado.</p>
                 )}
             </div> 
-             {/* <DocumentPlusIcon className='text-black w-7 '></DocumentPlusIcon>  */}
-            
         </section>
         </>
     )
