@@ -18,15 +18,11 @@ const FileUpload = ({ onFileUpload }) => {
           console.error('Usuário não autenticado');
           return;
         }
-        
-        const userUid = user.uid;
         const storage = getStorage();
         const storageRef = ref(storage, `exames/${user.uid}/${uploadedFile.name}`);
         
-        // Realiza o upload do arquivo para o Firebase Storage
         await uploadBytes(storageRef, uploadedFile);
-
-        // Chama a função de callback passada como prop para lidar com o upload do arquivo
+        
         onFileUpload(uploadedFile);
       } catch (error) {
         console.error("Erro ao fazer o upload do arquivo:", error);
@@ -36,8 +32,8 @@ const FileUpload = ({ onFileUpload }) => {
   
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: '.pdf', // Aceita apenas arquivos PDF
-    multiple: false, // Permite apenas um arquivo por vez
+    accept: '.pdf', 
+    multiple: false, 
   });
 
   return (
