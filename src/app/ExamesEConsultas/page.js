@@ -9,7 +9,6 @@ import Upload from '@/components/FileUpload.jsx';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, listAll, getDownloadURL, deleteObject } from "firebase/storage";
 
-
 export default function ExamesEConsultas() {
     
     // antes de editar
@@ -69,9 +68,11 @@ export default function ExamesEConsultas() {
       
       const viewPdf = (pdfFile) => {
         if (pdfFile) {
-            window.open(pdfFile.url, '_blank');
+          window.open(pdfFile.url, '_blank');
         }
-    };
+      };
+      
+      
     
     // const downloadPdf = async (pdfFile) => {
     //     if (pdfFile) {
