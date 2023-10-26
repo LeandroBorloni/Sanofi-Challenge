@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from 'react';
 import React from 'react';
 import Link from 'next/link';
@@ -5,8 +6,6 @@ import './global.css';
 import UserMenu from '@/components/UserMenu';
 import Form from '@/components/ConsultaForm.jsx';
 import Upload from '@/components/FileUpload.jsx';
-import { DocumentIcon } from '@heroicons/react/24/outline'
-import { DocumentPlusIcon } from '@heroicons/react/24/outline'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, listAll, getDownloadURL, deleteObject } from "firebase/storage";
 
@@ -74,29 +73,29 @@ export default function ExamesEConsultas() {
         }
     };
     
-    const downloadPdf = async (pdfFile) => {
-        if (pdfFile) {
-            try {
-                const response = await fetch(pdfFile.url);
-                const blob = await response.blob();
+    // const downloadPdf = async (pdfFile) => {
+    //     if (pdfFile) {
+    //         try {
+    //             const response = await fetch(pdfFile.url);
+    //             const blob = await response.blob();
     
-                const a = document.createElement('a');
-                const url = window.URL.createObjectURL(blob);
+    //             const a = document.createElement('a');
+    //             const url = window.URL.createObjectURL(blob);
                 
-                a.href = url;
-                a.download = pdfFile.name;
-                a.style.display = 'none';
+    //             a.href = url;
+    //             a.download = pdfFile.name;
+    //             a.style.display = 'none';
                 
-                document.body.appendChild(a);
-                a.click();
+    //             document.body.appendChild(a);
+    //             a.click();
                 
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-            } catch (error) {
-                console.error('Erro ao fazer download do PDF:', error);
-            }
-        }
-    };
+    //             window.URL.revokeObjectURL(url);
+    //             document.body.removeChild(a);
+    //         } catch (error) {
+    //             console.error('Erro ao fazer download do PDF:', error);
+    //         }
+    //     }
+    // };
     
     
     const removePdf = async (index) => {

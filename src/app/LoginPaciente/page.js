@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import './global.css';
 import { useRouter } from 'next/navigation';
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
+
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 
 export default function LoginPaciente() {
     const [email, setEmail] = useState("")

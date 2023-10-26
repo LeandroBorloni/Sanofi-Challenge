@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
-import { useDropzone } from 'react-dropzone';
-import { DocumentPlusIcon } from '@heroicons/react/24/outline';
+"use client"
+import React, { useCallback  } from 'react';
+// import { useDropzone } from 'react-dropzone';
 import '../app/ExamesEConsultas/global.css';
 
 import { getStorage, ref, uploadBytes } from "firebase/storage";
@@ -30,15 +30,15 @@ const FileUpload = ({ onFileUpload }) => {
     }
   }, [onFileUpload]);
   
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    accept: '.pdf', 
-    multiple: false, 
-  });
+  // const { getRootProps, getInputProps } = useDropzone({
+  //   onDrop,
+  //   accept: '.pdf', 
+  //   multiple: false, 
+  // });
 
   return (
-    <div {...getRootProps()} className="upcelbutton flex bg-[#A65C41] rounded-3xl w-1/2 h-[7rem] p-5 mt-10 cursor-pointer gap-5">
-      <input {...getInputProps()} />
+    <div className="upcelbutton flex bg-[#A65C41] rounded-3xl w-1/2 h-[7rem] p-5 mt-10 cursor-pointer gap-5">
+      {/* <input/> */}
       <p className='textupcel mont text-black font-medium text-3xl ml-12 text-center'>Clique aqui para adicionar seus exames em PDF!</p>
       <img src="/images/Upload.svg"/>
     </div>
@@ -46,3 +46,6 @@ const FileUpload = ({ onFileUpload }) => {
 };
 
 export default FileUpload;
+
+// {...getInputProps()} 
+// {...getRootProps()} 

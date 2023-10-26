@@ -69,7 +69,7 @@ const WeeklyCalendar = () => {
     setSpiritualActivityDays([]);
   };
 
-  const renderSelectOptions = (options) => {
+  const renderSelectOptions = (options) => { // 
     return options.map((option) => (
       <option key={option} className='bg-white text-black' value={option}>
         {option}
