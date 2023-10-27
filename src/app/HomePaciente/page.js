@@ -129,10 +129,10 @@ export default function HomePaciente() {
                                     )}
                                 </div> 
                         </div>
-                        <h3 className='mont text-black font-light text-2xl mt-5 ml-8'>Gostaria de modificar suas consultas?</h3>
+                        {/* <h3 className='mont text-black font-light text-2xl mt-5 ml-8'>Gostaria de modificar suas consultas?</h3>
                         <div className='lg:mt-10 flex justify-center items-center bg-[#FCECF5] botaocard rounded-3xl ml-72'>
                             <span className='text-black text-normal text-center text-2xl p-1'>Modificar Consulta</span>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className='flex flex-row-reverse'>
