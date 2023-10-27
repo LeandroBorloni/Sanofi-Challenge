@@ -32,12 +32,12 @@ const FileUpload = ({ onFileUpload }) => {
   };
 
   return (
-    <div className="upcelbutton flex bg-[#A65C41] rounded-3xl w-1/2 h-[7rem] p-5 mt-10 cursor-pointer gap-5">
-      <label className="textupcel mont text-black font-medium text-3xl ml-12 text-center">
+    <div className="upcelbutton flex bg-[#A65C41] rounded-3xl w-1/2 h-100 p-5 mt-10 cursor-pointer gap-5 justify-center ">
+      <label className="textupcel mont text-black font-medium text-3xl">
         Clique aqui para adicionar seus exames em PDF!
         <input type="file" accept=".pdf" style={{ display: 'none' }} onChange={handleFileChange} />
       </label>
-      <img src="/images/Upload.svg" alt="Upload Icon" />
+      {/* <img src="../images/upload.svg" alt="Upload Icon" /> */}
     </div>
   );
 };

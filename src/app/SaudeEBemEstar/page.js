@@ -41,14 +41,14 @@ export default function SaudeEBemEstar() {
                     <p className='mont text-black text-center text-2xl italic px-8'>Monte sua rotina de forma personalizada para o seu dia-a-dia! Estabeleça metas diárias e semanais para manter sua saúde integrada. Física, mental e espiritual.</p>
                     <img src='/images/LineCadastro.svg'></img>
                 </div>
-                <div className='metascel flex flex-col w-1/3 ml-10 mt-20'>
+                {/* <div className='metascel flex flex-col w-1/3 ml-10 mt-20'>
                     <div className=' bg-[#7AA188] rounded-t-3xl h-16'>
                         <h2 className='mont text-normal text-black text-center text-3xl leading-10 mt-2'>Suas metas são:</h2>
                     </div>
                     <div className='metasbgcel flex flex-col bg-[#8EBF9F] rounded-b-3xl h-[20rem]'>
                         <Metas></Metas>
                     </div>
-                </div>
+                </div> */}
 
                 <div className='flex flex-col justify-center items-center mt-20'>
                     <h1 className='metastextcel mont text-black text-3xl'>Adicione metas para seus dias!</h1>

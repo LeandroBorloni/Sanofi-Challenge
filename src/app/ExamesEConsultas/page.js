@@ -147,7 +147,7 @@ export default function ExamesEConsultas() {
                 Registrar próxima Consulta
             </h1>
             <Form user={user} ></Form>
-            <h1 className='uploadcel mont text-black font-medium text-4xl mt-20 ml-12 text-center'>
+            <h1 className='uploadcel mont text-black font-medium text-4xl mt-20 text-center'>
                 Upload de exames
             </h1>
              <div className='flex flex-col items-center justify-center'>

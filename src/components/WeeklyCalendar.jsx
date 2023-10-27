@@ -14,8 +14,11 @@ const WeeklyCalendar = () => {
   const calendarRef = useRef(null);
   const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
   const [selectedPanel, setSelectedPanel] = useState('Saúde Física');
+  const [selectedPhysicalActivity, setSelectedPhysicalActivity] = useState(null);
+  const [physicalActivityDays, setPhysicalActivityDays] = useState([]);
+  const [selectedSpiritualActivity, setSelectedSpiritualActivity] = useState(null);
 
-  useEffect(() => {
+  useEffect(() => { 
     if (selectedActivities){
       localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities))
     }
@@ -77,11 +80,7 @@ const WeeklyCalendar = () => {
     ));
   };
 
-  const [selectedPhysicalActivity, setSelectedPhysicalActivity] = useState(null);
-  const [physicalActivityDays, setPhysicalActivityDays] = useState([]);
-
-  const [selectedSpiritualActivity, setSelectedSpiritualActivity] = useState(null);
-
+  
   const handlePhysicalActivitySelect = (activity) => {
     setSelectedPanel('Saúde Física');
     setSelectedSpiritualActivity(null);

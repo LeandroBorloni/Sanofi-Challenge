@@ -4,8 +4,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 export default function Metas() {
-    const imagem1 = '/images/CheckBox.svg'
-    const imagem2 = '/images/CheckBox_Checked.svg'
+    const imagem1 = '../images/CheckBox.svg'
+    const imagem2 = '../images/CheckBox_Checked.svg'
 
     const [selectedImages, setSelectedImages] = useState({
         1: { imagem: imagem1, atividades: [] },
