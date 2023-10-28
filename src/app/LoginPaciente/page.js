@@ -17,57 +17,27 @@ export default function LoginPaciente() {
     const [loading, setLoading] = useState(false); // Novo estado para controlar o loading
     const { push } = useRouter()
     const auth = getAuth();
-    
-    useEffect(() => {
-        onAuthStateChanged(auth, (authUser) => {
-            setUser(authUser);
-    
-            if (authUser) {
-                console.log("Email do usuário:", authUser.email);
-                console.log("UID do usuário:", authUser.uid);
-                setEmail(authUser.email);
-                // Agora que o usuário está autenticado, você pode chamar a lógica de login aqui se necessário.
-            } else {
-                console.log("Usuário não autenticado");
-            }
-        });
-    }, []);
-    
+
     function login(e) {
         e.preventDefault();
-    
-        // Verifica se o usuário está autenticado antes de tentar fazer login
-        if (user) {
-            // Iniciar animação de loading
-            setLoading(true);
-    
-            signInWithEmailAndPassword(auth, email, senha)
-                .then((userCredential) => {
-                    push("/HomePaciente");
-                })
-                .catch((error) => {
-                    console.error(error);
-                    toast.error('Dados inválidos');
-                })
-                .finally(() => {
-                    // Parar animação de loading, tanto em caso de sucesso quanto em caso de erro
-                    setLoading(false);
-                });
-        } else {
-            console.log("Usuário não autenticado. Aguarde até que o usuário seja autenticado.");
-            // Pode exibir uma mensagem para o usuário informando que a autenticação ainda está em andamento.
-        }
+        signInWithEmailAndPassword(auth, email, senha)
+            .then((userCredential) => {
+                push("/HomePaciente");
+            })
+            .catch((error) => {
+                console.error(error);
+                toast.error('Dados inválidos');
+            })
+            .finally(() => {
+                // Parar animação de loading, tanto em caso de sucesso quanto em caso de erro
+                setLoading(false);
+            });
     }
-    // async function resetPassword() {
-    //     try {
-    //         await sendPasswordResetEmail(user, user.email);
-    //         toast.success('E-mail de redefinição de senha enviado. Verifique sua caixa de entrada.');
-    //     } catch (error) {
-    //         console.error(error);
-    //         toast.error(`Erro ao enviar o e-mail de redefinição de senha: ${error.message}`);
-    //     }
-    // }
-    
+
+    function resetPassword() {
+        toast.error('Funcionalidade em breve')
+    }
+
     return (
         <>
             <section className='flex flex-col'>
@@ -101,7 +71,7 @@ export default function LoginPaciente() {
                                 </button>
                             </form>
 
-                            <span className='mt-28 textosenha underline-2 hover:underline'>
+                            <span className='mt-28 textosenha underline-2 hover:underline hover:cursor-pointer' onClick={resetPassword} >
                                 Esqueceu a senha?
                             </span>
 
