@@ -58,15 +58,15 @@ export default function LoginPaciente() {
             // Pode exibir uma mensagem para o usuário informando que a autenticação ainda está em andamento.
         }
     }
-    async function resetPassword() {
-        try {
-            await sendPasswordResetEmail(user, user.email);
-            toast.success('E-mail de redefinição de senha enviado. Verifique sua caixa de entrada.');
-        } catch (error) {
-            console.error(error);
-            toast.error(`Erro ao enviar o e-mail de redefinição de senha: ${error.message}`);
-        }
-    }
+    // async function resetPassword() {
+    //     try {
+    //         await sendPasswordResetEmail(user, user.email);
+    //         toast.success('E-mail de redefinição de senha enviado. Verifique sua caixa de entrada.');
+    //     } catch (error) {
+    //         console.error(error);
+    //         toast.error(`Erro ao enviar o e-mail de redefinição de senha: ${error.message}`);
+    //     }
+    // }
     
     return (
         <>
@@ -101,7 +101,7 @@ export default function LoginPaciente() {
                                 </button>
                             </form>
 
-                            <span className='mt-28 textosenha underline-2 hover:underline' onClick={resetPassword}>
+                            <span className='mt-28 textosenha underline-2 hover:underline'>
                                 Esqueceu a senha?
                             </span>
 
