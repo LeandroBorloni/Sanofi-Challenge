@@ -82,8 +82,11 @@ function ConsultaForm({user}) {
       
           if (userDocSnapshot.exists()) {
             const userData = userDocSnapshot.data();
+
+            if (!userData.consultas) {
+              userData.consultas = [];
+            }
             
-      
             userData.consultas.push(novaConsulta);
       
             await setDoc(userDocRef, userData);
@@ -105,7 +108,7 @@ function ConsultaForm({user}) {
           toast.error("Documento do usuário não encontrado.");
         }
     } catch (error) {
-      toast.error("Erro ao adicionar consulta:", error);
+      console.log("Erro ao adicionar consulta:", error);
     }
       };
     
